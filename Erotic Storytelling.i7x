@@ -3277,37 +3277,6 @@ To verify story contents:
 		Say "There is no optional content to choose from in this story.";
 		Say paragraph break;
 
-Chapter 4.2.2c - Info/Warning Screen
-
-[At the start of play, warn the player of the contents of the story.]
-The adult introduction rule is listed before the start in the correct scenes rule in the startup rulebook.
-This is the adult introduction rule:
-	Say "[bold type]WARNING[roman type][paragraph break]";
-	Say "This is a game of [bold type]Adult[roman type] Interactive Fiction. It contains scenes and imagery of an explicit sexual nature intended for a mature audience. If you are underaged, easily offended or not interested in this kind of material, [bold type]please quit now[roman type].[paragraph break]";
-	Say "(-more-)[paragraph break]";
-	Wait for any key;
-	Let contents be the list of story contents;
-	If contents is not empty:
-		Let repeating be true;
-		Let optional be the list of optional story contents;
-		While repeating is true:
-			Display story contents;
-			If optional is not empty:
-				Say "Would you like to modify which of the optional content types to experience? (Y/N)";
-				If player consents:
-					Say paragraph break;
-					Verify story contents;
-				Else:
-					Now repeating is false;
-					Say paragraph break;
-			Else:
-				Now repeating is false;
-	Say "The story makes use of concepts and actions related to the adult nature of the story in addition to the usual Interactive Fiction commands.";
-	Say "Type '[bold type]HELP[roman type]' to access the built-in help system for details on how the erotic actions, cloth and body parts functions.[paragraph break]";
-	Say "(-more-)[paragraph break]";
-	Wait for any key;
-	Clear the screen;
-
 Book 4.3 - Help System
 
 [Status: TODO
