@@ -118,7 +118,7 @@ A body part has some text called the uncovered description.
 Section - Understanding
 
 A body part has some text called owner's pronoun. [Note: This will be updated at story start with the initiate erotic storytelling rule to match the person the part belongs to.]
-Understand the owner's pronoun property as describing a body part. 
+Understand the owner's pronoun property as describing a body part.
 
 Does the player mean examining a body part that is part of the player: It is unlikely.
 
@@ -128,7 +128,7 @@ Part 1.1.2 - Clothing
 Garments are implementation of wearable clothing that can be layered over cover areas. They have several complex sub-sets, grouped herein by chapter.]
 
 A garment is a kind of thing. The indefinite article is usually "a".
-The specification of garment is "A garment is something a person can wear over their body parts and related cover areas. 
+The specification of garment is "A garment is something a person can wear over their body parts and related cover areas.
 Garments are quite complex, with several distinct sub-features: Some garments can be shiftable in various ways, or even be ripped apart. Transparency determines whether it blocks vision, and they can allow or block touching through. Clothing size is provided to allow garments to only be wearable by matching persons."
 
 A garment is always wearable.
@@ -151,7 +151,7 @@ Shifting a garment also has the possibility of altering the areas covered (throu
 Table of Shift
 Shiftyness	describe shifting (text)	describe shifted (text)	describe unshifting (text)	describe unshifted (text)
 moveable	"[move] aside"	"moved aside"	"[move] back"	"in place"
-buttonable	"[unbutton]"	"unbuttoned"	"[button] up"	"buttoned"		
+buttonable	"[unbutton]"	"unbuttoned"	"[button] up"	"buttoned"
 zipable	"[unzip]"	"unzipped"	"[zip] up"	"zipped up"
 fastenable	"[unfasten]"	"unfastened"	"[fasten]"	"fastened"
 raisable	"[hike] up"	"hiked up"	"[pull] down"	"in place"
@@ -275,7 +275,7 @@ When play begins (this is the initiate erotic storytelling rule):
 	[Set correct pronouns for body parts:]
 	Repeat with part running through the body parts:
 		If part is part of the player:
-			Now owner's pronoun of part is "my";		
+			Now owner's pronoun of part is "my";
 		Else if part is part of a man:
 			Now owner's pronoun of part is "his";
 		Else if part is part of a woman:
@@ -292,7 +292,7 @@ When play begins (this is the initiate erotic storytelling rule):
 To update pronoun for (G - a garment):
 	If G is worn by a person (called P):
 		If P is the player:
-			Now wearer's pronoun of G is "my";		
+			Now wearer's pronoun of G is "my";
 		Else if P is worn a man:
 			Now wearer's pronoun of G is "his";
 		Else if P is a woman:
@@ -301,7 +301,7 @@ To update pronoun for (G - a garment):
 			Now wearer's pronoun of G is "their";
 	Else:
 		Now wearer's pronoun of G is "their";
-	
+
 Part 1.2.1 - Determining Decency and Privacy
 
 Chapter 1.2.1a - Determining Decency
@@ -559,7 +559,7 @@ To decide whether (G - a garment) can be worn by (P - a person):
 			If clothing layer of cloth >= clothing layer of G:
 				If A is listed in the modified cover areas of cloth, decide no;
 	Decide yes;
-	
+
 To decide which list of garments is preventing wearing of (G - a garment) by (P - a person):
 	Let preventers be a list of garments;
 	If G is worn by P:
@@ -616,7 +616,7 @@ To decide which list of things is revealed by taking off (G - a garment):
 		Repeat with I running through items:
 			Add I to revealed, if absent;
 	Decide on revealed;
-			
+
 To decide which decency is exposed by taking off (G - a garment):
 	Let exposed be the undefined decency;
 	If G is not worn by someone or G is transparent: [It doesn't conceal anything, so nothing will be revealed]
@@ -1241,7 +1241,7 @@ Check an actor shifting something (This is the shifting garments requires consen
 			Stop the action;
 
 Chapter 1.4.1c - Carry Out
-		
+
 Carry out an actor shifting (this is the standard shifting rule):
 	Now the noun is shifted;
 	Update decency for holder of noun;
@@ -1550,7 +1550,7 @@ Book 2.2 - Describing People
 
 Part 2.2.1 - Framework
 
-[Status: 
+[Status:
 In order to easily expand upon how people are described when examining, we create a new rulebook that's responsible for printing a description, and then hooking this up in the carry out examining rules. In order to create generic description rules, we also have a rulebook for determining how notable a given feature of a person is.]
 
 Chapter 2.2.1a - Rulebooks
@@ -1637,7 +1637,7 @@ A default description generation for a person (called P) (This is the generate s
 	Repeat with part running through parts:
 		Follow the description notability rules for part;
 		If the outcome of the rulebook is the distinct outcome:
-			If part provides the property short description 
+			If part provides the property short description
 			and the short description of the part is not the default value of text:
 				Add "[indefinite article of part] [short description of part]" to the notable body part descriptions;
 			Else:
@@ -1657,7 +1657,7 @@ A default description generation for a person (called P) (This is the generate s
 	Repeat with possession running through possessions:
 		Follow the description notability rules for possession;
 		If the outcome of the rulebook is the distinct outcome:
-			If possession provides the property short description 
+			If possession provides the property short description
 			and the short description of the possession is not the default value of text:
 				Add "[indefinite article of possession] [short description of possession]" to the notable possession descriptions;
 			Else:
@@ -1894,7 +1894,7 @@ The rubbing decency is initially immodest.
 
 Chapter 3.2.2a - Understanding
 
-Understand "massage [something]", "rub [something]", "fondle [something]" as rubbing. 
+Understand "massage [something]", "rub [something]", "fondle [something]" as rubbing.
 
 Does the player mean rubbing a body part: It is likely.
 Does the player mean rubbing a person: It is unlikely.
@@ -1964,7 +1964,7 @@ The tickling decency is initially immodest.
 
 Chapter 3.2.3a - Understanding
 
-Understand "tickle [something]" as tickling. 
+Understand "tickle [something]" as tickling.
 
 Does the player mean tickling something tickleable: It is very likely.
 Does the player mean tickling the player: It is very unlikely.
@@ -2126,7 +2126,7 @@ The pinching decency is initially immodest.
 
 Chapter 3.2.5a - Understanding
 
-Understand "pinch [something]", "squeeze [something]" as pinching. 
+Understand "pinch [something]", "squeeze [something]" as pinching.
 
 Does the player mean pinching something pinchable: It is very likely.
 Does the player mean pinching the player: It is very unlikely.
@@ -2175,7 +2175,7 @@ Check an actor pinching (this is the pinching decency rule):
 		Else if the player can see the actor:
 			Say "It [are] too public for [the actor] to pinch [noun] here." (B);
 		Stop the action;
-		
+
 Check an actor pinching (this is the seek consent for pinching rule):
 	If the noun is a person or noun is enclosed by a person:
 		Follow the consent rules;
@@ -2211,7 +2211,7 @@ The licking decency is initially immodest.
 
 Chapter 3.2.6a - Understanding
 
-Understand "lick [something]" and "suck [something]" as licking. 
+Understand "lick [something]" and "suck [something]" as licking.
 
 Does the player mean licking something lickable: It is very likely.
 Does the player mean licking a person: It is likely.
@@ -2302,7 +2302,7 @@ The biting decency is initially indecent.
 
 Chapter 3.2.7a - Understanding
 
-Understand "bite [something]", "gnaw [something]" and "chomp [something]" as biting. 
+Understand "bite [something]", "gnaw [something]" and "chomp [something]" as biting.
 
 Does the player mean biting something biteable: It is very likely.
 Does the player mean biting the player: It is very unlikely.
@@ -2461,7 +2461,7 @@ Check an actor fucking something with (this is the seek consent for fucking rule
 	Follow the consent rules;
 	Unless the outcome of the rulebook is the give consent outcome:
 		Stop the action;
-		
+
 Chapter 3.2.8c - Carry Out
 
 Carry out an actor fucking something with (this is the seek stimulation for fucking rule):
@@ -2706,7 +2706,7 @@ Report an actor hugging (this is the report hugging rule):
 	Else if the player can see the noun:
 		Say "[The noun] [are] hugged." (C);
 
-Part 3.3.3 - Dancing 
+Part 3.3.3 - Dancing
 
 [Status: Complete
 Dancing with is a new action. It takes into account that only other people can be danced with, decency and consent/arousal, and handle action reporting.]
@@ -2778,7 +2778,7 @@ Report an actor dancing (this is the report dancing rule):
 Book 3.4 - Redirect Helpers
 
 [To improve the understanding of the player, we provide some helper actions that redirect.]
-		
+
 Part 3.4.1 - Fucking
 
 Fucking is an action applying to one touchable thing.
@@ -2938,7 +2938,7 @@ To decide whether (P - a person) is (A - an arousal) or less:
 	Decide no;
 
 Part 3.5.2b - Arousing
-	
+
 [Increase the arousal of a person by one grade, with a maxmimum level.
 Note: Unattainable is treated as a null value, and calls to increase to it are ignored.]
 To arouse (P - a person) up to (A - an arousal):
@@ -2961,7 +2961,7 @@ To cool (P - a person) down to (A - an arousal):
 	Else if the current arousal of P is less than unaroused:
 		If the current arousal of P is less than A:
 			Now the current arousal of P is the arousal after the current arousal of P;
-	
+
 [Decrease the arousal of a person by one grade, without a minimum.]
 To cool down (P - a person):
 	Cool P down to unaroused;
@@ -2987,11 +2987,11 @@ To decide whether (P - a person) orgasms:
 
 Book 3.6 - Default Persuasion
 
-[Ideally we would find a way to use the consent rules to grant persuasion. 
+[Ideally we would find a way to use the consent rules to grant persuasion.
 Unfortunately the action of asking another person to do something is not easily converted to the person doing the action. Instead we grant default persuasion success for the actions that require consent, and let the consent rules stop the action instead.
 Because this is a rather big change, we make it an optional toggle.]
 
-Use consensual persuasion translates as (- Constant IMPLIED_PERSUASION; -). 
+Use consensual persuasion translates as (- Constant IMPLIED_PERSUASION; -).
 
 Part 3.6.1 - Clothing Actions
 
@@ -3324,7 +3324,7 @@ This is inspired by Example 383: Jamaica 1688.]
 Book 4.5 - Completion Tracking
 
 [Status: TODO/Not implemented]
-	
+
 Volume 5 - Templates
 
 [This volume provides ready-to-use templates that can be used in a story.]
@@ -3359,7 +3359,7 @@ Section - Legs
 
 Some thighs is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some thighs is pairs of thighs.
-The cover locations of some thighs is usually {the thigh area}. 
+The cover locations of some thighs is usually {the thigh area}.
 Some thighs is usually touchable. Some thighs is usually rubbable.
 
 Some legs is a kind of body part.
@@ -3401,7 +3401,7 @@ A neck is usually lickable. A neck is usually biteable.
 Some shoulders is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some shoulders is pairs of shoulders.
 The cover locations of some shoulders is usually {the shoulder area}.
-Some shoulders is usually rubbable. 
+Some shoulders is usually rubbable.
 
 A chest is a kind of body part.
 The cover locations of a chest is usually {the upper torso area}.
@@ -3623,7 +3623,7 @@ The cover areas of some shoes is usually {feet area}.
 
 Some boots is a kind of garment.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some boots is pairs of boots.
-The specification of some boots is "Boots are formal outerwear like shoes, but are higher and cover both feet and legs. 
+The specification of some boots is "Boots are formal outerwear like shoes, but are higher and cover both feet and legs.
 Note; take care to use boots with dresses, as they technically go on the outside of a long dress."
 Some boots is usually outerwear.
 The cloth decency of some boots is usually formal.
@@ -3686,7 +3686,7 @@ This books deals with integrating the discrete arousals into the stimulation and
 The underlying parts deals with responses of the actors, action integration and custom values for the templated body parts.]
 
 [We create a use-mode for enabling DACS:]
-Use DACS translates as (- Constant ENABLE_DACS; -). 
+Use DACS translates as (- Constant ENABLE_DACS; -).
 
 Part 5.2.1 - Responses
 
@@ -3740,7 +3740,7 @@ A consent rule (this is the love interest consent rule):
 		Else if the second noun is part of a person (called P):
 			Let second person be P;
 		Else if the second noun is held by a person (called P):
-			Let second person be P;	
+			Let second person be P;
 	[Check love interests for actor]
 	Unless actor is the player:
 		If first person is a person and first person is not listed in the love interests of the actor:
@@ -4319,7 +4319,7 @@ The fuck-play threshold of some nipples is usually aroused.
 Erotic Storytelling ends here.
 
 ---- DOCUMENTATION ----
-	
+
 Chapter 1 - Using this Extension
 
 To use this framework, you need to download and install it (which you probably have if you're reading this) and include it in your story:
@@ -4456,7 +4456,7 @@ Section 1.4 - Layering and Templates
 
 A common feature to promote realism in AIFs is clothing which can be examined and removed one piece at a time.
 The most common technical implementation of this in libraries is called layered clothing.
-In order to facilitate layered clothing, this extension uses "cover areas" to link people, body parts, and garments. 
+In order to facilitate layered clothing, this extension uses "cover areas" to link people, body parts, and garments.
 The technical specifics of this are covered in chapter 3, but the extension provides templates for garments and body parts which cover most normal situations.
 Example A shows a simple setup with templated body parts and garments.
 One notable difference between garments and body parts relates to knowledge and visiblitity.
@@ -4468,18 +4468,18 @@ Below is an overview of the body part templates, with the most pertinent propert
 
 	Abdomen (Immodest): touchable, rubbable, lickable, tickleable
 	Ass (Indecent): touchable, rubbable, spankable, pinchable, lickable, orificial.
-	Ankles (Immodest): plural; 
+	Ankles (Immodest): plural;
 	Arms (Casual): plural; touchable, rubbable
 	Backside (Immodest): rubbable, spankable
 	Breasts (Indecent): plural; touchable, rubbable, lickable, biteable, tickleable, pinchable
 	Nipple (Indecent): plural; touchable, rubbable, lickable, biteable, tickleable, pinchable, twistable
 	Chest (Indecent): touchable, rubbable, lickable, biteable, tickleable
 	Eyes (Formal): plural
-	Face (Formal): 
+	Face (Formal):
 	Feet (Immodest): plural; touchable, rubbable, lickable, biteable, tickleable
 	Hair (Formal): plural (ambigously)
 	Hands (Formal): plural; touchable, rubbable
-	Head (Formal): 
+	Head (Formal):
 	Legs (Casual): plural; touchable, rubbable
 	Mouth (Formal):
 	Neck (Casual): lickable, biteable
@@ -4487,9 +4487,9 @@ Below is an overview of the body part templates, with the most pertinent propert
 	Shoulders (Casual): plural; rubbable
 	Thighs (Immodest): plural; touchable, rubbable
 	Vagina (Indecent): touchable, rubbable, lickable, orificial.
-	Waist (Immodest): 
+	Waist (Immodest):
 	Wrists (Casual): plural;
-	
+
 [Comment:
 FictitiousFrode: The following clarification isn't needed, as orificial and penetrating are properties detailed in 2.1, just like the others.
 Rewrote the table introduction instead.
@@ -4505,13 +4505,13 @@ There is also more information available in the kind listing in the IDE.
 	Panties (Indecent Underwear): Covers crotch, but can be moved or ripped to reveal crotch; allow touching through; plural.
 	Swimsuit (Immodest Underwear): Covers upper/lower torso, lower back/crotch, but can be moved aside to reveal upper torso area; allow touching through.
 	Undershirt (Immodest Underwear): Covers upper/lower torso/back, but can be ripped to reveal upper torso; allow touching through.
-	
+
 	Glasses (Formal Normalwear): Covers the face; plural.
 	Pantyhose (Formal Normalwear): Covers feet, leg, thigh and crotch, but can be ripped to expose crotch; allow touching through; plural.
 	Shirt (Casual Normalwear): Covers upper/lower torso/back, arm and shoulder, but can be unbuttoned or ripped to reveal shoulder and upper/lower torso.
 	Socks (Formal Normalwear): Covers feet; allow touching through; plural.
 	Stockings (Formal Normalwear): Covers feet, leg and thigh, but can be ripped to expose thigh; allow touching through; plural.
-	
+
 	Dress (Casual Overwear): Covers upper/lower torso/back, shoulder, crotch, thigh and leg, but can be unbuttoned to reveal the shoulder and upper/lower torso (without altering full access).
 	Minidress (Immodest Overwear): Covers upper/lower torso/back, shoulder, crotch, and thigh, but can be pulled up to reveal crotch and thigh.
 	Shorts (Casual Overwear): Covers thigh and crotch, but can be unzipped to reveal crotch; plural.
@@ -4536,7 +4536,7 @@ Ever since the early days of AIF there has been a need to limit which actions an
 ADRIFT games usually had a puzzle to solve to 'unlock the girl', after which all possible actions were fair game.
 TADS, with it's more traditional programming language, allowed more complex solutions.
 Ever since Moist(*) used 'excitement' with thresholds to control the flow of sex scenes, arousal-like mechanics have been a staple of TADS games.
-The downside of using arousal thresholds is that sex scenes quickly turn into guess-which-action-works (**), and then repeating that action until you think a new action has been unlocked. 
+The downside of using arousal thresholds is that sex scenes quickly turn into guess-which-action-works (**), and then repeating that action until you think a new action has been unlocked.
 
 Regardless of our feelings over arousal-based systems, there needs to be a mechanism in place to control which actions are permissible.
 To accomplish this in Inform, this extension has settled on using 'Consent' as a new rulebook which works in a similar way to the existing rules for persuasion (which governs what happens when the player asks an NPC to do something).
@@ -4723,8 +4723,8 @@ In total, we have six person related actions; a reworking of the existing kissin
 
 Dancing with is a slightly special action; it's valid to use without a noun, implying that a person dances with themself. Thus the command "Dance" turns into "Dance with yourself" for the purpose of responses and consent.
 Hugging is a rather simple action, checking that a person does not try to hug oneself.
-We've already briefly covered kissing; the standard rules of Inform block the action. 
-We interfere and redirect attempts to kiss body parts to lick them instead, and allow kissing people while blocking any other types of noun. 
+We've already briefly covered kissing; the standard rules of Inform block the action.
+We interfere and redirect attempts to kiss body parts to lick them instead, and allow kissing people while blocking any other types of noun.
 For all three actions, the decency of the action is checked against the location's decency threshold, and the consent rules is consulted.
 
 The helping action fucking goes through a rather complex algorithm to try to determine what are the relevant penetrator and orifice, and then redirects to that.
@@ -4738,7 +4738,7 @@ Section 2.4 - Body Part-related
 Settling on which actions to support in a story can be quite an onerous task.
 Too few actions risks losing the immersion of the player, while too many leads to a significant workload for the author, and players might not even find most of the responses.
 Luckily, by using the adjectives controlling which parts are applicable, we can keep the number of valid responses down while still giving the player some agency.
-With that in mind, the extension has settled on providing a mixture of 'soft', 'active' and 'rough' actions. 
+With that in mind, the extension has settled on providing a mixture of 'soft', 'active' and 'rough' actions.
 
 The touching and rubbing actions are part of the standard library in Inform 7, so while the acts are similar they should be treated distinctly.
 As the specification states, touching is just that: touching something without applying pressure, while rubbing is more active.
@@ -4954,7 +4954,7 @@ A simple example of description generation is shown below:
 	Peter is a man in Library.
 	Peter carries a pocket watch.
 	A dapper suit is a suit worn by Peter.
-	
+
 	Description generation for Peter:
 		If peter is wearing the dapper suit:
 			Say "Peter looks smashing in his dapper suit.";
@@ -5024,7 +5024,7 @@ When writing responses for actions with multiple actors to check for simultaneou
 			Say "The orgamic response for the action should go here.";
 		Else:
 			Say "The normal response for the action should go here.";
-	
+
 	After fucking a a vagina enclosed by a person (called recipient) with a penis enclosed by a person (called penetrator):
 		Let recipient-orgasm be false;
 		Let penetrator-orgasm be false;
@@ -5042,7 +5042,7 @@ When writing responses for actions with multiple actors to check for simultaneou
 Chapter 5 - Improving Non-Player Characters
 
 Let's be blunt: Non-Player Characters are hard to get right in Interactive Fiction.
-The common approach (as described at SibylMoon *) is to limit the player's interaction with NPCs to as little as you can get away with. 
+The common approach (as described at SibylMoon *) is to limit the player's interaction with NPCs to as little as you can get away with.
 Unfortunately that approach doesn't work well for AIF where NPCs can be said to be the main goal of the experience.
 Instead we have to be more careful in the design of our NPCs to make them appear more advanced than they really are.
 SibylMoon (**) list four qualities that increase the illusion of intelligent NPCs: Active, reactive, goal-oriented and randomized.
@@ -5062,7 +5062,7 @@ The solution for these suggestions lies more in story design than technicalities
 A character's purpose is embodied through their persuasion and consent rules while the agency rules handles their active goal-seeking.
 The description system (detailed in chapter 4) tries to highlight the memorable physical features of each person, while the chosen conversation system can be used to create meaningful choices.
 
-Some final thoughts on memorable characters: 
+Some final thoughts on memorable characters:
 If one takes too drastic measures to make every character stand out as memorable, the net effect is usually that all the characters drown each other out.
 Instead one should focus on the player's experience, which is more focused on some way of telling the characters apart from each other.
 My personal preference is to avoid names that start on the same letter or otherwise sound similar, unless it's for the effect of making two characters linked.
@@ -5124,7 +5124,7 @@ Note that any attempts to ask Beatrice to do something will not work as we haven
 	Consent rule for someone doing something to Adam during Beatrice's Encounter: Give consent.
 	Consent rule for someone doing something to something enclosed by Adam during Beatrice's Encounter: Give consent.
 	Consent rule for an actor fucking something enclosed by Beatrice with something during Beatrice's Encounter: Give consent.
-	
+
 	Test me with "kiss Beatrice / lick Beatrice / fuck Beatrice / z / kiss Beatrice / lick Beatrice / fuck Beatrice / Beatrice, rub cock".
 
 Section 5.2 - Character Agency
@@ -5188,7 +5188,7 @@ Section 5.4 - Discrete Arousal-based Consent and Stimulation
 	When Beatrice's Encounter begins:
 		Say "'Oh, all right then, let's get this over with,' Beatrice sighs."
 		Add Adam to the love interests of Beatrice.
-	
+
 	Test me with "kiss Beatrice / lick Beatrice / fuck Beatrice / z / kiss Beatrice / lick Beatrice / fuck Beatrice".
 [TODO: Add more actions do move up the arousal levels]
 
@@ -5242,13 +5242,13 @@ Below is a short example of how content types can be used:
 
 *:
 	Include Erotic Storytelling by Fictitious Frode.
-	
+
 	Male Heterosexuality is a content type.
 	Female Heterosexuality is a content type.
 	Voyeurism is a disabled content type.
-	
+
 	Security Office is a room. "This state-of-the-art Security Office contains row upon row of monitors for the security cameras which are deployed to protect the hotel's guests."
-	
+
 	Some security monitors is backdrop in Security Office.
 	The description is "You scan over the familiar images of people going about their business in the privacy of their hotel rooms[if Voyeurism is enabled], catching a glimpse of a couple engaged in some early-afternoon sex[else]."
 
@@ -5287,7 +5287,7 @@ There is a well established precedent for this, the AIF community has a long and
 This approach has some advantages in that the player is hopefully familiar with both the setting and characters, but it's easy to break immersion if the characters are not portrayed correctly.
 An established setting also gives some directions for which puzzles and events that might be encountered.
 
-Perhaps the most important thing to note here is that over-ambition is the real project-killer: 
+Perhaps the most important thing to note here is that over-ambition is the real project-killer:
 Don't start with a concept you can't finish.
 For your first story you should try to keep it small, especially in the amount of characters the player should be allowed to interact with.
 A good guideline is the rules for the mini-comp which limits the story to one interactive character and a maximum of three locations.
@@ -5321,7 +5321,7 @@ While this will compile (try copying the text over to your story, and press F5 t
 The only description present is the title of the room, and while Inform has a built-in understanding of quite a few verbs, they won't do anything interesting.
 
 Before we start making the world more interesting, it's time to introduce some of the basic properties in Inform.
-We've actually already seen two of them in action despite only writing the single statement 'Library is a room.' 
+We've actually already seen two of them in action despite only writing the single statement 'Library is a room.'
 This statement creates the object name which we use to refer to the object in the source code, and is also used as the default value of the 'printed name' property which is printed to the player.
 By default Inform allows the author to use abbreviated object names, but can be forced to only accept fully qualified names through the 'Use unabbreviated object names' phrase.
 Going one step further, the object's name is also what the parser tries to match the player's input to.
@@ -5373,23 +5373,23 @@ By clever use of room descriptions and the 'before' and 'instead' rulebooks it's
 
 *:
 	Include Erotic Storytelling by Fictitious Frode.
-	
+
 	Living Room is a room.
 	"At the heart of your house is your living room, with its large flatscreen TV and soft couch. Refreshments can be had in the kitchen to the north, and a small hallway leads east towards the bedroom. A small bathroom lies to the west, and the front door is to the south."
-	
+
 	Before going east in Living Room, say "You pass through the hallway and enter your bedroom."
 	Instead of going west in Living Room, say "You don't have a pressing need to go visit the bathroom."
-	
+
 	The front door is a closed door. It is south of Living Room.
 	Instead of opening front door, say "You'd rather stay home tonight."
-	
+
 	Kitchen is north of Living Room.
 	"Your kitchen is small but functional, containing cupboards, an oven and a stocked fridge. As you consume most of your meals in the living room to the south, you've never seen the need for a kitchen table."
-	
+
 	Bedroom is east of Living Room. The decency threshold is indecent.
 	"This is where you sleep, and the mess in the room makes it hard to do anything else in here."
 	Before going west in Bedroom, say "You pass through the hall on your way back to the living room."
-	
+
 	The player is wearing an outfit called your clothes.
 
 This example illustrates another small complication introduced by this extension, as it contains the notion of decency.
@@ -5491,7 +5491,7 @@ For a full overview of properties you should look at the 'kinds' part of the Ind
 	Openable: Defined for doors and containers and governs whether the item is a valid target for the 'open' and 'close' actions. Doors default to openable while contains do not, unless it defined as open.
 	Open/closed: A state variable related to 'openable'.
 	Lockable: Defined for doors and containers and governs whether the item is a valid target for the 'lock' and 'unlock with' actions. Defaults to lockable if the item is locked.
-	Locked/unlocked: A state variable related top 'lockable'. 
+	Locked/unlocked: A state variable related top 'lockable'.
 	Matching Key: A reference to the item which acts as a key and can be used to unlock.
 
 One feature of many object oriented languages is the ability to inherit properties from from multiple parents, where this ancestry would be a kind of property onto itself.
@@ -5576,7 +5576,7 @@ Some parts of the extension are manually toggled by the 'use' phrase:
 Section 8.1 - New Kinds of Value
 
 The extension creates a few new kinds of value to help cohesion.
-Several of these could have been implemented as numeric properties instead, but making them kinds of value improves readability and makes it harder to compare the wrong values. 
+Several of these could have been implemented as numeric properties instead, but making them kinds of value improves readability and makes it harder to compare the wrong values.
 
 Arousal has typically been implemented as a linear numeric system, with continuous incremental changes up to thresholds based on the actor and actions. This model typically leads to spamming 'g' (repeat) in order to raise the arousal, so as to unlock new actions.
 To avoid this, we use Informs natural value enumeration to divide arousal into discrete values, which should provide a smoother and more natural progression.
@@ -5613,7 +5613,7 @@ They are designed to be flexible and customizable, and while there's nothing wro
 	Short Description: Used in the listing of notable body parts for person description generation if defined; should contain the essentials of the part.
 	Uncovered Description: A text that is printed if atleast one of the cover areas of the body part is visible (even through transparent garments). If the property is not set, nothing is printed.
 	Owner's Pronoun: A "hack" to allow the player to refer to "my/his/her/their" body part. Set at the start of play by the initiate erotic storytelling rule, and should be updated if the person changes gender or plurality.
-	
+
 A body part also has some properties to control which of the actions are applicable. The body part templates redefine some of these:
 
 	A body part can be touchable or untouchable. A body part is usually untouchable.
@@ -5741,7 +5741,7 @@ Section 8.6 - Adjectives
 
 The extension provides some adjectives for the story author to take advantage of:
 
-	A (person) is TOPLESS: If the upper torso cover area of the person is visible. 
+	A (person) is TOPLESS: If the upper torso cover area of the person is visible.
 	A (person) is BOTTOMLESS: If the crotch cover area of the person is visible.
 	A (person) is NEARLY NUDE: If the person is both topless and bottomless. Other body parts can be covered, however.
 	A (person) is NUDE: If the person is not wearing any garments. Other wearable things can be worn, however.
@@ -5842,7 +5842,7 @@ We also create a property to differentiate between major and minor players in th
 
 	Include Erotic Storytelling by Fictitious Frode.
 	Use unabbreviated object names.
-	
+
 	A person can be major or minor. A person is usually major.
 	Adam is a man. The player is Adam.
 	Bob is a minor man.
@@ -5856,7 +5856,7 @@ Every story also needs to take place somewhere.
 
 	Office is up from Factory Floor.
 	Denise is in Office. "Denise is at her desk."
-	
+
 	Operator Booth is inside from Office. "The Operator Booth contains the control machinery for the factory floor it overlooks. It's boxed in, providing some privacy."
 	The decency threshold of Operator Booth is indecent.
 	Carrie is in Operator Booth. "Carrie is here, operating the factory machinery."
@@ -5884,7 +5884,7 @@ When we use the "part of every" construct the parts will be named after the pers
 	The description of your ass is "Nice and taut."
 	The covered description of your penis is "You're packing some junk in your trousers."
 	The uncovered description of your penis is "Isn't it nice?"
-	
+
 	The description of Carrie's head is "Carrie has long blonde hair, lucious red lips and deep blue eyes."
 	The description of Carrie's legs is "Her legs are long and slim."
 	The description of Carrie's hands is "As a machine operator, her delicate hands are unsullied by hard labor."
@@ -5945,7 +5945,7 @@ First we have to set the stage.
 	Include Erotic Storytelling by Fictitious Frode.
 	Include Simple Conversations by Fictitious Frode.
 	Use unabbreviated object names.
-	
+
 	When play begins, say "After a long trek alongside your trusty native guide, you finally hack through the final vines to arrive at an opening in the dense jungle."
 
 	Jungle Clearing is a room. "The dense jungle opens up in a circular clearing, centered around a [small mound]. You can make out an entrance in the mound leading inside and down."
@@ -5953,9 +5953,9 @@ First we have to set the stage.
 	Instead of going down in Jungle Clearing, try going down.
 
 	Harry is a man in Jungle Clearing. The player is Harry.
-	Your adventuring clothes is an outfit worn by Harry. 
+	Your adventuring clothes is an outfit worn by Harry.
 	The description is "These is your trusty khaki adventuring outfit; tan trousers and long-sleeved shirt with heavy boots."
-	
+
 	A native guide is a woman in Jungle Clearing.
 	An skimpy attire is an outfit worn by native guide. The description is "Her clothing offers considerably less protection than yours, consisting of sandals, a short skirt and a loose-fitting blouse."
 	A flaming torch is carried by the native guide. It is lit.
@@ -5983,15 +5983,15 @@ We also need a small maze to be guided through, and to make things interesting w
 	Entrance Chamber is inside from small mound. "This small chamber lies just inside the [small mound]. A beam of light comes through the opening to the south, illuminating a corridor leading north."
 	Instead of going south in Entrance Chamber, try going outside.
 	Instead of going up in Entrance Chamber, try going outside.
-	
+
 	Dark Intersection is north of Entrance Chamber. It is dark. "The underground corridor from the entrance to the south splits into two branches going east and west."
 
 	Treasure Chamber is a room. "Sadly this chamber doesn't live up to it's name. Broken caskets and chests lie scattered around the room."
 	Every turn, if Harry is in Treasure Chamber, end the story finally saying "It might not have contained the treasures you were looking for, but you did find a nice girl."
-	
+
 	Endless Pit is a room. "Just as you feel the corridor walls around you open up, the floor before you also give way to nothingness."
 	Every turn, if Harry is in Endless Pit, end the story saying "You stumble over the edge, hurtling down through the darkness before making a messy spot at the bottom."
-	
+
 	When play begins:
 		If a random chance of 1 in 2 succeeds:
 			Change east exit of Dark Intersection to Endless Pit;
@@ -6006,11 +6006,11 @@ For our purpose, asking the guide about treasure seems like a reasonable trigger
 
 	Some treasure is a subject. Understand "gold", "gems" and "secrets" as treasure.
 	The dialogue of the native guide is the Table of Guide's Dialogue.
-	
+
 	Table of Guide's Dialogue
 	subject (a thing)	availability (a truth state)	cue (a text)	turn stamp (a number)	dialogue (some text)
 	treasure	true	"treasure"	--	"'Yes mister Harry, I know where the treasure is hidden. Follow me and try to keep up!'"
-	
+
 	After talking to native guide about treasure for the first time:
 		Now the target location of native guide is Treasure Chamber;
 		Now the native guide is agency-enabled;
@@ -6023,7 +6023,7 @@ The provided templates covers the need of most stories, but it's impossible to c
 This example shows how a new type of body part requiring it's own cover area can be implemented.
 
 	*: "A Furry Tale"
-	
+
 	Include Erotic Storytelling by Fictitious Frode.
 	Use consensual persuasion.
 
@@ -6044,7 +6044,7 @@ The first part is expanding the Table of Coverage to define the new cover area.
 For creating the body part, we have two options: create a new template kind or a new generic body part.
 Both approaches need all properties set; the most important is the cover locations but any understand phrases or action control adjectives should also be defined.
 If we expect to create multiples of the new part it's best to create a new template so all this is only done once.
-	
+
 	A tail is a kind of body part.
 	The cover locations of a tail is usually {tail area}.
 	A tail is usually touchable. A tail is usually rubbable.
@@ -6054,7 +6054,7 @@ This can be done by either declaring the contents of the body area property, or 
 The body part must also be declared to be part of the relevant persons.
 
 	When play begins, add tail area to the body areas of Kitsune.
-	
+
 	Kitsune's tail is a tail that is part of Kitsune.
 	The covered description of Kitsune's tail is "You've heard the rumours about her [short description], but you can't see it."
 	The uncovered description of Kitsune's tail is "She has a [short description], wagging playfully from side to side."
@@ -6070,10 +6070,10 @@ We also change the dress to be raisable instead of buttonable
 	The unworn description is "It's a [short description]."
 	The worn description is "She's wearing a [short description] that covers most of her body."
 	The shifted description is "Her [short description] is raised to reveal her legs and [short description of Kitsune's tail]."
-	
+
 	The cover areas of pink dress is usually {shoulder area, arm area, upper torso area, lower torso area, upper back area, lower back area, crotch area, thigh area, leg area, tail area}.
 	A pink dress is not default cover blocking.
-	The shiftyness of a pink dress is raisable. The shifting revealed cover areas of a dress is usually {crotch area, thigh area, leg area, tail area}.	
+	The shiftyness of a pink dress is raisable. The shifting revealed cover areas of a dress is usually {crotch area, thigh area, leg area, tail area}.
 
 We can also create new garments for just this body part.
 We make it transparent because we don't want it to block vision.
@@ -6090,5 +6090,5 @@ We grant consent for some actions so the player can test the differences.
 
 	Consent for an actor shifting a garment worn by Kitsune: Give consent.
 	Consent for an taking ribbon: Give consent.
-	
+
 	Test me with "x kitsune / x tail / x ribbon / lift dress / x kitsune / x tail / x ribbon / take ribbon / wear ribbon"
