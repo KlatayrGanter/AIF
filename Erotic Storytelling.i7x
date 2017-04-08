@@ -22,6 +22,10 @@ To unfasten is a verb.
 To fasten is a verb.
 To hike is a verb.
 To rip is a verb.
+To displace is a verb.
+To replace is a verb.
+To uncover is a verb.
+To cover is a verb.
 
 Section - Actions Related Verbs
 
@@ -156,6 +160,8 @@ zipable	"[unzip]"	"unzipped"	"[zip] up"	"zipped up"
 fastenable	"[unfasten]"	"unfastened"	"[fasten]"	"fastened"
 raisable	"[hike] up"	"hiked up"	"[pull] down"	"in place"
 lowerable	"[pull] down"	"pulled down"	"[pull] up"	"in place"
+displaceable	"[displace]"	"displaced"	"[replace]"	"replaced"
+uncoverable	"[uncover]"	"uncovered"	"[cover]"	"covered"
 
 [Saying:]
 To say describe shifting of (S - a shiftyness):
@@ -1169,6 +1175,12 @@ Understand "unzip [fastenable garment]" as shifting.
 Understand "unbutton [fastenable garment]" as shifting.
 Understand "open [fastenable garment]" as shifting.
 
+Understand "displace [displaceable garment]" as shifting.
+Understand "replace [displaceable garment]" as shifting.
+
+Understand "uncover [uncoverable garment]" as shifting.
+Understand "cover [uncoverable garment]" as shifting.
+
 Understand "pull up/-- [raisable garment]" as shifting.
 Understand "raise up/-- [raisable garment]" as shifting.
 Understand "lift up/-- [raisable garment]" as shifting.
@@ -1176,6 +1188,7 @@ Understand "hike up [raisable garment]" as shifting.
 
 Understand "pull down/-- [lowerable garment]" as shifting.
 Understand "lower down/-- [lowerable garment]" as shifting.
+
 
 Does the player mean shifting a shifted garment: It is unlikely.
 Does the player mean shifting a unshifted garment: It is likely.
@@ -3332,7 +3345,7 @@ The cover locations of some thighs is usually {the thigh area}.
 Some thighs is usually touchable. Some thighs is usually rubbable.
 
 Some legs is a kind of body part.
-It is usually ambiguously plural. The indefinite article is usually "some". The plural of some legs is pairs of legs.
+It is usually ambiguously plural. The indefinite article is usually "two". The plural of some legs is pairs of legs.
 The cover locations of some legs is usually {the leg area}.
 Some legs is usually touchable. Some legs is usually rubbable.
 
@@ -3431,7 +3444,7 @@ Some panties is usually underwear.
 The cloth decency of some panties is usually indecent.
 Some panties is usually allow touching through.
 The cover areas of some panties is usually {crotch area}.
-Some panties is usually shiftable. The shiftyness of some panties is usually moveable. The shifting revealed cover areas of some panties is usually {crotch area}.
+Some panties is usually shiftable. The shiftyness of some panties is usually displaceable. The shifting revealed cover areas of some panties is usually {crotch area}.
 Some panties is usually rippable. The ripping revealed cover areas of some panties is usually {crotch area}.
 
 A bra is a kind of garment.
@@ -3440,6 +3453,8 @@ A bra is usually underwear.
 The cloth decency of a bra is usually indecent.
 A bra is usually allow touching through.
 The cover areas of a bra is usually {upper torso area, upper back area}.
+A bra is usually shiftable. The shiftyness of a bra is usually displaceable. The shifting revealed cover areas of bra is usually {upper torso area}.
+Some bra is usually not rippable. The ripping revealed cover areas of bra is usually {upper torso area}.
 
 An undershirt is a kind of garment.
 The indefinite article is usually "an".
@@ -3457,6 +3472,7 @@ The cloth decency of a swimsuit is usually immodest.
 A swimsuit is usually allow touching through.
 The cover areas of a swimsuit is usually {upper torso area, lower torso area, lower back area, crotch area}.
 A swimsuit is usually shiftable. The shiftyness of a swimsuit is usually moveable. The shifting revealed cover areas of a swimsuit is usually a {upper torso area}.
+Some swimsuit is usually not rippable. The ripping revealed cover areas of swimsuit is usually {upper torso area}.
 
 A bodysuit is a kind of garment.
 The specification of bodysuit is "A bodysuit is a special form of indecent underwear that covers most of a person, only leaving the hands and head/face uncovered."
@@ -3508,6 +3524,7 @@ The cover areas of a shirt is usually {shoulder area, arm area, upper torso area
 A shirt is usually default cover blocking.
 A shirt is usually shiftable. The shiftyness of a shirt is usually buttonable. The shifting revealed cover areas of a shirt is usually {shoulder area, upper torso area, lower torso area}.
 A shirt is usually rippable. The ripping revealed cover areas of a shirt is usually {shoulder area, upper torso area, lower torso area}.
+A t-shirt and blouse is a kind of shirt.
 
 Some glasses is a kind of garment.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some glasses is pairs of glasses.
@@ -3516,6 +3533,7 @@ The specification of some glasses is "Glasses go on the face, and are usually fo
 Some glasses is usually normalwear.
 The cloth decency of some glasses is usually formal.
 The cover areas of some glasses is usually {face area}.
+spectacles are a kind of glasses. It is usually ambiguously plural. The indefinite article is usually "some". The plural of some glasses is pairs of spectacles.
 
 A minidress is a kind of garment.
 The specification of a minidress is "A minidress is a short dress that doesn't cover the legs; see dress for more details. It's usually casual and normalwear. It's can usually be raised to gain access to the crotch."
@@ -3523,6 +3541,7 @@ A minidress is usually normalwear.
 The cloth decency of minidress is usually immodest.
 The cover areas of a minidress is usually {shoulder area, arm area, upper torso area, lower torso area, upper back area, lower back area, crotch area, thigh area}.
 A minidress is usually shiftable. The shiftyness of a minidress is usually raisable. The shifting revealed cover areas of a minidress is usually {crotch area, thigh area}.
+A miniskirt is a kind of minidress.
 
 Chapter 5.1.2c - Overwear
 
