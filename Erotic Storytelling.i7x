@@ -1339,7 +1339,7 @@ Check an actor unshifting something (This is the unshifting garments requires co
 			Stop the action;
 
 Chapter 1.4.2c - Carry Out
-		
+
 Carry out an actor unshifting (this is the standard unshifting rule):
 	Now the noun is unshifted;
 	Update decency for the holder of noun;
@@ -3792,7 +3792,6 @@ A consent rule (this is the dressing consent rule):
 
 [We can skip abide by the love interest consent rule because only the actor will be wearing clothes]
 A consent rule for an actor wearing something (this is the dressing default consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the dressing consent rule;
 
 Section - Worn Garments
@@ -3822,23 +3821,18 @@ A consent rule (this is the worn garment consent rule):
 	Give consent;
 
 A consent rule for an actor taking off something (this is the undressing default consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the worn garment consent rule;
 A consent rule for an actor taking a garment (this is the taking off default consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the worn garment consent rule;
 A consent rule for an actor ripping a garment (this is the ripping default consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the worn garment consent rule;
 A consent rule for an actor shifting a garment (this is the shifting default consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the worn garment consent rule;
 A consent rule for an actor unshifting a garment (this is the unshifting default consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the worn garment consent rule;
 
@@ -3894,27 +3888,21 @@ A consent rule (this is the soft-playing consent rule):
 	Give consent;
 
 A consent rule for an actor touching (this is the default touching consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the soft-playing consent rule;
 A consent rule for an actor rubbing (this is the default rubbing consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the soft-playing consent rule;
 A consent rule for an actor tickling (this is the default tickling consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the soft-playing consent rule;
 A consent rule for an actor kissing (this is the default kissing consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the soft-playing consent rule;
 A consent rule for an actor hugging (this is the default hugging consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the soft-playing consent rule;
 A consent rule for an actor dancing (this is the default dancing consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the soft-playing consent rule;
 
@@ -3934,22 +3922,16 @@ A stimulation rule (this is the soft-playing stimulation rule):
 	Stimulated;
 
 A stimulation rule for an actor touching (this is the default touching stimulation rule):
-	Unless DACS option is active, make no decision;
 	Abide by the soft-playing stimulation rule;
 A stimulation rule for an actor rubbing (this is the default rubbing stimulation rule):
-	Unless DACS option is active, make no decision;
 	Abide by the soft-playing stimulation rule;
 A stimulation rule for an actor tickling (this is the default tickling stimulation rule):
-	Unless DACS option is active, make no decision;
 	Abide by the soft-playing stimulation rule;
 A stimulation rule for an actor kissing (this is the default kissing stimulation rule):
-	Unless DACS option is active, make no decision;
 	Abide by the soft-playing stimulation rule;
 A stimulation rule for an actor hugging (this is the default hugging stimulation rule):
-	Unless DACS option is active, make no decision;
 	Abide by the soft-playing stimulation rule;
 A stimulation rule for an actor dancing (this is the default dancing stimulation rule):
-	Unless DACS option is active, make no decision;
 	Abide by the soft-playing stimulation rule;
 
 Chapter 5.2.2d - Rough Play
@@ -4004,19 +3986,15 @@ A consent rule (this is the rough-playing consent rule):
 	Give consent;
 
 A consent rule for an actor spanking (this is the default spanking consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the rough-playing consent rule;
 A consent rule for an actor pinching (this is the default pinching consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the rough-playing consent rule;
 A consent rule for an actor biting (this is the default biting consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the rough-playing consent rule;
 A consent rule for an actor twisting (this is the default twisting consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the rough-playing consent rule;
 
@@ -4036,16 +4014,12 @@ A stimulation rule (this is the rough-playing stimulation rule):
 	Stimulated;
 
 A stimulation rule for an actor spanking (this is the default spanking stimulation rule):
-	Unless DACS option is active, make no decision;
 	Abide by the rough-playing stimulation rule;
 A stimulation rule for an actor pinching (this is the default pinching stimulation rule):
-	Unless DACS option is active, make no decision;
 	Abide by the rough-playing stimulation rule;
 A stimulation rule for an actor biting (this is the default biting stimulation rule):
-	Unless DACS option is active, make no decision;
 	Abide by the rough-playing stimulation rule;
 A stimulation rule for an actor twisting (this is the default twisting stimulation rule):
-	Unless DACS option is active, make no decision;
 	Abide by the rough-playing stimulation rule;
 
 Chapter 5.2.2e - Oral Play
@@ -4100,7 +4074,6 @@ A consent rule (this is the oral-playing consent rule):
 	Give consent;
 
 A consent rule for an actor licking (this is the default licking consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the oral-playing consent rule;
 
@@ -4120,7 +4093,6 @@ A stimulation rule (this is the oral-playing stimulation rule):
 	Stimulated;
 
 A stimulation rule for an actor licking (this is the default licking stimulation rule):
-	Unless DACS option is active, make no decision;
 	Abide by the oral-playing stimulation rule;
 
 Chapter 5.2.2f - Fucking
@@ -4192,7 +4164,6 @@ A consent rule (this is the fuck-playing consent rule):
 	Give consent;
 
 A consent rule for an actor fucking something with (this is the default fucking consent rule):
-	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the fuck-playing consent rule;
 
@@ -4247,7 +4218,6 @@ A stimulation rule (this is the fuck-playing stimulation rule):
 	Stimulated;
 
 A stimulation rule for an actor fucking something with (this is the default fucking stimulation rule):
-	Unless DACS option is active, make no decision;
 	Abide by the fuck-playing stimulation rule;
 
 Part 5.2.3 - Body Part Integration
@@ -4390,7 +4360,6 @@ As this is a large and complex, a proper overview of what can be found in the do
 The following examples are included:
 
 	A: Templates: Factory Mould - Using the provided templates to flesh out actors.
-	B: DACS - Not yet written.
 	C: Agency: Intelligent Agency - Not yet written.
 	D: Customization: A Furry Tale - How to create custom body parts.
 	E: Scenes - Not yet written.
@@ -4437,7 +4406,7 @@ This can be a common occurrence in AIFs, so it's important to include (or at lea
 Chapter 12.4 of 'Writing with Inform' covers the use of persuasion.
 Consent is a new rulebook for this extension, and works in a similar way to make it possible for persons to object to the player's actions if they are directly involved.
 To avoid having to write both consent and persuasion rules for the same action, persuasion for the actions included can be granted from the consent rules.
-Note that it is also possible to take advantage of the bundled Discrete-Arousal-based Consent and Stimulation (DACS) system.
+The Discrete-Arousal-based Consent and Stimulation (DACS) system is always enabled.
 Both consent in general and DACS are covered in more detail in chapter 5.
 
 Inform is quite smart about processing rulebooks, allowing you to write a mixture of general and specific rules.
@@ -4580,10 +4549,8 @@ This extension has opted to use Inform's support for enumerated values to provid
 This has several benefits; the code is easier to read, and fewer discrete values makes it easier to model both for the author and the player exploring it.
 Second, such a system isn't much use if the current arousal of a person is fixed, or left to the author to update manually for each action.
 This led to the stimulation rules, which together with some default consent rules form the Discrete Arousal-based Consent and Stimulation-system (DACS for short).
-In order to avoid unplanned sex-scenes, DACS must be manually enabled:
 
-	1: Include the phrase "Use DACS." in your story setup.
-	2: Update the "love interest" list property of the involved persons to include each other; this can be done dynamically during play.
+	1: Update the "love interest" list property of the involved persons to include each other; this can be done dynamically during play.
 
 Example B shows a simple DACS setup with some customizations, and the system is explained in more detail in section 5.4.
 
