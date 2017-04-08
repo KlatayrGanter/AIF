@@ -30,6 +30,7 @@ To bite is a verb.
 To tickle is a verb.
 To pinch is a verb.
 To spank is a verb.
+To twist is a verb.
 To fuck is a verb.
 
 To kiss is a verb.
@@ -1797,6 +1798,7 @@ A body part can be touchable or untouchable. A body part is usually untouchable.
 A body part can be rubbable or unrubbable. A body part is usually unrubbable.
 A body part can be tickleable or untickleable. A body part is usually untickleable.
 A body part can be spankable or unspankable. A body part is usually unspankable.
+A body part can be twistable or untwistable. A body part is usually untwistable.
 A body part can be pinchable or unpinchable. A body part is usually unpinchable.
 A body part can be lickable or unlickable. A body part is usually unlickable.
 A body part can be biteable or unbiteable. A body part is usually unbiteable.
@@ -2476,6 +2478,84 @@ Report an actor fucking something with (this is the report fucking rule):
 	Else if the player can see the noun:
 		Say "[The noun] [are] fucked." (C);
 
+Part 3.2.9 - Twisting
+
+[Status: Complete
+twisting is a new action. It takes into account that other people's body parts can be twisted, decency and consent/arousal, and handle reporting. Unlike other new actions, we will allow self-twisting.]
+
+Twisting is an action applying to one touchable thing.
+The specification of the twisting action is "Twisting is the act of hurtful turning a person's body parts. Attempts to twist a person will redirect to the nipple."
+
+The twisting decency is initially indecent.
+
+Chapter 3.2.4a - Understanding
+
+Understand "twist [something]", "slap [something]", "smash [something]", "hit [something]", "punch [something]" and "thump [something]" as twisting.
+
+Does the player mean twisting something twistable: It is very likely.
+Does the player mean twisting the player: It is very unlikely.
+Does the player mean twisting something that is part of the player: It is very unlikely.
+
+Chapter 3.2.4b - Check
+
+Check an actor twisting (This is the twisting specificity rule):
+	If the noun is a person:
+		If the actor is the player:
+			Say "[We] [have] to be more specific about what to twist." (A);
+		Else if the player can see the actor and the action is not silent:
+			Say "[We] [have] to be more specific about what [the actor] should twist." (B);
+		Stop the action;
+
+Check an actor twisting (This is the control what can be twisted rule):
+	Unless the noun provides the property twistable and the noun is twistable:
+		If the actor is the player:
+			Say "[We] [can't] twist that." (A);
+		Else if the player can see the actor and the action is not silent:
+			Say "[The actor] [can't] twist that." (B);
+		Stop the action;
+
+Check an actor twisting (this is the twisting reachability rule):
+	If the noun is a body part or the noun is a garment:
+		Unless noun is touchable:
+			If the player is the actor:
+				Say "[We] [can't] reach that." (A);
+			Else if the player can see the actor:
+				Say "[The actor] [can't] reach that." (B);
+			Stop the action;
+
+Check an actor twisting (this is the twisting decency rule):
+	Let L be the location of the actor;
+	If the decency threshold of L is greater than the twisting decency:
+		If the player is the actor:
+			Say "It [are] too public for [us] to twist [noun] here." (A);
+		Else if the player can see the actor:
+			Say "It [are] too public for [the actor] to twist [noun] here." (B);
+		Stop the action;
+
+Check an actor twisting (this is the seek consent for twisting rule):
+	If the noun is a person or noun is enclosed by a person:
+		Follow the consent rules;
+		Unless the outcome of the rulebook is the give consent outcome:
+			Stop the action;
+
+Chapter 3.2.4c - Carry Out
+
+Carry out an actor twisting (this is the seek stimulation for twisting rule):
+	If the noun is a person or noun is enclosed by a person:
+		Follow the stimulation rules;
+
+Chapter 3.2.4d - Reporting
+
+[Default response]
+Report an actor twisting (this is the report twisting rule):
+	If the player is the actor:
+		Say "[We] [twist] [the noun]." (A);
+	Else if the player can see the actor:
+		Say "[The actor] [twist] [the noun]." (B);
+	Else if the player can see the noun:
+		Say "[The noun] [are] twisted." (C);
+
+
 Book 3.3 - Person Actions
 
 [These actions only take another person as the noun, but some redirect if used on body parts.]
@@ -3003,6 +3083,12 @@ Chapter 3.6.2h - Fucking It With
 Persuasion for asking someone to try fucking something with something (this is the consensual fucking persuasion rule): If consensual persuasion option is active, persuasion succeeds.
 Unsuccessful attempt by someone fucking something with when the reason the action failed is the seek consent for fucking rule: Rule succeeds;
 
+Chapter 3.6.2i - Twisting
+
+Persuasion for asking someone to try twisting a person (this is the consensual twisting people persuasion rule): If consensual persuasion option is active, persuasion succeeds.
+Persuasion for asking someone to try twisting something enclosed by a person (this is the consensual twisting persuasion rule): If consensual persuasion option is active, persuasion succeeds.
+Unsuccessful attempt by someone twisting something when the reason the action failed is the seek consent for twisting rule: Rule succeeds;
+
 Part 3.6.3 - Person Actions
 
 Chapter 3.6.3a - Kissing
@@ -3086,6 +3172,7 @@ Carry out debug examining something (this is the debug examine body parts rule):
 		Say "Fuck-Play:[line break]";
 		If noun is penetrating, say "Penetrate at [fuck-play threshold of noun]([fuck-play threshold of P]) up to [fuck-play recipient limit of noun]([fuck-play recipient limit of P]).";
 		If noun is orificial, say "Orifice at [fuck-play threshold of noun]([fuck-play threshold of P]) up to [fuck-play recipient limit of noun]([fuck-play recipient limit of P]).";
+		If noun is twistable, say "Twistable at [rough-play threshold of noun]([rough-play threshold of P]) up to [rough-play recipient limit of noun]([rough-play recipient limit of P]).";
 
 Chapter 4.1.1c - Garment
 
@@ -3321,10 +3408,15 @@ The cover locations of a chest is usually {the upper torso area}.
 A chest is usually touchable. A chest is usually rubbable. A chest is usually tickleable. A chest is usually lickable. A chest is usually biteable.
 
 Some breasts is a kind of body part.
-It is usually ambiguously plural. The indefinite article is usually "some". The plural of some breasts is pairs of breasts. 
-The cover locations of some breasts is usually {the upper torso area}. 
+It is usually ambiguously plural. The indefinite article is usually "some". The plural of some breasts is pairs of breasts.
+The cover locations of some breasts is usually {the upper torso area}.
 Understand "tit", "tits", "breast", "boob", "boobs", "tittie", "titties" and "juggs" as some breasts.
 Some breasts is usually touchable. Some breasts is usually rubbable. Some breasts is usually tickleable. Some breasts is usually lickable. Some breasts is usually biteable. Some breasts is usually pinchable.
+
+A nipple is a kind of body part.
+It is usually ambiguously plural. The indefinite article is usually "some". The plural of some nipples is two nipples.
+The cover locations of some nipples is usually {the upper torso area}.
+Some nipples is usually touchable. Some nipples is usually rubbable. Some nipples is usually tickleable. Some nipples is usually lickable. Some nipples is usually biteable. Some nipples is usually pinchable. Some nipples is usually twistable.
 
 An abdomen is a kind of body part.
 The indefinite article is usually "an".
@@ -3923,6 +4015,10 @@ A consent rule for an actor biting (this is the default biting consent rule):
 	Unless DACS option is active, make no decision;
 	Abide by the love interest consent rule;
 	Abide by the rough-playing consent rule;
+A consent rule for an actor twisting (this is the default twisting consent rule):
+	Unless DACS option is active, make no decision;
+	Abide by the love interest consent rule;
+	Abide by the rough-playing consent rule;
 
 [Create a default stimulation rule]
 The rough-playing stimulation rule is listed after the default stimulation rule in the stimulation rules.
@@ -3946,6 +4042,9 @@ A stimulation rule for an actor pinching (this is the default pinching stimulati
 	Unless DACS option is active, make no decision;
 	Abide by the rough-playing stimulation rule;
 A stimulation rule for an actor biting (this is the default biting stimulation rule):
+	Unless DACS option is active, make no decision;
+	Abide by the rough-playing stimulation rule;
+A stimulation rule for an actor twisting (this is the default twisting stimulation rule):
 	Unless DACS option is active, make no decision;
 	Abide by the rough-playing stimulation rule;
 
@@ -4229,6 +4328,24 @@ The oral-play recipient limit of a vagina is usually orgasmic.
 The fuck-play performer limit of a vagina is usually orgasmic.
 The fuck-play recipient limit of a vagina is usually orgasmic.
 
+Chapter 5.2.3b - Nipples
+
+The soft-play threshold of some nipples is usually aroused.
+The soft-play performer limit of some nipples is usually very aroused.
+The soft-play recipient limit of some nipples is usually very aroused.
+
+[No Change: The rough-play threshold of some nipples is usually very aroused.]
+[No Change: The rough-play performer limit of some nipples is usually very aroused.]
+[No Change: The rough-play recipient limit of some nipples is usually very aroused.]
+
+[No Change: The oral-play threshold of some nipples is usually aroused.]
+[No Change: The oral-play performer limit of some nipples is usually very aroused.]
+[No Change: The oral-play recipient limit of some nipples is usually very aroused.]
+
+The fuck-play threshold of some nipples is usually aroused.
+[No Change: The fuck-play performer limit of some nipples is usually very aroused.]
+[No Change: The fuck-play recipient limit of some nipples is usually very aroused.]
+
 Erotic Storytelling ends here.
 
 ---- DOCUMENTATION ----
@@ -4386,6 +4503,7 @@ Below is an overview of the body part templates, with the most pertinent propert
 	Arms (Casual): plural; touchable, rubbable
 	Backside (Immodest): rubbable, spankable
 	Breasts (Indecent): plural; touchable, rubbable, lickable, biteable, tickleable, pinchable
+	Nipple (Indecent): plural; touchable, rubbable, lickable, biteable, tickleable, pinchable, twistable
 	Chest (Indecent): touchable, rubbable, lickable, biteable, tickleable
 	Eyes (Formal): plural
 	Face (Formal): 
@@ -4584,6 +4702,7 @@ Actions applying to body parts or persons are also compared to the threshold, an
 	The pinching decency is initially immodest.
 	The rubbing decency is initially immodest.
 	The spanking decency is initially indecent.
+	The twisting decency is initially indecent.
 	The tickling decency is initially immodest.
 	The touching decency is initially immodest.
 
@@ -5534,6 +5653,7 @@ A body part also has some properties to control which of the actions are applica
 	A body part can be rubbable or unrubbable. A body part is usually unrubbable.
 	A body part can be tickleable or untickleable. A body part is usually untickleable.
 	A body part can be spankable or unspankable. A body part is usually unspankable.
+	A body part can be twistable or untwistable. A body part is usually untwistable.
 	A body part can be pinchable or unpinchable. A body part is usually unpinchable.
 	A body part can be lickable or unlickable. A body part is usually unlickable.
 	A body part can be biteable or unbiteable. A body part is usually unbiteable.
@@ -5646,6 +5766,7 @@ To make it easy for an author to alter this, they are defined as global variable
 	The pinching decency is initially immodest.
 	The rubbing decency is initially immodest.
 	The spanking decency is initially indecent.
+	The twisting decency is initially indecent.
 	The tickling decency is initially immodest.
 	The touching decency is initially immodest.
 
