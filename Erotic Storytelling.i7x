@@ -55,7 +55,27 @@ Chapter 1.1.1a - Decency
 
 [a control mechanism to control what a person should be allowed to do.]
 
-A decency is a kind of value. The decencies are depraved, obscene, profane, indecent, unashamed, lewd, immodest, displayed, exposed, revealing, uncovered, casual, presentable, modest, formal, prudent, guiltless, virtuous, chaste and undefined decency.
+[dependent on the number of actions encountered - go slow with this.]
+A Purity is a kind of value. The purities are defiled, filthy, dirty, soiled, stained, blemished, messy, untidy, untouched, clean, prim, proper, spotless, immaculate, pure and virgin.
+
+[Resistance to negatively affect another, given the relation. Decreases with purity.]
+Ethics are a kind of value. It is usually ambiguously plural. The indefinite article is usually "some".
+The ethics are fallen, corrupt, unethical, wanton, tainted, unprincipled, malleable, indifferent, careless, naive, innocent, guiltless, concerned, strict, honest, virtuous, honourable and incorruptible.
+
+[decency: persons, clothed and actions can have it. Resistance to expose oneself.]
+A decency is a kind of value. The decencies are depraved, profane, obscene, debased, nasty, provoking, unashamed, lewd, indecent, teasing, naughty, sensual, seducing, enticing, flirting, nonchalant, casual, modest, formal, reserved, prudent, puritan, devout, chaste and undefined decency.
+
+[levels of exposure. Increases arousal, decreases purity.]
+An exposure is a kind of value. The indefinite article is usually "an".
+The exposures are exhibited, advertised, blatant, naked, denuded, stripped, displayed, bared, exposed, unveiled, presented, revealed, obvious, evident, manifest, noticeable discernable and covered.
+
+[general resistance. Inverse related to ethics and arousal, normal relation with excitation.]
+A defiance is a kind of value. The defiances are broken, puppet-like, slavish, servile, tame, docile, trained, disciplined, obedient, willing, prompt, amenable, cooperating, reluctant, manageable, hesitant, self-willed, mischievous, involuntary, uncompliant, restrained, insubordinate, disobedient, misbehaving, resisting and violent.
+
+[non-sexual excitation, general elation. High at start, decreases with high ethics and exposure, unless aroused.]
+An excitation is a kind of value. The indefinite article is usually "an".
+The excitations are suicidal, unworthy, guilted, sluggish, demure, resignated, worn-out, sad, half-hearted, spiritless, apathetic, disregarding, tranced, mesmerized, captivated, fascinated, impressed, pleased, glad, amused, enjoying, merry, elated, cheerful, thrilled, overjoyed, delighted and euphoric.
+
 
 
 The specification of decency is "Decency is a measure for the social standards of a situation, it applies to a person, actions and location given the surroundings.
@@ -76,21 +96,21 @@ The cover areas are defined by the Table of Coverage, which can be extended. NOT
 
 Table of Coverage
 Cover Area	Uncovered Decency (decency)
-The head area	virtuous
+The head area	devout
 The face area	chaste
-The shoulder area	revealing
+The shoulder area	reserved
 The arm area	casual
 The hand area	prudent
 The upper torso area	indecent
-The upper back area	presentable
-The lower torso area	unashamed
-The lower back area	uncovered
-The crotch area	profane
-The thigh area	lewd
-The leg area	exposed
-The feet area	immodest
-The neck area	guiltless
-The wrist area	formal
+The upper back area	formal
+The lower torso area	naughty
+The lower back area	sensual
+The crotch area	provoking
+The thigh area	teasing
+The leg area	enticing
+The feet area	nonchalant
+The neck area	modest
+The wrist area	devout
 The ankle area	modest
 
 A person has a list of cover areas called body areas.
@@ -1821,7 +1841,7 @@ The specification of the touching action is "Touching is just that, touching som
 In the Standard Rules there are no check touching rules, since touchability is already a requirement of the noun for the action anyway, and no carry out rules because nothing in the standard Inform world model reacts to a mere touch - though report rules do mean that attempts to touch other people provoke a special reply.
 In Erotic Storytelling however, touching is 'passive' touching where the player softly feels the target, while the related rubbing action is 'active' touching where the player actively massages the target."
 
-The touching decency is initially revealing.
+The touching decency is initially enticing.
 
 Chapter 3.2.1a - Understanding
 
@@ -1958,7 +1978,7 @@ Part 3.2.3 - Tickling
 Tickling is an action applying to one touchable thing.
 The specification of the tickling action is "Tease another person by tickling their body parts."
 
-The tickling decency is initially exposed.
+The tickling decency is initially naughty.
 
 Chapter 3.2.3a - Understanding
 
@@ -2118,7 +2138,7 @@ Part 3.2.5 - Pinching
 Pinching is an action applying to one touchable thing.
 The specification of the pinching action is "Tease another person by pinching their body parts."
 
-The pinching decency is initially displayed.
+The pinching decency is initially naughty.
 
 Chapter 3.2.5a - Understanding
 
@@ -2975,7 +2995,7 @@ Part 3.5.1 - Definitions
 
 Chapter 3.5.1a - Discrete Arousals
 
-An arousal is a kind of value. The arousals are frigid, repellent, lifeless, stiff, passive, unaroused, spirited, animated, excited, stimulated, passionate, lusty, aroused, heated, horny, vibrant, orgasmic, satiated, over-sensitive, pulsating, spasming, throbbing and ahegao.
+An arousal is a kind of value. The arousals are frigid, desinterested, lifeless, stiff, passive, unaroused, shy, hesitating, animated, spirited, excited, stimulated, passionate, lusty, aroused, heated, horny, vibrant, orgasmic, satiated, over-sensitive, pulsating, oversexed, spasming, throbbing, nymphomaniac and ahegao.
 The specification of arousal is "Arousal is a discrete measure of how aroused a person is. Unaroused is the neutral zero-point, with frigid as a negative value and the intolerable (as the last value defined) as the unset/null-value. These methods for arousing and cooling of a person will take these into account."
 
 A person has an arousal called current arousal. The current arousal of a person is usually unaroused.
@@ -3513,9 +3533,9 @@ Some bra is usually not rippable. The ripping revealed cover areas of bra is usu
 
 An undershirt is a kind of garment.
 The indefinite article is usually "an".
-The specification of undershirt is "An undershirt is a shirt that's meant to go under a normal shirt, covering just the torso (front/back). It's usually immodest underwear. It can be ripped to expose the upper torso area."
+The specification of undershirt is "An undershirt is a shirt that's meant to go under a normal shirt, covering just the torso (front/back). It's usually sensual underwear. It can be ripped to expose the upper torso area."
 An undershirt is usually underwear.
-The cloth decency of an undershirt is usually immodest.
+The cloth decency of an undershirt is usually sensual.
 An undershirt is usually allow touching through.
 The cover areas of an undershirt is usually {upper torso area, lower torso area, upper back area, lower back area}.
 An undershirt is usually rippable. The ripping revealed cover areas of an undershirt is usually a {upper torso area}.
@@ -3536,9 +3556,9 @@ The cloth decency of a bodysuit is usually indecent.
 The cover areas of a bodysuit is usually {shoulder area, arm area, upper torso area, upper back area, lower torso area, lower back area, crotch area, thigh area, leg area, feet area}.
 
 A mask is a kind of garment.
-The specification of mask is "A mask covers a persons face and head, and is usually virtuous. This is a piece of garment that should be used with care, as it will block access to a person's mouth."
+The specification of mask is "A mask covers a persons face and head, and is usually chaste. This is a piece of garment that should be used with care, as it will block access to a person's mouth."
 A mask is usually underwear.
-The cloth decency of a mask is usually virtuous.
+The cloth decency of a mask is usually chaste.
 The cover areas of a mask is usually {face area, head area}.
 
 Chapter 5.1.2b - Normalwear
@@ -4431,6 +4451,7 @@ The oral-play recipient limit of an anus is usually orgasmic.
 The fuck-play performer limit of an anus is usually orgasmic.
 The fuck-play recipient limit of an anus is usually orgasmic.
 
+
 Erotic Storytelling ends here.
 
 ---- DOCUMENTATION ----
@@ -4768,7 +4789,7 @@ The adjectives, along with which templates they are set for, are:
 	Touchable: Arms, Ass, Breasts, Chest, Feet, Hands, Legs, Abdomen, Penis, Thighs, Vagina
 
 To control what behavior is proper in a given location we introduce Decency as a new kind of value, which is explained in more detail in section 3.2.
-By default decency has the four possible values indecent, immodest, casual and formal, as well as the undefined decency to serve as an unset/null-value.
+By default decency has the four possible values indecent, sensual, casual and formal, as well as the undefined decency to serve as an unset/null-value.
 Every room has a decency threshold (which defaults to casual) that determines what is allowed in that room.
 For garment related actions, the resulting decency is calculated and compared to the threshold, stopping any actions that would violate the threshold.
 Attempts to violate the threshold by entering in the wrong state of undress is also similarly stopped.
@@ -4780,13 +4801,13 @@ Actions applying to body parts or persons are also compared to the threshold, an
 	The fucking decency is initially indecent.
 	The hugging decency is initially formal.
 	The kissing decency is initially casual.
-	The licking decency is initially immodest.
-	The pinching decency is initially immodest.
-	The rubbing decency is initially immodest.
+	The licking decency is initially sensual.
+	The pinching decency is initially sensual.
+	The rubbing decency is initially sensual.
 	The spanking decency is initially indecent.
 	The twisting decency is initially indecent.
-	The tickling decency is initially immodest.
-	The touching decency is initially immodest.
+	The tickling decency is initially sensual.
+	The touching decency is initially sensual.
 
 The last check is to see if all involved parties consent to the action, which is a separate rulebook described in section 5.1.
 If no consent rules are written (and the DACS system is not enabled) the default consent rule will deny consent and state the uninterested response for the person.
@@ -5709,7 +5730,7 @@ The cover areas are defined by the Table of Coverage which links each area to a 
 This table can be expanded upon, but then it's important to note that any added areas are not included in people by default.
 
 Decency is intended to control what behavior is proper in a given location.
-By default there are the four stages indecent, immodest, casual, formal, as well as the undefined decency (because I7 doesn't allow for null-values).
+By default there are the four stages indecent, sensual, casual, formal, as well as the undefined decency (because I7 doesn't allow for null-values).
 Every room has a decency threshold, and attempts to enter (or undress in) that room when the visible clothing and body parts gives you a lesser decency is stopped; certain actions also have a decency associated (see Global Variables) that is also checked for.
 
 Shiftyness is a horrible made up word, which governs how the player can rearrange a garment in order to gain access to more cover areas.
@@ -5844,13 +5865,13 @@ To make it easy for an author to alter this, they are defined as global variable
 	The fucking decency is initially indecent.
 	The hugging decency is initially formal.
 	The kissing decency is initially casual.
-	The licking decency is initially immodest.
-	The pinching decency is initially immodest.
-	The rubbing decency is initially immodest.
+	The licking decency is initially sensual.
+	The pinching decency is initially sensual.
+	The rubbing decency is initially sensual.
 	The spanking decency is initially indecent.
 	The twisting decency is initially indecent.
-	The tickling decency is initially immodest.
-	The touching decency is initially immodest.
+	The tickling decency is initially sensual.
+	The touching decency is initially sensual.
 
 Section 8.6 - Adjectives
 
@@ -6154,7 +6175,7 @@ The first part is expanding the Table of Coverage to define the new cover area.
 
 	Table of Coverage(continued)
 	Cover Area	Uncovered Decency (decency)
-	The tail area	immodest
+	The tail area	sensual
 
 For creating the body part, we have two options: create a new template kind or a new generic body part.
 Both approaches need all properties set; the most important is the cover locations but any understand phrases or action control adjectives should also be defined.
