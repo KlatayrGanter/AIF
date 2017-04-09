@@ -2495,15 +2495,15 @@ The specification of the twisting action is "Twisting is the act of hurtful turn
 
 The twisting decency is initially indecent.
 
-Chapter 3.2.4a - Understanding
+Chapter 3.2.9a - Understanding
 
-Understand "twist [something]", "slap [something]", "smash [something]", "hit [something]", "punch [something]" and "thump [something]" as twisting.
+Understand "twist [something]", "jerk [something]", "yank [something]" as twisting.
 
 Does the player mean twisting something twistable: It is very likely.
 Does the player mean twisting the player: It is very unlikely.
 Does the player mean twisting something that is part of the player: It is very unlikely.
 
-Chapter 3.2.4b - Check
+Chapter 3.2.9b - Check
 
 Check an actor twisting (This is the twisting specificity rule):
 	If the noun is a person:
@@ -2545,13 +2545,13 @@ Check an actor twisting (this is the seek consent for twisting rule):
 		Unless the outcome of the rulebook is the give consent outcome:
 			Stop the action;
 
-Chapter 3.2.4c - Carry Out
+Chapter 3.2.9c - Carry Out
 
 Carry out an actor twisting (this is the seek stimulation for twisting rule):
 	If the noun is a person or noun is enclosed by a person:
 		Follow the stimulation rules;
 
-Chapter 3.2.4d - Reporting
+Chapter 3.2.9d - Reporting
 
 [Default response]
 Report an actor twisting (this is the report twisting rule):
