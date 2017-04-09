@@ -57,7 +57,7 @@ Chapter 1.1.1a - Decency
 [Status: Complete
 Decency is a control mechanism the story author can employ to control what the player should be allowed to do.]
 
-A decency is a kind of value. The decencies are indecent, immodest, casual, formal and undefined decency.
+A decency is a kind of value. The decencies are depraved, obscene, profane, indecent, unashamed, lewd, immodest, displayed, exposed, revealing, uncovered, casual, presentable, modest, formal, prudent, virtuous, chaste and undefined decency.
 The specification of decency is "Decency is a measure of what is socially acceptable in a given location. A room has a decency threshold (usually casual)
 For a person, decency is a measure of how much skin that person is showing, and is defined for cover areas and garments. Body parts will inherit the lowest decency of the areas it covers, but this can be 'upgraded' by covering with clothing. The decency of a person is a value that will be referenced more often than it's updated, so we cache it and force the actions that will change it to update the cached value using the provided method 'update decency for Person'. Note; It's possible to manually set the decency of a person to a different value than it would be calculated to be; this value would hold untill the next action that recalculates it. Currently, the actions wearing, taking off, shifting, unshifting and ripping garments will recalculate the decency of the (former) wearer. Before doing any of these actions (as well as going), the person's (updated) decency is compared to the threshold to see if the action should be allowed.
 The erotic actions also have a decency, which is also compared to the threshold. For many actions, this check is somewhat redundant as the action is only meaningful when indecent body parts are visible.
@@ -79,18 +79,18 @@ The cover areas are defined by the Table of Coverage, which can be extended. NOT
 
 Table of Coverage
 Cover Area	Uncovered Decency (decency)
-The head area	formal
-The face area	formal
-The shoulder area	casual
+The head area	virtuous
+The face area	chaste
+The shoulder area	revealing
 The arm area	casual
-The hand area	formal
+The hand area	prudent
 The upper torso area	indecent
-The upper back area	formal
-The lower torso area	immodest
-The lower back area	casual
-The crotch area	indecent
-The thigh area	immodest
-The leg area	casual
+The upper back area	presentable
+The lower torso area	unashamed
+The lower back area	uncovered
+The crotch area	profane
+The thigh area	lewd
+The leg area	exposed
 The feet area	immodest
 
 [Extension:
@@ -1834,7 +1834,7 @@ The specification of the touching action is "Touching is just that, touching som
 In the Standard Rules there are no check touching rules, since touchability is already a requirement of the noun for the action anyway, and no carry out rules because nothing in the standard Inform world model reacts to a mere touch - though report rules do mean that attempts to touch other people provoke a special reply.
 In Erotic Storytelling however, touching is 'passive' touching where the player softly feels the target, while the related rubbing action is 'active' touching where the player actively massages the target."
 
-The touching decency is initially immodest.
+The touching decency is initially revealing.
 
 Chapter 3.2.1a - Understanding
 
@@ -1903,7 +1903,7 @@ Rubbing is already covered in the Standard Rules, but it's disabled by default. 
 The specification of the rubbing action is "The Standard Rules define this action in only a minimal way, blocking it with a check rule which stops it in all cases. It exists so that before or instead rules can be written to make it do interesting things in special cases. (Or to reconstruct the action as something more substantial, unlist the block rule and supply carry out and report rules, together perhaps with some further check rules.)
 For Erotic Story Actions, rubbing is intended for when the actor uses their hands to rub something (as opposed to the softer touch action), and reponds to commands like RUB ANNA, MASSAGE ANNA'S BREASTS, etc. It only works only body parts that are set to rubbable."
 
-The rubbing decency is initially immodest.
+The rubbing decency is initially unashamed.
 
 Chapter 3.2.2a - Understanding
 
@@ -1973,7 +1973,7 @@ Tickling is a new action. It takes into account that only other people's body pa
 Tickling is an action applying to one touchable thing.
 The specification of the tickling action is "Tease another person by tickling their body parts."
 
-The tickling decency is initially immodest.
+The tickling decency is initially exposed.
 
 Chapter 3.2.3a - Understanding
 
@@ -2135,7 +2135,7 @@ Pinching is a new action. It takes into account that only other people's body pa
 Pinching is an action applying to one touchable thing.
 The specification of the pinching action is "Tease another person by pinching their body parts."
 
-The pinching decency is initially immodest.
+The pinching decency is initially displayed.
 
 Chapter 3.2.5a - Understanding
 
@@ -2220,7 +2220,7 @@ Licking is a new action, used only on body parts but attempts to redirect from p
 Licking is an action applying to one touchable thing.
 The specification of the licking action is "This action is intended for when the actor uses their mouth on a body part. Trying to lick a person will try to find a better part of that person to lick."
 
-The licking decency is initially immodest.
+The licking decency is initially indecent.
 
 Chapter 3.2.6a - Understanding
 
@@ -3466,9 +3466,9 @@ The cover areas of an undershirt is usually {upper torso area, lower torso area,
 An undershirt is usually rippable. The ripping revealed cover areas of an undershirt is usually a {upper torso area}.
 
 A swimsuit is a kind of garment.
-The specification of swimsuit is "A swimsuit is immodest underwear that covers the upper torso, lower back/torso and crotch. It doesn't necessarily have to be for swimming; teddies and similar underwear can also use the same template. It can usually be moved aside to expose upper torso."
+The specification of swimsuit is "A swimsuit is unashamed underwear that covers the upper torso, lower back/torso and crotch. It doesn't necessarily have to be for swimming; teddies and similar underwear can also use the same template. It can usually be moved aside to expose upper torso."
 A swimsuit is usually underwear.
-The cloth decency of a swimsuit is usually immodest.
+The cloth decency of a swimsuit is usually unashamed.
 A swimsuit is usually allow touching through.
 The cover areas of a swimsuit is usually {upper torso area, lower torso area, lower back area, crotch area}.
 A swimsuit is usually shiftable. The shiftyness of a swimsuit is usually moveable. The shifting revealed cover areas of a swimsuit is usually a {upper torso area}.
@@ -3481,9 +3481,9 @@ The cloth decency of a bodysuit is usually indecent.
 The cover areas of a bodysuit is usually {shoulder area, arm area, upper torso area, upper back area, lower torso area, lower back area, crotch area, thigh area, leg area, feet area}.
 
 A mask is a kind of garment.
-The specification of mask is "A mask covers a persons face and head, and is usually immodest. This is a piece of garment that should be used with care, as it will block access to a person's mouth."
+The specification of mask is "A mask covers a persons face and head, and is usually virtuous. This is a piece of garment that should be used with care, as it will block access to a person's mouth."
 A mask is usually underwear.
-The cloth decency of a mask is usually immodest.
+The cloth decency of a mask is usually virtuous.
 The cover areas of a mask is usually {face area, head area}.
 
 Chapter 5.1.2b - Normalwear
@@ -3538,7 +3538,7 @@ spectacles are a kind of glasses. It is usually ambiguously plural. The indefini
 A minidress is a kind of garment.
 The specification of a minidress is "A minidress is a short dress that doesn't cover the legs; see dress for more details. It's usually casual and normalwear. It's can usually be raised to gain access to the crotch."
 A minidress is usually normalwear.
-The cloth decency of minidress is usually immodest.
+The cloth decency of minidress is usually profane.
 The cover areas of a minidress is usually {shoulder area, arm area, upper torso area, lower torso area, upper back area, lower back area, crotch area, thigh area}.
 A minidress is usually shiftable. The shiftyness of a minidress is usually raisable. The shifting revealed cover areas of a minidress is usually {crotch area, thigh area}.
 A miniskirt is a kind of minidress.
@@ -3667,14 +3667,23 @@ A strap-on is usually allow touching through.
 The cover areas of a strap-on is usually {crotch area}.
 A strap-on can be penetrating. A strap-on is usually penetrating.
 
-Book 5.2 - Discrete Arousal-based Consent and Stimulation
+Book 5.2 - Generalizations
 
-[Status: Complete
-This books deals with integrating the discrete arousals into the stimulation and consent framework of the actions, to create a basis system that grants consent based on arousal. It's separated into it's own part in order to make it easier to excise it if needed, like if the author wants to use a numerical arousal system.
-The underlying parts deals with responses of the actors, action integration and custom values for the templated body parts.]
+A body part can be lacerated. A body part is usually not lacerated.
+A body part can be bruised. A body part is usually not bruised.
+A body part can be raw. A body part is usually not raw.
+A body part can be sore. A body part is usually not sore.
+A body part can be chafed. A body part is usually not chafed.
+A body part can be sensitive. A body part is usually not sensitive.
+A body part can be tender. A body part is usually not tender.
+A body part can be arroused. A body part is usually not arroused.
+A body part can be spermed. A body part is usually not spermed.
+A body part can be smelling of urine. A body part is usually not smelling of urine.
+A body part can be irritated. A body part is usually not irritated.
+A body part can be itching. A body part is usually not itching.
+A body part can be stinging. A body part is usually not stinging.
+A body part can be smarting. A body part is usually not smarting.
 
-[We create a use-mode for enabling DACS:]
-Use DACS translates as (- Constant ENABLE_DACS; -).
 
 Part 5.2.1 - Responses
 
