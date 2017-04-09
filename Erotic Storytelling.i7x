@@ -23,8 +23,6 @@ To fasten is a verb.
 To hike is a verb.
 To rip is a verb.
 To displace is a verb.
-To replace is a verb.
-To uncover is a verb.
 To cover is a verb.
 
 Section - Actions Related Verbs
@@ -160,8 +158,7 @@ zipable	"[unzip]"	"unzipped"	"[zip] up"	"zipped up"
 fastenable	"[unfasten]"	"unfastened"	"[fasten]"	"fastened"
 raisable	"[hike] up"	"hiked up"	"[pull] down"	"in place"
 lowerable	"[pull] down"	"pulled down"	"[pull] up"	"in place"
-displaceable	"[displace]"	"displaced"	"[replace]"	"replaced"
-uncoverable	"[uncover]"	"uncovered"	"[cover]"	"covered"
+displaceable	"[displace]"	"displaced"	"[cover]"	"covered"
 
 [Saying:]
 To say describe shifting of (S - a shiftyness):
@@ -1176,10 +1173,7 @@ Understand "unbutton [fastenable garment]" as shifting.
 Understand "open [fastenable garment]" as shifting.
 
 Understand "displace [displaceable garment]" as shifting.
-Understand "replace [displaceable garment]" as shifting.
-
-Understand "uncover [uncoverable garment]" as shifting.
-Understand "cover [uncoverable garment]" as shifting.
+Understand "cover [displaceable garment]" as shifting.
 
 Understand "pull up/-- [raisable garment]" as shifting.
 Understand "raise up/-- [raisable garment]" as shifting.
