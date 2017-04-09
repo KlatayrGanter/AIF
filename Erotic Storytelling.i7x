@@ -29,6 +29,7 @@ Section - Actions Related Verbs
 
 To lick is a verb.
 To bite is a verb.
+To pierce is a verb.
 To tickle is a verb.
 To pinch is a verb.
 To spank is a verb.
@@ -52,14 +53,13 @@ Part 1.1.1 - Coverage
 
 Chapter 1.1.1a - Decency
 
-[Status: Complete
-Decency is a control mechanism the story author can employ to control what the player should be allowed to do.]
+[a control mechanism to control what a person should be allowed to do.]
 
-A decency is a kind of value. The decencies are depraved, obscene, profane, indecent, unashamed, lewd, immodest, displayed, exposed, revealing, uncovered, casual, presentable, modest, formal, prudent, virtuous, chaste and undefined decency.
-The specification of decency is "Decency is a measure of what is socially acceptable in a given location. A room has a decency threshold (usually casual)
-For a person, decency is a measure of how much skin that person is showing, and is defined for cover areas and garments. Body parts will inherit the lowest decency of the areas it covers, but this can be 'upgraded' by covering with clothing. The decency of a person is a value that will be referenced more often than it's updated, so we cache it and force the actions that will change it to update the cached value using the provided method 'update decency for Person'. Note; It's possible to manually set the decency of a person to a different value than it would be calculated to be; this value would hold untill the next action that recalculates it. Currently, the actions wearing, taking off, shifting, unshifting and ripping garments will recalculate the decency of the (former) wearer. Before doing any of these actions (as well as going), the person's (updated) decency is compared to the threshold to see if the action should be allowed.
-The erotic actions also have a decency, which is also compared to the threshold. For many actions, this check is somewhat redundant as the action is only meaningful when indecent body parts are visible.
-The undefined decency is not intended to be used, but is needed to signal that the value hasn't been calculated yet."
+A decency is a kind of value. The decencies are depraved, obscene, profane, indecent, unashamed, lewd, immodest, displayed, exposed, revealing, uncovered, casual, presentable, modest, formal, prudent, guiltless, virtuous, chaste and undefined decency.
+
+
+The specification of decency is "Decency is a measure for the social standards of a situation, it applies to a person, actions and location given the surroundings.
+The undefined decency is not intended to be used, needed to signal that the value hasn't been calculated yet."
 
 A person has a decency called the current decency. The current decency of a person is usually the undefined decency.
 
@@ -67,8 +67,7 @@ A room has a decency called the decency threshold. The decency threshold of a ro
 
 Chapter 1.1.1b - Cover Areas
 
-[Status: Complete
-Cover areas are the link between body parts and garments, and are used to defined visibility (with decency) and accesibility.]
+[Cover areas are the link between body parts and garments, and are used to defined visibility (with decency) and accesibility.]
 
 A cover area is a kind of value. The cover area are defined by the Table of Coverage.
 The specification of cover area is "Cover areas are the distinct, non-overlapping areas of the body that can be covered by garments. They are needed to provide the link between garments and body parts in order to provide decency, as not all areas on a person might be associated with a body part.
@@ -90,12 +89,9 @@ The crotch area	profane
 The thigh area	lewd
 The leg area	exposed
 The feet area	immodest
-
-[Extension:
-These are not included by default, but could be:
-The neck area	formal
+The neck area	guiltless
 The wrist area	formal
-The ankle area	formal]
+The ankle area	modest
 
 A person has a list of cover areas called body areas.
 The body areas of a person is usually {head area, face area, shoulder area, arm area, hand area, upper torso area, upper back area, lower torso area, lower back area, crotch area, thigh area, leg area, feet area}.
@@ -1801,16 +1797,17 @@ Chapter 3.1.3a - Action Control Adjectives
 [The following properties are specified to control which things the correspondingly named action is applicable to.
 These can be applied to other things than body part if wanted, and access to garments are supported.]
 
-A body part can be touchable or untouchable. A body part is usually untouchable.
-A body part can be rubbable or unrubbable. A body part is usually unrubbable.
-A body part can be tickleable or untickleable. A body part is usually untickleable.
-A body part can be spankable or unspankable. A body part is usually unspankable.
-A body part can be twistable or untwistable. A body part is usually untwistable.
-A body part can be pinchable or unpinchable. A body part is usually unpinchable.
-A body part can be lickable or unlickable. A body part is usually unlickable.
-A body part can be biteable or unbiteable. A body part is usually unbiteable.
+A body part can be touchable or untouchable. A body part is usually touchable.
+A body part can be rubbable or not rubbable. A body part is usually rubbable.
+A body part can be spankable or not spankable. A body part is usually spankable.
+A body part can be lickable. A body part is usually lickable.
+A body part can be tickleable. A body part is usually tickleable.
 
-Chapter 3.1.3b - Sexual Adjectives
+A body part can be biteable or not biteable. A body part is usually biteable.
+A body part can be pinchable. A body part is usually pinchable.
+A body part can be twistable. A body part is usually not twistable.
+
+A body part can be pierceable or unpierceable. A body part is usually unpierceable.
 
 A body part can be penetrating. A body part is usually not penetrating.
 A body part can be orificial. A body part is usually not orificial.
@@ -2562,6 +2559,83 @@ Report an actor twisting (this is the report twisting rule):
 	Else if the player can see the noun:
 		Say "[The noun] [are] twisted." (C);
 
+Part 3.2.10 - Piercing
+
+[Status: Complete
+piercing is a new action. It takes into account that other people's body parts can be pierced, decency and consent/arousal, and handle reporting. Unlike other new actions, we will allow self-piercing.]
+
+Piercing is an action applying to one touchable thing.
+The specification of the piercing action is "Piercing is the act of hurtful turning a person's body parts. Attempts to pierce a person will redirect to the nipple."
+
+The piercing decency is initially indecent.
+
+Chapter 3.2.10a - Understanding
+
+Understand "pierce [something]", "perforate [something]", "puncture [something]" as piercing.
+
+Does the player mean piercing something pierceable: It is very likely.
+Does the player mean piercing the player: It is very unlikely.
+Does the player mean piercing something that is part of the player: It is very unlikely.
+
+Chapter 3.2.10b - Check
+
+Check an actor piercing (This is the piercing specificity rule):
+	If the noun is a person:
+		If the actor is the player:
+			Say "[We] [have] to be more specific about what to pierce." (A);
+		Else if the player can see the actor and the action is not silent:
+			Say "[We] [have] to be more specific about what [the actor] should pierce." (B);
+		Stop the action;
+
+Check an actor piercing (This is the control what can be pierced rule):
+	Unless the noun provides the property pierceable and the noun is pierceable:
+		If the actor is the player:
+			Say "[We] [can't] pierce that." (A);
+		Else if the player can see the actor and the action is not silent:
+			Say "[The actor] [can't] pierce that." (B);
+		Stop the action;
+
+Check an actor piercing (this is the piercing reachability rule):
+	If the noun is a body part or the noun is a garment:
+		Unless noun is touchable:
+			If the player is the actor:
+				Say "[We] [can't] reach that." (A);
+			Else if the player can see the actor:
+				Say "[The actor] [can't] reach that." (B);
+			Stop the action;
+
+Check an actor piercing (this is the piercing decency rule):
+	Let L be the location of the actor;
+	If the decency threshold of L is greater than the piercing decency:
+		If the player is the actor:
+			Say "It [are] too public for [us] to pierce [noun] here." (A);
+		Else if the player can see the actor:
+			Say "It [are] too public for [the actor] to pierce [noun] here." (B);
+		Stop the action;
+
+Check an actor piercing (this is the seek consent for piercing rule):
+	If the noun is a person or noun is enclosed by a person:
+		Follow the consent rules;
+		Unless the outcome of the rulebook is the give consent outcome:
+			Stop the action;
+
+Chapter 3.2.10c - Carry Out
+
+Carry out an actor piercing (this is the seek stimulation for piercing rule):
+	If the noun is a person or noun is enclosed by a person:
+		Follow the stimulation rules;
+
+Chapter 3.2.10d - Reporting
+
+[Default response]
+Report an actor piercing (this is the report piercing rule):
+	If the player is the actor:
+		Say "[We] [pierce] [the noun]." (A);
+	Else if the player can see the actor:
+		Say "[The actor] [pierce] [the noun]." (B);
+	Else if the player can see the noun:
+		Say "[The noun] [are] pierced." (C);
+
 
 Book 3.3 - Person Actions
 
@@ -2911,15 +2985,15 @@ Book 3.5 - Discrete Arousal
 [Status: Complete
 Arousal has typically been implemented as a linear numeric system, with continuous incremental changes up to thresholds based on the actor and actions. This model typically leads to spamming 'g' (repeat) in order to raise the arousal so as to unlock new actions.
 This extension uses Informs natural value enumeration to divide arousal into discrete values, which should provide a smoother and more natural progression. This part is just the bare bones, allowing the story author to use arousal as a decision making tool.
-The system is extensible, but it assumes that unaorused is the neutral setting, and unattainable arousal is the last defined value.
+The system is extensible, but it assumes that unaorused is the neutral setting, and intolerable is the last defined value.
 In the template volume, this is extended into a full-blown stimulation and consent system.]
 
 Part 3.5.1 - Definitions
 
 Chapter 3.5.1a - Discrete Arousals
 
-An arousal is a kind of value. The arousals are frigid arousal, unaroused, slightly aroused, aroused, very aroused, orgasmic, unattainable arousal.
-The specification of arousal is "Arousal is a discrete measure of how aroused a person is. Unaroused is the neutral zero-point, with frigid arousal as a negative value and the unattainable arousal (as the last value defined) as the unset/null-value. These methods for arousing and cooling of a person will take these into account."
+An arousal is a kind of value. The arousals are frigid, repellent, lifeless, stiff, passive, cool, unaroused, spirited, animated, excited, stimulated, passionate, lusty, heated, horny, aroused, inflamed, ablaze, intensive, orgasmic, vibrant, satiated, pulsating, sensitive, spasming, throbbing and intolerable.
+The specification of arousal is "Arousal is a discrete measure of how aroused a person is. Unaroused is the neutral zero-point, with frigid as a negative value and the intolerable (as the last value defined) as the unset/null-value. These methods for arousing and cooling of a person will take these into account."
 
 A person has an arousal called current arousal. The current arousal of a person is usually unaroused.
 
@@ -2934,13 +3008,13 @@ Part 3.5.2a - Comparisons
 
 [Note: Unattainable is treated as a null value, and is never considered more or less than anything.]
 To decide whether (P - a person) is (A - an arousal) or more:
-	If the current arousal of P is the unattainable arousal, decide no;
+	If the current arousal of P is the satiated, decide no;
 	If the current arousal of P is at least A, decide yes;
 	Decide no;
 
 [Note: Unattainable is treated as a null value, and is never considered more or less than anything.]
 To decide whether (P - a person) is (A - an arousal) or less:
-	If the current arousal of P is the unattainable arousal, decide no;
+	If the current arousal of P is the satiated, decide no;
 	If the current arousal of P is at most A, decide yes;
 	Decide no;
 
@@ -2949,20 +3023,20 @@ Part 3.5.2b - Arousing
 [Increase the arousal of a person by one grade, with a maxmimum level.
 Note: Unattainable is treated as a null value, and calls to increase to it are ignored.]
 To arouse (P - a person) up to (A - an arousal):
-	If the current arousal of P is less than A and A is not the unattainable arousal:
+	If the current arousal of P is less than A and A is not the satiated:
 		Now the current arousal of P is the arousal after the current arousal of P;
 
 [Increase the arousal of a person by one grade, without a maxmimum.
-Note: Will not increase to the unattainable arousal.]
+Note: Will not increase to the satiated.]
 To arouse (P - a person):
-	Arouse P up to (the arousal before the unattainable arousal);
+	Arouse P up to (the arousal before the satiated);
 
 Part 3.5.2c - Cooling Down
 
 [Move the arousal of a person by one grade towards the neutral unaroused, with a minimum level.
 Note: Unattainable is treated as a null value, and will not be moved from.]
 To cool (P - a person) down to (A - an arousal):
-	If the current arousal of P is greater than unaroused and the current arousal of P is not the unattainable arousal:
+	If the current arousal of P is greater than unaroused and the current arousal of P is not the satiated:
 		If the current arousal of P is greater than A:
 			Now the current arousal of P is the arousal before the current arousal of P;
 	Else if the current arousal of P is less than unaroused:
@@ -2980,7 +3054,7 @@ A person has an arousal called the orgasm reset arousal. The orgasm reset arousa
 [We want to make it so that every time a person orgasms, it's harder to achieve the next one.
 The chance to succed is attempts : orgasms; the first orgasm is 'free'; the second is 50% at first attempt and 100% at second, third is 1/3 then 2/3, and so on.]
 To decide whether (P - a person) orgasms:
-	If the current arousal of P is the unattainable arousal, decide no;
+	If the current arousal of P is the satiated, decide no;
 	If P is orgasmic or more:
 		Increase the orgasmic attempts of P by 1;
 		Let X be the orgasmic attempts of P;
@@ -3317,6 +3391,7 @@ The cover locations of a head is usually {the head area}.
 Some hair is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some".
 The cover locations of hair is usually {the head area}.
+Some hair is usually not spankable. Some hair is usually not lickable. Some hair is usually not tickleable. Some hair is usually not pinchable.
 
 A face is a kind of body part.
 The cover locations of face is usually {the face area}.
@@ -3325,9 +3400,13 @@ A mouth is a kind of body part.
 The cover locations of mouth is usually {the face area}.
 Understand "lip", "lips" as mouth.
 
+A nose is a kind of body part.
+The cover locations of nose is usually {the face area}.
+
 Some eyes is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some eyes is pairs of eyes.
 The cover locations of some eyes is usually {the face area}.
+Some eyes is usually not spankable. Some eyes is usually not lickable. Some eyes is usually not tickleable. Some eyes is usually not pinchable.
 
 Chapter 5.1.1b - Limbs
 
@@ -3336,12 +3415,10 @@ Section - Legs
 Some thighs is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some thighs is pairs of thighs.
 The cover locations of some thighs is usually {the thigh area}.
-Some thighs is usually touchable. Some thighs is usually rubbable.
 
 Some legs is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "two". The plural of some legs is pairs of legs.
 The cover locations of some legs is usually {the leg area}.
-Some legs is usually touchable. Some legs is usually rubbable.
 
 Some ankles is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some ankles is pairs of ankles.
@@ -3350,14 +3427,12 @@ The cover locations of some ankles is usually {the feet area, the leg area}.
 Some feet is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some feet is pairs of feet.
 The cover locations of some feet is usually {the feet area}.
-Some feet is usually touchable. Some feet is usually rubbable. Some feet is usually tickleable. Some feet is usually lickable. Some feet is usually biteable.
 
 Section - Arms
 
 Some arms is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some arms is pairs of arms.
 The cover locations of some arms is usually {the arm area}.
-Some arms is usually touchable. Some arms is usually rubbable.
 
 Some wrists is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some wrists is pairs of wrists.
@@ -3366,39 +3441,34 @@ The cover locations of some wrists is usually {the hand area, the arm area}.
 Some hands is a kind of body part.
 The cover locations of some hands is usually {the hand area}.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some hands is pairs of hands.
-Some hands is usually touchable. Some hands is usually rubbable.
 
 Chapter 5.1.1c - Torso
 
 A neck is a kind of body part.
 The cover locations of a neck is usually {the shoulder area}.
-A neck is usually lickable. A neck is usually biteable.
 
 Some shoulders is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some shoulders is pairs of shoulders.
 The cover locations of some shoulders is usually {the shoulder area}.
-Some shoulders is usually rubbable.
 
 A chest is a kind of body part.
 The cover locations of a chest is usually {the upper torso area}.
-A chest is usually touchable. A chest is usually rubbable. A chest is usually tickleable. A chest is usually lickable. A chest is usually biteable.
 
 Some breasts is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some breasts is pairs of breasts.
 The cover locations of some breasts is usually {the upper torso area}.
 Understand "tit", "tits", "breast", "boob", "boobs", "tittie", "titties" and "juggs" as some breasts.
-Some breasts is usually touchable. Some breasts is usually rubbable. Some breasts is usually tickleable. Some breasts is usually lickable. Some breasts is usually biteable. Some breasts is usually pinchable.
 
 A nipple is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some nipples is two nipples.
 The cover locations of some nipples is usually {the upper torso area}.
-Some nipples is usually touchable. Some nipples is usually rubbable. Some nipples is usually tickleable. Some nipples is usually lickable. Some nipples is usually biteable. Some nipples is usually pinchable. Some nipples is usually twistable.
+Some nipples is usually twistable.
 
 An abdomen is a kind of body part.
 The indefinite article is usually "an".
 The cover locations of an abdomen is usually {the lower torso area}.
 Understand "stomach", "tummy", "belly", "midriff" as abdomen.
-An abdomen is usually touchable. An abdomen is usually rubbable. An abdomen is usually tickleable. An abdomen is usually lickable.
+An abdomen is usually rubbable. An abdomen is usually tickleable.
 
 A waist is a kind of body part.
 The cover locations of a waist is usually {the lower torso area, the lower back area}.
@@ -3412,17 +3482,28 @@ An ass is a kind of body part.
 The indefinite article is usually "an".
 The cover locations of an ass is usually {the crotch area}.
 Understand "asshole", "anus", "rear", "rear end", "butt", "bottom", "rump" as ass.
-An ass is usually touchable. An ass is usually rubbable. An ass is usually spankable. An ass is usually pinchable. An ass is usually lickable. An ass is usually orificial.
+An ass is usually rubbable. An ass is usually spankable. An ass is usually pinchable. An ass is usually orificial.
 
 A penis is a kind of body part.
 The cover locations of a penis is usually {the crotch area}.
 Understand "cock", "dick", "wang", "dong", "wiener", "willy", "schlong", "boner", "pecker" as penis.
-A penis is usually touchable. A penis is usually rubbable. A penis is usually pinchable. A penis is usually lickable. A penis is usually biteable. A penis is usually penetrating.
+A penis is usually rubbable. A penis is usually pinchable. A penis is usually biteable. A penis is usually penetrating.
 
 A vagina is a kind of body part.
 The cover locations of a vagina is usually {the crotch area}.
-Understand "pussy", "cunt", "slit", "crotch", "snatch", "clitoris", "clit", "twat" as vagina.
-A vagina is usually touchable. A vagina is usually rubbable. A vagina is usually lickable. A vagina is usually orificial.
+Understand "pussy", "cunt", "slit", "crotch", "snatch", "twat" as vagina.
+A vagina is usually rubbable. A vagina is usually orificial.
+
+A clitoris is a kind of body part.
+The cover locations of a clitoris is usually {the crotch area}.
+Understand "clit" as clitoris.
+A clitoris is usually rubbable. A clitoris is usually pinchable. A clitoris is usually biteable. A clitoris is usually twistable.
+
+Some labia is a kind of body part.
+The cover locations of Some labia is usually {the crotch area}.
+Some labia is usually rubbable. Some labia is usually pinchable. Some labia is usually biteable. Some labia is usually twistable.
+
+
 
 Part 5.1.2 - Wardrobe
 
@@ -3663,16 +3744,27 @@ A strap-on can be penetrating. A strap-on is usually penetrating.
 
 Book 5.2 - Generalizations
 
-A body part can be lacerated. A body part is usually not lacerated.
-A body part can be bruised. A body part is usually not bruised.
-A body part can be raw. A body part is usually not raw.
-A body part can be sore. A body part is usually not sore.
-A body part can be chafed. A body part is usually not chafed.
-A body part can be sensitive. A body part is usually not sensitive.
+
 A body part can be tender. A body part is usually not tender.
-A body part can be arroused. A body part is usually not arroused.
+A body part can be agitated. A body part is usually not agitated.
+A body part can be sore. A body part is usually not sore.
+A body part can be raw. A body part is usually not raw.
+A body part can be aching. A body part is usually not aching.
+
+A body part can be chafed. A body part is usually not chafed.
+A body part can be bruised. A body part is usually not bruised.
+A body part can be lacerated. A body part is usually not lacerated.
+
 A body part can be spermed. A body part is usually not spermed.
-A body part can be smelling of urine. A body part is usually not smelling of urine.
+A body part can be urinated. A body part is usually not urinated.
+A body part can be defecated. A body part is usually not defecated.
+
+A body part can be scenting. A body part is usually not scenting.
+A body part can be reeking. A body part is usually not reeking.
+A body part can be pungent. A body part is usually not pungent.
+A body part can be stenching. A body part is usually not stenching.
+A body part can be exuding. A body part is usually not exuding.
+
 A body part can be irritated. A body part is usually not irritated.
 A body part can be itching. A body part is usually not itching.
 A body part can be stinging. A body part is usually not stinging.
@@ -3762,8 +3854,8 @@ A consent rule (this is the love interest consent rule):
 Chapter 5.2.2b - Clothing
 
 [Clothing threshold is the minimum arousal at which a person or a garment will (un-)dress.]
-A person has an arousal called the clothing threshold. The clothing threshold of a person is usually slightly aroused.
-A garment has an arousal called the clothing threshold. The clothing threshold of a garment is usually slightly aroused.
+A person has an arousal called the clothing threshold. The clothing threshold of a person is usually stimulated.
+A garment has an arousal called the clothing threshold. The clothing threshold of a garment is usually stimulated.
 
 Section - Wearing
 
@@ -3771,8 +3863,8 @@ The dressing consent rule is listed after the default consent rule in the consen
 A consent rule (this is the dressing consent rule):
 	If the noun is a garment (called G):
 		Unless the actor is the player:
-			If the clothing threshold of the actor is the unattainable arousal
-			or the clothing threshold of G is the unattainable arousal:
+			If the clothing threshold of the actor is the satiated
+			or the clothing threshold of G is the satiated:
 				Say the uninterested response of the actor;
 				Deny consent;
 			Unless the actor is the clothing threshold of the actor or more
@@ -3792,8 +3884,8 @@ A consent rule (this is the worn garment consent rule):
 	If the noun is a garment (called G) and G is worn by someone:
 		Let P be the holder of G;
 		Unless the actor is the player:
-			If the clothing threshold of the actor is the unattainable arousal
-			or the clothing threshold of G is the unattainable arousal:
+			If the clothing threshold of the actor is the satiated
+			or the clothing threshold of G is the satiated:
 				Say the uninterested response of the actor;
 				Deny consent;
 			Unless the actor is the clothing threshold of the actor or more
@@ -3801,8 +3893,8 @@ A consent rule (this is the worn garment consent rule):
 				Say the unaroused response of the actor;
 				Deny consent;
 		Unless P is the player:
-			If the clothing threshold of P is the unattainable arousal
-			or the clothing threshold of G is the unattainable arousal:
+			If the clothing threshold of P is the satiated
+			or the clothing threshold of G is the satiated:
 				Say the uninterested response of P;
 				Deny consent;
 			Unless P is the clothing threshold of P or more
@@ -3833,11 +3925,11 @@ Chapter 5.2.2c - Soft-play
 
 [Soft-play threshold is the minimum arousal at which a person or it's body part will engage in the soft-play actions.]
 A person has an arousal called the soft-play threshold. The soft-play threshold of a person is usually unaroused.
-A body part has an arousal called the soft-play threshold. The soft-play threshold of a body part is usually slightly aroused.
+A body part has an arousal called the soft-play threshold. The soft-play threshold of a body part is usually stimulated.
 
 [Active/passive soft-play arousal is the arousal attainable by soft-play actions, as the active and passive participant.]
-A person has an arousal called the soft-play performer limit. The soft-play performer limit of a person is usually slightly aroused.
-A person has an arousal called the soft-play recipient limit. The soft-play recipient limit of a person is usually slightly aroused.
+A person has an arousal called the soft-play performer limit. The soft-play performer limit of a person is usually stimulated.
+A person has an arousal called the soft-play recipient limit. The soft-play recipient limit of a person is usually stimulated.
 A body part has an arousal called the soft-play performer limit. The soft-play performer limit of a body part is usually aroused.
 A body part has an arousal called the soft-play recipient limit. The soft-play recipient limit of a body part is usually aroused.
 
@@ -3846,7 +3938,7 @@ The soft-playing consent rule is listed after the default consent rule in the co
 A consent rule (this is the soft-playing consent rule):
 	[Check consent for the actor first; we assume that the player always consent.]
 	Unless the actor is the player:
-		If the soft-play threshold of the actor is the unattainable arousal:
+		If the soft-play threshold of the actor is the satiated:
 			Say the uninterested response of the actor;
 			Deny consent;
 		Unless the actor is the soft-play threshold of the actor or more:
@@ -3855,7 +3947,7 @@ A consent rule (this is the soft-playing consent rule):
 	[Check consent for the noun directly]
 	If the noun is a person:
 		Unless the noun is the player:
-			If the soft-play threshold of the noun is the unattainable arousal:
+			If the soft-play threshold of the noun is the satiated:
 				Say the uninterested response of the noun;
 				Deny consent;
 			Unless the noun is the soft-play threshold of the noun or more:
@@ -3864,10 +3956,10 @@ A consent rule (this is the soft-playing consent rule):
 	Else if the noun is a body part:
 		Let P be the holder of the noun;
 		Unless P is the player:
-			If the soft-play threshold of the noun is the unattainable arousal:
+			If the soft-play threshold of the noun is the satiated:
 				Say the uninterested response of P;
 				Deny consent;
-			If the soft-play threshold of P is the unattainable arousal:
+			If the soft-play threshold of P is the satiated:
 				Say the uninterested response of P;
 				Deny consent;
 			Unless P is the soft-play threshold of the noun or more:
@@ -3930,21 +4022,21 @@ Chapter 5.2.2d - Rough Play
 [This part deals with the "rough" actions, which share the same thresholds by default.]
 
 [Rough-play threshold is the minimum arousal at which a person or it's body part will engage in the rough-play actions.]
-A person has an arousal called the rough-play threshold. The rough-play threshold of a person is usually very aroused.
-A body part has an arousal called the rough-play threshold. The rough-play threshold of a body part is usually very aroused.
+A person has an arousal called the rough-play threshold. The rough-play threshold of a person is usually inflamed.
+A body part has an arousal called the rough-play threshold. The rough-play threshold of a body part is usually inflamed.
 
 [Active/passive rough-play arousal is the arousal attainable by rough-play actions, as the active and passive participant.]
-A person has an arousal called the rough-play performer limit. The rough-play performer limit of a person is usually very aroused.
-A person has an arousal called the rough-play recipient limit. The rough-play recipient limit of a person is usually very aroused.
-A body part has an arousal called the rough-play performer limit. The rough-play performer limit of a body part is usually very aroused.
-A body part has an arousal called the rough-play recipient limit. The rough-play recipient limit of a body part is usually very aroused.
+A person has an arousal called the rough-play performer limit. The rough-play performer limit of a person is usually inflamed.
+A person has an arousal called the rough-play recipient limit. The rough-play recipient limit of a person is usually inflamed.
+A body part has an arousal called the rough-play performer limit. The rough-play performer limit of a body part is usually inflamed.
+A body part has an arousal called the rough-play recipient limit. The rough-play recipient limit of a body part is usually inflamed.
 
 [Create a default consent rule]
 The rough-playing consent rule is listed after the default consent rule in the consent rules.
 A consent rule (this is the rough-playing consent rule):
 	[Check consent for the actor first; we assume that the player always consent.]
 	Unless the actor is the player:
-		If the rough-play threshold of the actor is the unattainable arousal:
+		If the rough-play threshold of the actor is the satiated:
 			Say the uninterested response of the actor;
 			Deny consent;
 		Unless the actor is the rough-play threshold of the actor or more:
@@ -3953,7 +4045,7 @@ A consent rule (this is the rough-playing consent rule):
 	[Check consent for the noun directly]
 	If the noun is a person:
 		Unless the noun is the player:
-			If the rough-play threshold of the noun is the unattainable arousal:
+			If the rough-play threshold of the noun is the satiated:
 				Say the uninterested response of the noun;
 				Deny consent;
 			Unless the noun is the rough-play threshold of the noun or more:
@@ -3962,10 +4054,10 @@ A consent rule (this is the rough-playing consent rule):
 	Else if the noun is a body part:
 		Let P be the holder of the noun;
 		Unless P is the player:
-			If the rough-play threshold of the noun is the unattainable arousal:
+			If the rough-play threshold of the noun is the satiated:
 				Say the uninterested response of P;
 				Deny consent;
-			If the rough-play threshold of P is the unattainable arousal:
+			If the rough-play threshold of P is the satiated:
 				Say the uninterested response of P;
 				Deny consent;
 			Unless P is the rough-play threshold of the noun or more:
@@ -4022,17 +4114,17 @@ A person has an arousal called the oral-play threshold. The oral-play threshold 
 A body part has an arousal called the oral-play threshold. The oral-play threshold of a body part is usually aroused.
 
 [Active/passive oral-play arousal is the arousal attainable by oral-play actions, as the active and passive participant.]
-A person has an arousal called the oral-play performer limit. The oral-play performer limit of a person is usually very aroused.
-A person has an arousal called the oral-play recipient limit. The oral-play recipient limit of a person is usually very aroused.
-A body part has an arousal called the oral-play performer limit. The oral-play performer limit of a body part is usually very aroused.
-A body part has an arousal called the oral-play recipient limit. The oral-play recipient limit of a body part is usually very aroused.
+A person has an arousal called the oral-play performer limit. The oral-play performer limit of a person is usually inflamed.
+A person has an arousal called the oral-play recipient limit. The oral-play recipient limit of a person is usually inflamed.
+A body part has an arousal called the oral-play performer limit. The oral-play performer limit of a body part is usually inflamed.
+A body part has an arousal called the oral-play recipient limit. The oral-play recipient limit of a body part is usually inflamed.
 
 [Create a default consent rule]
 The oral-playing consent rule is listed after the default consent rule in the consent rules.
 A consent rule (this is the oral-playing consent rule):
 	[Check consent for the actor first; we assume that the player always consent.]
 	Unless the actor is the player:
-		If the oral-play threshold of the actor is the unattainable arousal:
+		If the oral-play threshold of the actor is the satiated:
 			Say the uninterested response of the actor;
 			Deny consent;
 		Unless the actor is the oral-play threshold of the actor or more:
@@ -4041,7 +4133,7 @@ A consent rule (this is the oral-playing consent rule):
 	[Check consent for the noun directly]
 	If the noun is a person:
 		Unless the noun is the player:
-			If the oral-play threshold of the noun is the unattainable arousal:
+			If the oral-play threshold of the noun is the satiated:
 				Say the uninterested response of the noun;
 				Deny consent;
 			Unless the noun is the oral-play threshold of the noun or more:
@@ -4050,10 +4142,10 @@ A consent rule (this is the oral-playing consent rule):
 	Else if the noun is a body part:
 		Let P be the holder of the noun;
 		Unless P is the player:
-			If the oral-play threshold of the noun is the unattainable arousal:
+			If the oral-play threshold of the noun is the satiated:
 				Say the uninterested response of P;
 				Deny consent;
-			If the oral-play threshold of P is the unattainable arousal:
+			If the oral-play threshold of P is the satiated:
 				Say the uninterested response of P;
 				Deny consent;
 			Unless P is the oral-play threshold of the noun or more:
@@ -4095,10 +4187,10 @@ A person has an arousal called the fuck-play threshold. The fuck-play threshold 
 A body part has an arousal called the fuck-play threshold. The fuck-play threshold of a body part is usually aroused.
 
 [Active/passive fucking-play arousal is the arousal attainable by fucking, as the active and passive participant.]
-A person has an arousal called the fuck-play performer limit. The fuck-play performer limit of a person is usually very aroused.
-A person has an arousal called the fuck-play recipient limit. The fuck-play recipient limit of a person is usually very aroused.
-A body part has an arousal called the fuck-play performer limit. The fuck-play performer limit of a body part is usually very aroused.
-A body part has an arousal called the fuck-play recipient limit. The fuck-play recipient limit of a body part is usually very aroused.
+A person has an arousal called the fuck-play performer limit. The fuck-play performer limit of a person is usually inflamed.
+A person has an arousal called the fuck-play recipient limit. The fuck-play recipient limit of a person is usually inflamed.
+A body part has an arousal called the fuck-play performer limit. The fuck-play performer limit of a body part is usually inflamed.
+A body part has an arousal called the fuck-play recipient limit. The fuck-play recipient limit of a body part is usually inflamed.
 
 [Create a default consent rule:
 Due to prior checks, we assume that the actor is enclosing one of the nouns, so we only check consent for the controller of each noun:]
@@ -4107,10 +4199,10 @@ A consent rule (this is the fuck-playing consent rule):
 	If the noun is a body part:
 		Let P be the holder of the noun;
 		Unless P is the player:
-			If the fuck-play threshold of the noun is the unattainable arousal:
+			If the fuck-play threshold of the noun is the satiated:
 				Say the uninterested response of P;
 				Deny consent;
-			If the fuck-play threshold of P is the unattainable arousal:
+			If the fuck-play threshold of P is the satiated:
 				Say the uninterested response of P;
 				Deny consent;
 			Unless P is the fuck-play threshold of the noun or more:
@@ -4122,7 +4214,7 @@ A consent rule (this is the fuck-playing consent rule):
 	Else if the noun is held:
 		Let P be the holder of the noun;
 		Unless P is the player:
-			If the fuck-play threshold of P is the unattainable arousal:
+			If the fuck-play threshold of P is the satiated:
 				Say the uninterested response of P;
 				Deny consent;
 			Unless P is the fuck-play threshold of P or more:
@@ -4131,10 +4223,10 @@ A consent rule (this is the fuck-playing consent rule):
 	If the second noun is a body part:
 		Let P be the holder of the second noun;
 		Unless P is the player:
-			If the fuck-play threshold of the second noun is the unattainable arousal:
+			If the fuck-play threshold of the second noun is the satiated:
 				Say the uninterested response of P;
 				Deny consent;
-			If the fuck-play threshold of P is the unattainable arousal:
+			If the fuck-play threshold of P is the satiated:
 				Say the uninterested response of P;
 				Deny consent;
 			Unless P is the fuck-play threshold of the second noun or more:
@@ -4146,7 +4238,7 @@ A consent rule (this is the fuck-playing consent rule):
 	Else if the second noun is held:
 		Let P be the holder of the second noun;
 		Unless P is the player:
-			If the fuck-play threshold of P is the unattainable arousal:
+			If the fuck-play threshold of P is the satiated:
 				Say the uninterested response of P;
 				Deny consent;
 			Unless P is the fuck-play threshold of P or more:
@@ -4219,93 +4311,93 @@ We set them all explicitly, even if some are the same as the default values.]
 
 Chapter 5.2.3a - Ass
 
-[No Change: The soft-play threshold of an ass is usually slightly aroused.]
-The soft-play performer limit of an ass is usually very aroused.
-The soft-play recipient limit of an ass is usually very aroused.
+[No Change: The soft-play threshold of an ass is usually stimulated.]
+The soft-play performer limit of an ass is usually inflamed.
+The soft-play recipient limit of an ass is usually inflamed.
 
-[No Change: The rough-play threshold of an ass is usually very aroused.]
-[No Change: The rough-play performer limit of an ass is usually very aroused.]
-[No Change: The rough-play recipient limit of an ass is usually very aroused.]
+[No Change: The rough-play threshold of an ass is usually inflamed.]
+[No Change: The rough-play performer limit of an ass is usually inflamed.]
+[No Change: The rough-play recipient limit of an ass is usually inflamed.]
 
 [No Change: The oral-play threshold of an ass is usually aroused.]
 The oral-play performer limit of an ass is usually aroused.
-[No Change: The oral-play recipient limit of an ass is usually very aroused.]
+[No Change: The oral-play recipient limit of an ass is usually inflamed.]
 
-[No Change: The fuck-play threshold of an ass is usually very aroused.]
-[No Change: The fuck-play performer limit of an ass is usually very aroused.]
-[No Change: The fuck-play recipient limit of an ass is usually very aroused.]
+[No Change: The fuck-play threshold of an ass is usually inflamed.]
+[No Change: The fuck-play performer limit of an ass is usually inflamed.]
+[No Change: The fuck-play recipient limit of an ass is usually inflamed.]
 
 Chapter 5.2.3b - Breasts
 
 The soft-play threshold of some breasts is usually aroused.
-The soft-play performer limit of some breasts is usually very aroused.
-The soft-play recipient limit of some breasts is usually very aroused.
+The soft-play performer limit of some breasts is usually inflamed.
+The soft-play recipient limit of some breasts is usually inflamed.
 
-[No Change: The rough-play threshold of some breasts is usually very aroused.]
-[No Change: The rough-play performer limit of some breasts is usually very aroused.]
-[No Change: The rough-play recipient limit of some breasts is usually very aroused.]
+[No Change: The rough-play threshold of some breasts is usually inflamed.]
+[No Change: The rough-play performer limit of some breasts is usually inflamed.]
+[No Change: The rough-play recipient limit of some breasts is usually inflamed.]
 
 [No Change: The oral-play threshold of some breasts is usually aroused.]
-[No Change: The oral-play performer limit of some breasts is usually very aroused.]
-[No Change: The oral-play recipient limit of some breasts is usually very aroused.]
+[No Change: The oral-play performer limit of some breasts is usually inflamed.]
+[No Change: The oral-play recipient limit of some breasts is usually inflamed.]
 
 The fuck-play threshold of some breasts is usually aroused.
-[No Change: The fuck-play performer limit of some breasts is usually very aroused.]
-[No Change: The fuck-play recipient limit of some breasts is usually very aroused.]
+[No Change: The fuck-play performer limit of some breasts is usually inflamed.]
+[No Change: The fuck-play recipient limit of some breasts is usually inflamed.]
 
 Chapter 5.2.3c - Penis
 
 The soft-play threshold of a penis is usually aroused.
-The soft-play performer limit of a penis is usually very aroused.
+The soft-play performer limit of a penis is usually inflamed.
 The soft-play recipient limit of a penis is usually orgasmic.
 
-[No Change: The rough-play threshold of a penis is usually very aroused.]
-[No Change: The rough-play performer limit of a penis is usually very aroused.]
-[No Change: The rough-play recipient limit of a penis is usually very aroused.]
+[No Change: The rough-play threshold of a penis is usually inflamed.]
+[No Change: The rough-play performer limit of a penis is usually inflamed.]
+[No Change: The rough-play recipient limit of a penis is usually inflamed.]
 
 [No Change: The oral-play threshold of a penis is usually aroused.]
-[No Change: The oral-play performer limit of a penis is usually very aroused.]
+[No Change: The oral-play performer limit of a penis is usually inflamed.]
 The oral-play recipient limit of a penis is usually orgasmic.
 
-[No Change: The fuck-play threshold of a penis is usually very aroused.]
+[No Change: The fuck-play threshold of a penis is usually inflamed.]
 The fuck-play performer limit of a penis is usually orgasmic.
 The fuck-play recipient limit of a penis is usually orgasmic.
 
 Chapter 5.2.3d - Vagina
 
 The soft-play threshold of a vagina is usually aroused.
-The soft-play performer limit of a vagina is usually very aroused.
+The soft-play performer limit of a vagina is usually inflamed.
 The soft-play recipient limit of a vagina is usually orgasmic.
 
-[No Change: The rough-play threshold of a vagina is usually very aroused.]
-[No Change: The rough-play performer limit of a vagina is usually very aroused.]
-[No Change: The rough-play recipient limit of a vagina is usually very aroused.]
+[No Change: The rough-play threshold of a vagina is usually inflamed.]
+[No Change: The rough-play performer limit of a vagina is usually inflamed.]
+[No Change: The rough-play recipient limit of a vagina is usually inflamed.]
 
 [No Change: The oral-play threshold of a vagina is usually aroused.]
-[No Change: The oral-play performer limit of a vagina is usually very aroused.]
+[No Change: The oral-play performer limit of a vagina is usually inflamed.]
 The oral-play recipient limit of a vagina is usually orgasmic.
 
-[No Change: The fuck-play threshold of a vagina is usually very aroused.]
+[No Change: The fuck-play threshold of a vagina is usually inflamed.]
 The fuck-play performer limit of a vagina is usually orgasmic.
 The fuck-play recipient limit of a vagina is usually orgasmic.
 
 Chapter 5.2.3b - Nipples
 
 The soft-play threshold of some nipples is usually aroused.
-The soft-play performer limit of some nipples is usually very aroused.
-The soft-play recipient limit of some nipples is usually very aroused.
+The soft-play performer limit of some nipples is usually inflamed.
+The soft-play recipient limit of some nipples is usually inflamed.
 
-[No Change: The rough-play threshold of some nipples is usually very aroused.]
-[No Change: The rough-play performer limit of some nipples is usually very aroused.]
-[No Change: The rough-play recipient limit of some nipples is usually very aroused.]
+[No Change: The rough-play threshold of some nipples is usually inflamed.]
+[No Change: The rough-play performer limit of some nipples is usually inflamed.]
+[No Change: The rough-play recipient limit of some nipples is usually inflamed.]
 
 [No Change: The oral-play threshold of some nipples is usually aroused.]
-[No Change: The oral-play performer limit of some nipples is usually very aroused.]
-[No Change: The oral-play recipient limit of some nipples is usually very aroused.]
+[No Change: The oral-play performer limit of some nipples is usually inflamed.]
+[No Change: The oral-play recipient limit of some nipples is usually inflamed.]
 
 The fuck-play threshold of some nipples is usually aroused.
-[No Change: The fuck-play performer limit of some nipples is usually very aroused.]
-[No Change: The fuck-play recipient limit of some nipples is usually very aroused.]
+[No Change: The fuck-play performer limit of some nipples is usually inflamed.]
+[No Change: The fuck-play recipient limit of some nipples is usually inflamed.]
 
 Erotic Storytelling ends here.
 
@@ -5572,7 +5664,7 @@ Several of these could have been implemented as numeric properties instead, but 
 Arousal has typically been implemented as a linear numeric system, with continuous incremental changes up to thresholds based on the actor and actions. This model typically leads to spamming 'g' (repeat) in order to raise the arousal, so as to unlock new actions.
 To avoid this, we use Informs natural value enumeration to divide arousal into discrete values, which should provide a smoother and more natural progression.
 This part is just the bare bones, allowing the story author to use arousal as a decision making tool.
-The system is extensible, but it assumes that unaorused is the neutral setting, and unattainable arousal is the last defined value.
+The system is extensible, but it assumes that unaorused is the neutral setting, and satiated is the last defined value.
 The Discrete Arousal-based Consent and Stimulation (DACS) template makes use of several arousal properties for both persons and body parts, detailed both below and in the chapter on DACS.
 
 Clothing Layer is a simplified method of divvying up which garments can be worn over others.
@@ -5608,13 +5700,13 @@ They are designed to be flexible and customizable, and while there's nothing wro
 A body part also has some properties to control which of the actions are applicable. The body part templates redefine some of these:
 
 	A body part can be touchable or untouchable. A body part is usually untouchable.
-	A body part can be rubbable or unrubbable. A body part is usually unrubbable.
-	A body part can be tickleable or untickleable. A body part is usually untickleable.
-	A body part can be spankable or unspankable. A body part is usually unspankable.
-	A body part can be twistable or untwistable. A body part is usually untwistable.
-	A body part can be pinchable or unpinchable. A body part is usually unpinchable.
-	A body part can be lickable or unlickable. A body part is usually unlickable.
-	A body part can be biteable or unbiteable. A body part is usually unbiteable.
+	A body part can be rubbable. A body part is usually not rubbable.
+	A body part can be tickleable. A body part is usually not tickleable.
+	A body part can be spankable. A body part is usually not spankable.
+	A body part can be twistable. A body part is usually not twistable.
+	A body part can be pinchable. A body part is usually not pinchable.
+	A body part can be lickable. A body part is usually not lickable.
+	A body part can be biteable. A body part is usually not biteable.
 	A body part can be penetrating. A body part is usually not penetrating.
 	A body part can be orificial. A body part is usually not orificial.
 
@@ -5687,7 +5779,7 @@ Persons get more changes, see also decency above.
 	Orgasmic Attemps: The number of times the ORGASMS phrase has been called since the last orgasm. Used to calculate the success rate for ORGASMS.
 	Priority: Used by the agency rules to determine the acting order.
 	Unaroused Response: Issued by the DACS templates when the person is not interested in the action, due to the current arousal of the person not being high enough. Defaults to "'Not yet,' [printed name] says softly."
-	Uninterested Response: Issued by the the consent rules when the default consent rule denies consent. Also used by the DACS templates and issued when the person is not interested in the action, either due to unattainable arousal threshold or lack of love interest. Defaults to "'That's not going to happen,' [printed name] says cooly."
+	Uninterested Response: Issued by the the consent rules when the default consent rule denies consent. Also used by the DACS templates and issued when the person is not interested in the action, either due to satiated threshold or lack of love interest. Defaults to "'That's not going to happen,' [printed name] says cooly."
 
 Persons also have quite a few arousals for use with DACS; How these work are described in more detail earlier in the arousal section, but the default values are listed here:
 
@@ -5814,9 +5906,9 @@ These phrases deals with arousal and orgasms:
 	whether (person) IS (arousal) OR MORE: An easy-living phrase which checks if the current arousal is equal or greater than the specified arousal.
 	whether (person) IS (arousal) OR LESS: An easy-living phrase which checks if the current arousal is equal or less than the specified arousal.
 	AROUSE (person): Change the current arousal of the person to the next level.
-	AROUSE (person) UP TO (arousal): Change the current arousal of the person to the next level, but not past the specified arousal. If the unattainable arousal is specified as input, no change will happen.
+	AROUSE (person) UP TO (arousal): Change the current arousal of the person to the next level, but not past the specified arousal. If the satiated is specified as input, no change will happen.
 	COOL DOWN (person): Change the current arousal of the person to the previous level.
-	COOL (person) DOWN TO (arousal): Change the current arousal of the person to the previous level, but not past the specified arousal. If the unattainable arousal is specified as input, no change will happen.
+	COOL (person) DOWN TO (arousal): Change the current arousal of the person to the previous level, but not past the specified arousal. If the satiated is specified as input, no change will happen.
 	whether (person) ORGASMS: Uses the Orgasmic Attempts and Orgasms properties of the person to decide whether the person has an orgasm, and if it succeeds it sets the current arousal of the person to the Orgasm Reset Arousal. The formula is based on the ratio of attempts to orgasms.
 
 Example: ** Factory Mould - Using the provided templates to flesh out actors.
