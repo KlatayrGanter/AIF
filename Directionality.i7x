@@ -38,7 +38,7 @@ To use this framework, you need to download and install it (which you probably h
 	Include Directionality by Fictitious Frode.
 
 After printing the room description, Inform will now print a line listing all the exits from the current location.
-If the player has knowledge of the destination by visiting it, the name will also be listed. 
+If the player has knowledge of the destination by visiting it, the name will also be listed.
 Note that this does not check that the player knows that this exits leads to the destination.
 
 Section 1.1 - Exploration
@@ -49,7 +49,7 @@ Eric Eve's Epistemology extension is used to provide this support.
 	The Library is north of the Hallway.
 	The Hallway is familiar.
 
-When determining wether an exit is known or unknown, it's not the exit that's being evaluated but the destination. 
+When determining wether an exit is known or unknown, it's not the exit that's being evaluated but the destination.
 This has some implications for rooms that are accessible from multiple directions, and shortcuts.
 Secret doors are handled according to the Standard Rules; a door that is not described is not listed.
 
@@ -58,7 +58,7 @@ Section 1.2 - Version History
 2015-01-26 (Release 1)
 
 	Initial functionality.
-	
+
 2017-04-01 (Release 2)
 
 	Incorporated Eric Eve's Epistemology instead of the custom 'known/unknown' property.

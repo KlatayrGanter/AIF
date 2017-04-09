@@ -288,7 +288,7 @@ Section 1.2 - Version History
 	Individual default dialogue responses for each person.
 	Availability for both subjects and individual dialogues can be toggled.
 	Support for runtime alterations to dialogues.
-	
+
 2017-04-01: Beta-2 (Release 2)
 
 	Support for clearing cue and dialogue entries.
@@ -332,14 +332,14 @@ Each person has a 'dialogue' property which points to a table, which should look
 *:
 	Library is a room.
 	Bob is a person in Library. Bob's dialogue is the Table of Bob's Dialogue.
-	
+
 	A conversation is a subject.
 	Understand "conversations", "help --/on" and "talking" as conversation.
-	
+
 	Table of Bob's Dialogue
 	subject (a thing)	availability (a truth state)	cue (a text)	turn stamp (a number)	dialogue (some text)
 	conversation	true	"help on how to talk to other people"	--	"'You should try reading the documentation,' Bob answers. Not much help in that."
-	
+
 	Test me with "talk to bob / talk to bob about help".
 
 It's important that the table contains the following five columns:
@@ -349,7 +349,7 @@ It's important that the table contains the following five columns:
 	Cue: If not blank, the text here is listed together to guide the player when using the 'talk to' action
 	Turn stamp: The turn on which the dialogue was last talked about, or blank (--) if it's never been talked about
 	Dialogue: The text to output when talking about the option
-	
+
 It's also possible to write 'after talking to person about subject' rules.
 Typically these would be to unlock the effects of talking about the subject, such as updating cues and making other dialogues available.
 
@@ -413,24 +413,24 @@ It's also possible to check if something has been talked about with a given pers
 Example: ** Hard Rock - A conversational example
 
 	*: "Hard Rock"
-	
+
 	Include Simple Conversations by Fictitious Frode.
-	
+
 	Cavern is a room. Understand "this place" as cavern.
 	A mysterious chest is a a closed container in cavern. It is fixed in place.
 	A stone is in mysterious chest.
 
 	Adam is a person in Cavern. Adam's dialogue is the Table of Adam's Dialogue.
-	
+
 	Some music is a subject. Understand "sound", "rock" and "roll" as music.
-	
+
 	Table of Adam's Dialogue
 	subject (a thing)	availability (a truth state)	cue (a text)	turn stamp (a number)	dialogue (some text)
 	cavern	true	"this place"	--	"'This is where I retreat to when the world gets to be too much,' he answers."
 	mysterious chest	true	--	--	"'[if stone is known]It's just where I keep my rock collection[else]It wouldn't be much of a mystery if I told you that[end if],' he answers."
 	stone	true	--	--	"'It's no longer rolling.'"
 	music	true	--	--	"'Sometimes I like to bang the stone against the cave walls.'"
-	
+
 	After talking to Adam about stone, update the cue of music for Adam to "rock 'n' roll music".
-	
+
 	Test me with "talk to adam / talk to adam this place / talk to adam about chest / talk to adam about stone / open chest / talk to adam about stone / talk to adam about rock".

@@ -43,7 +43,7 @@ To say assume posture of (P - a posture):
 		If P is the Posture entry, say the assume posture entry;
 
 Chapter 1.1.1b - Property Integrations
-		
+
 A person has a posture called the current posture.
 A supporter has a list of postures called compatible postures. The compatible postures of a supporter is usually {standing}.
 A container has a list of postures called compatible postures. The compatible postures of a container is usually {standing}.
@@ -86,7 +86,7 @@ To decide whether (location - an object) has vacancy:
 	If location provides the property occupant limit:
 		If the number of people enclosed by location is not less than the occupant limit of location, decide no;
 	Decide yes;
-	
+
 Book 1.2 - New Actions
 
 [As most of the logic for assuming a posture is shared between the postures, we use the posturing action to apply the logic and actions for each posture to redirect.]
@@ -511,7 +511,7 @@ The specification of a cabinet is "Cabinets are usually large enough for two peo
 Posturing ends here.
 
 ---- DOCUMENTATION ----
-	
+
 Chapter 1 - Using this Extension
 
 To use this extension, you need to download and install it (which you probably have if you're reading this) and include it in your story:
@@ -535,7 +535,7 @@ The documentation will cover the following subjects:
 
 The following examples are included:
 
-	A: Garden Lounge - 
+	A: Garden Lounge -
 	B: Customization: Crawling - How to create new postures
 
 Section 1.2 - Version History
@@ -648,7 +648,7 @@ For changing the posture of a person in a controlled manner, the posturing actio
 	prone	"laying prone"	"[lie] prone"
 	supine	"supine"	"[lie] supine"
 
-Section 3.2 - Phrases 
+Section 3.2 - Phrases
 
 The following phrases can be used to describe a posture in a text substitution:
 
@@ -669,7 +669,7 @@ Example: * Garden Lounge - Relaxing in various postures
 Getting started with postures is as easy as using the furniture templates.
 
 	*: "Garden Lounge"
-	
+
 	Include Posturing by Fictitious Frode.
 	Garden Patio is a room.
 
@@ -692,23 +692,23 @@ Example: ** Crawling - Creating new postures
 Adding a new posture is rather simple, but we must also remember to add new actions for the actors to use.
 
 	*: "Crawling"
-	
+
 	Include Posturing by Fictitious Frode.
-	
+
 First we expand the Table of Postures to create the crawling posture.
 
 	To crawl is a verb.
-	
+
 	Table of Postures (continued)
 	Posture	describe posture (text)	assume posture (text)
 	crawling	"crawling"	"[crawl] on all four"
-	
+
 We can then create two new actions, one to crawl and one to crawl on and in something.
 
 	Crawling is an action applying to nothing.
 	Understand "crawl" as crawling.
 	Carry out an actor crawling: try the actor posturing crawling.
-	
+
 	Crawling on is an action applying to one thing.
 	Understand "crawl on/over [a supporter]" as crawling on.
 	Understand "crawl in [a container]" as crawling on.
@@ -719,10 +719,10 @@ We can then create two new actions, one to crawl and one to crawl on and in some
 		If the holder of the actor is the noun:
 			Unless the current posture of the actor is crawling, try the actor posturing crawling;
 			Else follow the report posturing rules;
-	
+
 We can now create containers and supporters that work with crawling.
 
 	Garage is a room.
 	A cardboard box is an enterable container in Garage. The compatible postures is {crawling}.
-	
+
 	Test me with "enter box / stand / crawl in box"
