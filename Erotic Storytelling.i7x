@@ -98,8 +98,7 @@ The body areas of a person is usually {head area, face area, shoulder area, arm 
 
 Chapter 1.1.1c - Body Part
 
-[Status: Complete
-Body parts are (as the name implies) parts of a body that the player can interact with.
+[Body parts are (as the name implies) parts of a body that the player can interact with.
 It's possible to use body parts directly, but most of the time you would use a specific body part from the template section.]
 
 A body part is a kind of thing. The indefinite article of a body part is usually "a".
@@ -122,8 +121,7 @@ Does the player mean examining a body part that is part of the player: It is unl
 
 Part 1.1.2 - Clothing
 
-[Status: Complete
-Garments are implementation of wearable clothing that can be layered over cover areas. They have several complex sub-sets, grouped herein by chapter.]
+[Garments are implementation of wearable clothing that can be layered over cover areas. They have several complex sub-sets, grouped herein by chapter.]
 
 A garment is a kind of thing. The indefinite article is usually "a".
 The specification of garment is "A garment is something a person can wear over their body parts and related cover areas.
@@ -138,8 +136,7 @@ A person has a list of garments called the preferred clothing. [Used by dressing
 
 Chapter 1.1.2a - Shifting and Ripping
 
-[Status: Complete
-Shifting and ripping are two related but separate ways to alter the covered areas of a garment. Shifting is temporary but ripping is permanent.]
+[Shifting and ripping are two related but separate ways to alter the covered areas of a garment. Shifting is temporary but ripping is permanent.]
 
 A shiftyness is a kind of value. The shiftyness are defined by the Table of Shift.
 The specification of shiftyness is "Shiftyness (which isn't really a word) are the positions that a garment can be shifted to in order to allow (usually) more access to underlying parts.
@@ -193,8 +190,7 @@ A person has a number called clothing size. The clothing size of a person is usu
 
 Chapter 1.1.2c - Cover Areas
 
-[Status: Complete
-A garment fits over a set of cover areas, which can be modified by ripping or shifting the garment. This will subtract certain cover areas.]
+[A garment fits over a set of cover areas, which can be modified by ripping or shifting the garment. This will subtract certain cover areas.]
 
 A garment has a list of cover areas called cover areas.
 A garment has a list of cover areas called shifting revealed cover areas. [The cover areas revealed when the garment is shifted.]
@@ -305,8 +301,7 @@ Part 1.2.1 - Determining Decency and Privacy
 
 Chapter 1.2.1a - Determining Decency
 
-[Status: Complete
-For cover areas and body parts, we calculate the decency; for persons we cache it in a variable.]
+[For cover areas and body parts, we calculate the decency; for persons we cache it in a variable.]
 
 Section - Cover Area
 
@@ -345,8 +340,7 @@ Check an actor going (this is the check decency before going rule):
 
 Part 1.2.2 - Layering
 
-[Status: Complete
-This deals with the layering of garments over body parts and each other. This can have three related but different results:
+[This deals with the layering of garments over body parts and each other. This can have three related but different results:
 Covering - Prevent touch
 Conceal - Prevent vision; ie. transparent layers are ignored.
 Blocking - Prevent taking off. This is a special subset of covering.
@@ -755,8 +749,7 @@ Definition: A person is nude if it is not wearing any garments.
 
 Part 1.2.3 - Visibility
 
-[Status: Complete
-Deals with determining which items are visible for the player, as well as custom descriptions.]
+[Deals with determining which items are visible for the player, as well as custom descriptions.]
 
 The examine undescribed things rule is listed last in the carry out examining rulebook.
 
@@ -810,8 +803,7 @@ Carry out examining (this is the examining garments rule):
 
 Part 1.2.4 - Forcing Clothing
 
-[Status: Complete
-Sometimes it's necessary to forcefully change the clothing of someone, while still doing some rules maintenance. These are not intended to be used by the player, but rather at scene changes.]
+[Sometimes it's necessary to forcefully change the clothing of someone, while still doing some rules maintenance. These are not intended to be used by the player, but rather at scene changes.]
 
 [Forcefully strips a person of all worn things. It ignores all rules such as carrying capacity, but will update decency.
 Use with caution!]
@@ -842,8 +834,7 @@ Book 1.3 - (Un-) Dressing
 
 Part 1.3.1 - Wearing Garments
 
-[Status: Complete
-We use the standard wearing action, but add some checks and replace the carry out rule.]
+[We use the standard wearing action, but add some checks and replace the carry out rule.]
 
 Chapter 1.3.1a - Check
 
@@ -952,8 +943,7 @@ Carry out an actor taking off (this is the modified taking off rule):
 
 Part 1.3.3 - Taking Off Others
 
-[Status: Complete
-By default, taking clothing that others are wearing is blocked. This is something that should be allowed in certain situations, so we need to make some changes to the standard rules.]
+[By default, taking clothing that others are wearing is blocked. This is something that should be allowed in certain situations, so we need to make some changes to the standard rules.]
 
 Chapter 1.3.3a - Removing Existing Blocks
 
@@ -1003,8 +993,7 @@ Carry out an actor taking a garment (called G) (this is the taking garments rule
 
 Part 1.3.4 - Dressing
 
-[Status: Complete
-Dressing makes an actor put on the clothes listed in their preferred clothing property, first taking any missing clothing and then stripping naked.]
+[Dressing makes an actor put on the clothes listed in their preferred clothing property, first taking any missing clothing and then stripping naked.]
 
 Dressing is an action applying to nothing.
 The specification of the dressing action is "Dressing is the act of putting back on the preferred clothing of a person."
@@ -1069,8 +1058,7 @@ Report an actor dressing (this is the report dressing rule):
 
 Part 1.3.5 - Stripping
 
-[Status: Complete
-Stripping is just as the name implies the act of stripping out of the currently worn clothes.
+[Stripping is just as the name implies the act of stripping out of the currently worn clothes.
 This is done through recursive calls to take off, in the correct order.]
 
 Stripping is an action applying to one touchable thing.
@@ -1143,8 +1131,7 @@ Book 1.4 - Shifting and Ripping
 
 Part 1.4.1 - Shifting
 
-[Status: Complete
-This part implements the shifting ability of garments, as detailed in 1.1.2a]
+[This part implements the shifting ability of garments, as detailed in 1.1.2a]
 
 Shifting is an action applying to one touchable thing.
 The specification of the shifting action is "Shifting is the act of putting aside a garment in order to gain more favorable access. It is closely related to the shiftyness value of a garment, which indicates what happens when it is shifted, and the unshifting action which reverses the process.
@@ -1270,8 +1257,7 @@ Report an actor shifting (this is the standard report shifting rule):
 
 Part 1.4.2 - Unshifting
 
-[Status: Complete
-This part implements the shifting ability of garments, as detailed in 1.1.2a]
+[This part implements the shifting ability of garments, as detailed in 1.1.2a]
 
 Unshifting is an action applying to one touchable thing.
 The specification of the Unshifting action is "Shifting is the act of putting back a garment that has been put aside in order to gain more favorable access. It is closely related to the shiftyness value of a garment, which indicates what happens when it is shifted, and the shifting action which starts the process.
@@ -1357,8 +1343,7 @@ Report an actor unshifting (this is the standard report unshifting rule):
 
 Part 1.4.3 - Ripping
 
-[Status: Complete
-This part implements the ripping ability of garments, as detailed in 1.1.2a]
+[This part implements the ripping ability of garments, as detailed in 1.1.2a]
 
 Ripping is an action applying to one touchable thing.
 The specification of the ripping action is "Ripping is the act of tearing a piece of garment apart. A ripped garment can no longer be shifted, but it can be worn."
@@ -1457,8 +1442,7 @@ Urgent: Actions that the person urgently seek to perform, even if engaged with s
 
 Part 2.1.1 - Concepts
 
-[Status: Complete
-This part deals with the underlying concepts needed to make agency processing possible]
+[This part deals with the underlying concepts needed to make agency processing possible]
 
 Chapter 2.1.1a - Occupied Flag
 
@@ -1505,8 +1489,7 @@ A person has some text called the agency state description.
 
 Part 2.1.2 - Rulebooks
 
-[Status: Complete
-We modify the turn sequence rulebook to add a stage that's responsible for calling the script rules for each person.
+[We modify the turn sequence rulebook to add a stage that's responsible for calling the script rules for each person.
 Exactly at which point it should be inserted can be argued, but as we want this to emulate the every turn rules, we insert it just before. We delay clearing the occupied flag untill after the every turn stage, so that the flag is available for every turn rules.]
 
 Chapter 2.1.2a - Turn Sequence
@@ -1798,19 +1781,33 @@ Chapter 3.1.3a - Action Control Adjectives
 These can be applied to other things than body part if wanted, and access to garments are supported.]
 
 A body part can be touchable or untouchable. A body part is usually touchable.
-A body part can be rubbable or not rubbable. A body part is usually rubbable.
-A body part can be spankable or not spankable. A body part is usually spankable.
+A body part can be rubbable. A body part is usually rubbable.
+A body part can be spankable. A body part is usually spankable.
 A body part can be lickable. A body part is usually lickable.
 A body part can be tickleable. A body part is usually tickleable.
 
-A body part can be biteable or not biteable. A body part is usually biteable.
-A body part can be pinchable. A body part is usually pinchable.
-A body part can be twistable. A body part is usually not twistable.
+An orifice is a kind of body part. The indefinite article is usually "an".
 
-A body part can be pierceable or unpierceable. A body part is usually unpierceable.
+A body part can be biteable. A body part is usually biteable. An orifice is usually not biteable.
+A body part can be pinchable. A body part is usually pinchable. An orifice is usually not pinchable.
+A body part can be orificial. A body part is usually not orificial. An orifice is usually orificial.
+
+An appendage is a kind of body part. The indefinite article is usually "an".
+
+An appendage can be twistable. An appendage is usually twistable.
+An appendage can be pierceable. An appendage is usually pierceable.
+
+[Erogenous zones, female:
+Parts of the vulva, especially the clitoris, are erogenous zones.[14][15][16] While the vagina is not especially sensitive as a whole, its lower third (the area close to the entrance) has concentrations of the nerve endings that can provide pleasurable sensations during sexual activity when stimulated; this is also called the anterior wall of the vagina or the outer one-third of the vagina, and it contains the majority of the vaginal nerve endings, making it more sensitive to touch than the inner two-thirds of the vaginal barrel.[15][16][17][18]
+
+Within the anterior wall of the vagina, there is a patch of ribbed rough tissue which has a texture that is sometimes described as similar to the palate (the roof of a mouth) or a raspberry, and may feel spongy when a woman is sexually aroused. This is the urethral sponge, which may also be the location of the G-spot ¿ a structure described as an area of the vagina that some women report is an erogenous zone which, when stimulated, can lead to sexual arousal, orgasms and female ejaculation.[19] The existence of the G-spot and whether or not it is a distinct structure is debated among researchers, as reports of its location vary from woman to woman, it appears to be nonexistent in some women, and scientists commonly believe that it is an extension of the clitoris.
+
+Erogenous zones, male:
+Males can be aroused by stimulation to the sides of the glans and penis, upper side of the glans, the foreskin, the front side of the scrotum, the skin between the scrotum and anus perineum, and around the anus.[5] The prostate gland may be stimulated from inside the rectum, such as by anal sex, or by applying pressure on the base of the perineum near the anus.[6][7][8] Men who report the sensation of prostate and seminal vesicles stimulation often give descriptions similar to females' accounts of G-spot stimulation.[9]
+
+The foreskin, which carries the ridged band and lower frenular delta,[10] has mucocutaneous end-organs extending from the distal margin to the point where hairy skin starts.[11] The thin dermis and minimal subcutaneous tissue results in closely set nerve networks. Vater-Pacini corpuscles are present. The mucocutaneous end-organs are formed after birth, with few in newborn infants and many well-organized endings in adults.]
 
 A body part can be penetrating. A body part is usually not penetrating.
-A body part can be orificial. A body part is usually not orificial.
 
 Book 3.2 - Body Part Actions
 
@@ -1818,8 +1815,7 @@ Book 3.2 - Body Part Actions
 
 Part 3.2.1 - Touching
 
-[Status: Complete
-Touching is already covered in the Standard Rules, but it doesn't do much. We add some checks for touching people and body parts, and because we don't allow touching people directly we can keep the standard reports.]
+[Touching is already covered in the Standard Rules, but it doesn't do much. We add some checks for touching people and body parts, and because we don't allow touching people directly we can keep the standard reports.]
 
 The specification of the touching action is "Touching is just that, touching something without applying pressure: a touch-sensitive screen or a living creature might react, but a standard push-button or lever will probably not.
 In the Standard Rules there are no check touching rules, since touchability is already a requirement of the noun for the action anyway, and no carry out rules because nothing in the standard Inform world model reacts to a mere touch - though report rules do mean that attempts to touch other people provoke a special reply.
@@ -1888,8 +1884,7 @@ Carry out an actor touching (this is the seek stimulation for touching rule):
 
 Part 3.2.2 - Rubbing
 
-[Status: Complete
-Rubbing is already covered in the Standard Rules, but it's disabled by default. We add some checks for rubbing people and body parts, and we can keep the standard reports.]
+[Rubbing is already covered in the Standard Rules, but it's disabled by default. We add some checks for rubbing people and body parts, and we can keep the standard reports.]
 
 The specification of the rubbing action is "The Standard Rules define this action in only a minimal way, blocking it with a check rule which stops it in all cases. It exists so that before or instead rules can be written to make it do interesting things in special cases. (Or to reconstruct the action as something more substantial, unlist the block rule and supply carry out and report rules, together perhaps with some further check rules.)
 For Erotic Story Actions, rubbing is intended for when the actor uses their hands to rub something (as opposed to the softer touch action), and reponds to commands like RUB ANNA, MASSAGE ANNA'S BREASTS, etc. It only works only body parts that are set to rubbable."
@@ -1958,8 +1953,7 @@ Carry out an actor rubbing (this is the seek stimulation for rubbing rule):
 
 Part 3.2.3 - Tickling
 
-[Status: Complete
-Tickling is a new action. It takes into account that only other people's body parts can be tickled, decency and consent/arousal, and handle reporting.]
+[Tickling is a new action. It takes into account that only other people's body parts can be tickled, decency and consent/arousal, and handle reporting.]
 
 Tickling is an action applying to one touchable thing.
 The specification of the tickling action is "Tease another person by tickling their body parts."
@@ -2043,8 +2037,7 @@ Report an actor tickling (this is the report tickling rule):
 
 Part 3.2.4 - Spanking
 
-[Status: Complete
-Spanking is a new action. It takes into account that other people's body parts can be spanked, decency and consent/arousal, and handle reporting. Unlike other new actions, we will allow self-spanking.]
+[Spanking is a new action. It takes into account that other people's body parts can be spanked, decency and consent/arousal, and handle reporting. Unlike other new actions, we will allow self-spanking.]
 
 Spanking is an action applying to one touchable thing.
 The specification of the spanking action is "Spanking is the act of hitting or slapping a person's body parts. Attempts to spank a person will redirect to the rear end."
@@ -2120,8 +2113,7 @@ Report an actor spanking (this is the report spanking rule):
 
 Part 3.2.5 - Pinching
 
-[Status: Complete
-Pinching is a new action. It takes into account that only other people's body parts can be pinched, decency and consent/arousal, and handle reporting.]
+[Pinching is a new action. It takes into account that only other people's body parts can be pinched, decency and consent/arousal, and handle reporting.]
 
 Pinching is an action applying to one touchable thing.
 The specification of the pinching action is "Tease another person by pinching their body parts."
@@ -2205,8 +2197,7 @@ Report an actor pinching (this is the report pinching rule):
 
 Part 3.2.6 - Licking
 
-[Status: Complete
-Licking is a new action, used only on body parts but attempts to redirect from persons. It handles decency, access.]
+[Licking is a new action, used only on body parts but attempts to redirect from persons. It handles decency, access.]
 
 Licking is an action applying to one touchable thing.
 The specification of the licking action is "This action is intended for when the actor uses their mouth on a body part. Trying to lick a person will try to find a better part of that person to lick."
@@ -2296,8 +2287,7 @@ Report an actor licking (this is the report licking rule):
 
 Part 3.2.7 - Biting
 
-[Status: Complete
-Biting is a new action, used only on body parts, but attempts to bit something edible is eating. It handles decency, access.]
+[Biting is a new action, used only on body parts, but attempts to bit something edible is eating. It handles decency, access.]
 
 Biting is an action applying to one touchable thing.
 The specification of the biting action is "This action is intended for when the actor bites on something. Attempts to bite something edible redirects to eating."
@@ -2383,8 +2373,7 @@ Report an actor biting (this is the report biting rule):
 
 Part 3.2.8 - Fucking It With
 
-[Status: Complete
-Fucking it with is a new action with some complexity, and is the act of inserting something penetrating into something orificial.
+[Fucking it with is a new action with some complexity, and is the act of inserting something penetrating into something orificial.
 See also the person-oriented redirect actions.]
 
 Fucking it with is an action applying to one touchable thing and one thing.
@@ -2484,8 +2473,7 @@ Report an actor fucking something with (this is the report fucking rule):
 
 Part 3.2.9 - Twisting
 
-[Status: Complete
-twisting is a new action. It takes into account that other people's body parts can be twisted, decency and consent/arousal, and handle reporting. Unlike other new actions, we will allow self-twisting.]
+[twisting is a new action. It takes into account that other people's body parts can be twisted, decency and consent/arousal, and handle reporting. Unlike other new actions, we will allow self-twisting.]
 
 Twisting is an action applying to one touchable thing.
 The specification of the twisting action is "Twisting is the act of hurtful turning a person's body parts. Attempts to twist a person will redirect to the nipple."
@@ -2561,8 +2549,7 @@ Report an actor twisting (this is the report twisting rule):
 
 Part 3.2.10 - Piercing
 
-[Status: Complete
-piercing is a new action. It takes into account that other people's body parts can be pierced, decency and consent/arousal, and handle reporting. Unlike other new actions, we will allow self-piercing.]
+[piercing is a new action. It takes into account that other people's body parts can be pierced, decency and consent/arousal, and handle reporting. Unlike other new actions, we will allow self-piercing.]
 
 Piercing is an action applying to one touchable thing.
 The specification of the piercing action is "Piercing is the act of hurtful turning a person's body parts. Attempts to pierce a person will redirect to the nipple."
@@ -2643,8 +2630,7 @@ Book 3.3 - Person Actions
 
 Part 3.3.1 - Kissing
 
-[Status: Complete
-Kissing is already covered in the Standard Rules, but it's disabled by default.
+[Kissing is already covered in the Standard Rules, but it's disabled by default.
 We replace the blocks with our own checks, taking into account that only other people can be kissed, decency and consent/arousal, and handle action reporting.]
 
 The specification of the kissing action is "Possibly because Inform was originally written by an Englishman, attempts at kissing another person are normally blocked as being unrealistic or not seriously meant. So the Standard Rules simply block attempts to kiss people, but the action exists for rules to make exceptions.
@@ -2716,8 +2702,7 @@ Report an actor kissing (this is the report kissing rule):
 
 Part 3.3.2 - Hugging
 
-[Status: Complete
-Hugging is a new action. It takes into account that only other people can be hugged, decency and consent/arousal, and handle reporting.]
+[Hugging is a new action. It takes into account that only other people can be hugged, decency and consent/arousal, and handle reporting.]
 
 Hugging is an action applying to one touchable thing.
 The specification of the hugging action is "Shows affection to another person by giving them a hug. Only other people can be hugged, hugging a body part redirects to touching."
@@ -2789,8 +2774,7 @@ Report an actor hugging (this is the report hugging rule):
 
 Part 3.3.3 - Dancing
 
-[Status: Complete
-Dancing with is a new action. It takes into account that only other people can be danced with, decency and consent/arousal, and handle action reporting.]
+[Dancing with is a new action. It takes into account that only other people can be danced with, decency and consent/arousal, and handle action reporting.]
 
 The dancing decency is initially formal.
 
@@ -2982,8 +2966,7 @@ Check an actor titfucking (This is the titfucking redirect rule):
 
 Book 3.5 - Discrete Arousal
 
-[Status: Complete
-Arousal has typically been implemented as a linear numeric system, with continuous incremental changes up to thresholds based on the actor and actions. This model typically leads to spamming 'g' (repeat) in order to raise the arousal so as to unlock new actions.
+[Arousal has typically been implemented as a linear numeric system, with continuous incremental changes up to thresholds based on the actor and actions. This model typically leads to spamming 'g' (repeat) in order to raise the arousal so as to unlock new actions.
 This extension uses Informs natural value enumeration to divide arousal into discrete values, which should provide a smoother and more natural progression. This part is just the bare bones, allowing the story author to use arousal as a decision making tool.
 The system is extensible, but it assumes that unaorused is the neutral setting, and intolerable is the last defined value.
 In the template volume, this is extended into a full-blown stimulation and consent system.]
@@ -3286,8 +3269,7 @@ A system for the story author to announce to the player which types of content t
 
 Part 4.2.1 - Concepts
 
-[Status: Complete
-This part deals with the concepts of story contents and their properties.]
+[This part deals with the concepts of story contents and their properties.]
 
 Chapter 4.2.1a - Types
 
@@ -3388,19 +3370,19 @@ Chapter 5.1.1a - Head
 A head is a kind of body part.
 The cover locations of a head is usually {the head area}.
 
-Some hair is a kind of body part.
+Some hair is a kind of appendage.
 It is usually ambiguously plural. The indefinite article is usually "some".
 The cover locations of hair is usually {the head area}.
-Some hair is usually not spankable. Some hair is usually not lickable. Some hair is usually not tickleable. Some hair is usually not pinchable.
+Some hair is usually not spankable. Some hair is usually not lickable. Some hair is usually not tickleable. Some hair is usually not pinchable. Some hair is usually not pierceable.
 
 A face is a kind of body part.
 The cover locations of face is usually {the face area}.
 
-A mouth is a kind of body part.
+A mouth is a kind of orifice.
 The cover locations of mouth is usually {the face area}.
 Understand "lip", "lips" as mouth.
 
-A nose is a kind of body part.
+A nose is a kind of appendage.
 The cover locations of nose is usually {the face area}.
 
 Some eyes is a kind of body part.
@@ -3420,11 +3402,11 @@ Some legs is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "two". The plural of some legs is pairs of legs.
 The cover locations of some legs is usually {the leg area}.
 
-Some ankles is a kind of body part.
+Some ankles is a kind of appendage.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some ankles is pairs of ankles.
 The cover locations of some ankles is usually {the feet area, the leg area}.
 
-Some feet is a kind of body part.
+Some feet is a kind of appendage.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some feet is pairs of feet.
 The cover locations of some feet is usually {the feet area}.
 
@@ -3434,11 +3416,11 @@ Some arms is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some arms is pairs of arms.
 The cover locations of some arms is usually {the arm area}.
 
-Some wrists is a kind of body part.
+Some wrists is a kind of appendage.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some wrists is pairs of wrists.
 The cover locations of some wrists is usually {the hand area, the arm area}.
 
-Some hands is a kind of body part.
+Some hands is a kind of appendage.
 The cover locations of some hands is usually {the hand area}.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some hands is pairs of hands.
 
@@ -3454,21 +3436,19 @@ The cover locations of some shoulders is usually {the shoulder area}.
 A chest is a kind of body part.
 The cover locations of a chest is usually {the upper torso area}.
 
-Some breasts is a kind of body part.
+Some breasts is a kind of appendage.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some breasts is pairs of breasts.
 The cover locations of some breasts is usually {the upper torso area}.
 Understand "tit", "tits", "breast", "boob", "boobs", "tittie", "titties" and "juggs" as some breasts.
 
-A nipple is a kind of body part.
+A nipple is a kind of appendage.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some nipples is two nipples.
 The cover locations of some nipples is usually {the upper torso area}.
-Some nipples is usually twistable.
 
 An abdomen is a kind of body part.
 The indefinite article is usually "an".
 The cover locations of an abdomen is usually {the lower torso area}.
 Understand "stomach", "tummy", "belly", "midriff" as abdomen.
-An abdomen is usually rubbable. An abdomen is usually tickleable.
 
 A waist is a kind of body part.
 The cover locations of a waist is usually {the lower torso area, the lower back area}.
@@ -3481,28 +3461,28 @@ Chapter 5.1.1d - Crotch
 An ass is a kind of body part.
 The indefinite article is usually "an".
 The cover locations of an ass is usually {the crotch area}.
-Understand "asshole", "anus", "rear", "rear end", "butt", "bottom", "rump" as ass.
-An ass is usually rubbable. An ass is usually spankable. An ass is usually pinchable. An ass is usually orificial.
+Understand "rear", "rear end", "butt", "bottom", "rump" as ass.
 
-A penis is a kind of body part.
+An anus is a kind of orifice.
+The indefinite article is usually "an".
+The cover locations of an anus is usually {the crotch area}.
+Understand "asshole" as anus.
+
+A penis is a kind of appendage.
 The cover locations of a penis is usually {the crotch area}.
 Understand "cock", "dick", "wang", "dong", "wiener", "willy", "schlong", "boner", "pecker" as penis.
-A penis is usually rubbable. A penis is usually pinchable. A penis is usually biteable. A penis is usually penetrating.
 
-A vagina is a kind of body part.
+A vagina is a kind of orifice.
 The cover locations of a vagina is usually {the crotch area}.
 Understand "pussy", "cunt", "slit", "crotch", "snatch", "twat" as vagina.
 A vagina is usually rubbable. A vagina is usually orificial.
 
-A clitoris is a kind of body part.
+A clitoris is a kind of appendage.
 The cover locations of a clitoris is usually {the crotch area}.
 Understand "clit" as clitoris.
-A clitoris is usually rubbable. A clitoris is usually pinchable. A clitoris is usually biteable. A clitoris is usually twistable.
 
-Some labia is a kind of body part.
+Some labia is a kind of appendage.
 The cover locations of Some labia is usually {the crotch area}.
-Some labia is usually rubbable. Some labia is usually pinchable. Some labia is usually biteable. Some labia is usually twistable.
-
 
 
 Part 5.1.2 - Wardrobe
@@ -3773,8 +3753,7 @@ A body part can be smarting. A body part is usually not smarting.
 
 Part 5.2.1 - Responses
 
-[Status: Complete
-If an action is stopped because the actors aren't interested (either in each other, or the arousal threshold is unattainable), then the uninterested response should be issued. If the action is stopped because the current arousal isn't high enough (yet), then the unaroused response should be issued.]
+[If an action is stopped because the actors aren't interested (either in each other, or the arousal threshold is unattainable), then the uninterested response should be issued. If the action is stopped because the current arousal isn't high enough (yet), then the unaroused response should be issued.]
 
 A person has some text called the uninterested response. The uninterested response of a person is usually "'That's not going to happen,' [printed name] says cooly."
 A person has some text called the unaroused response. The unaroused response of a person is usually "'Not yet,' [printed name] says softly."
@@ -4305,8 +4284,7 @@ A stimulation rule for an actor fucking something with (this is the default fuck
 
 Part 5.2.3 - Body Part Integration
 
-[Status: Complete
-Some of the template body parts should have different arousal thresholds and caps.
+[Some of the template body parts should have different arousal thresholds and caps.
 We set them all explicitly, even if some are the same as the default values.]
 
 Chapter 5.2.3a - Ass
