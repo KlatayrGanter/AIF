@@ -1790,7 +1790,7 @@ An orifice is a kind of body part. The indefinite article is usually "an".
 
 A body part can be biteable. A body part is usually biteable. An orifice is usually not biteable.
 A body part can be pinchable. A body part is usually pinchable. An orifice is usually not pinchable.
-A body part can be orificial. A body part is usually not orificial. An orifice is usually orificial.
+A orifice can be orificial. An orifice is usually orificial.
 
 An appendage is a kind of body part. The indefinite article is usually "an".
 
@@ -2975,7 +2975,7 @@ Part 3.5.1 - Definitions
 
 Chapter 3.5.1a - Discrete Arousals
 
-An arousal is a kind of value. The arousals are frigid, repellent, lifeless, stiff, passive, cool, unaroused, spirited, animated, excited, stimulated, passionate, lusty, heated, horny, aroused, inflamed, ablaze, intensive, orgasmic, vibrant, satiated, pulsating, sensitive, spasming, throbbing and intolerable.
+An arousal is a kind of value. The arousals are frigid, repellent, lifeless, stiff, passive, unaroused, spirited, animated, excited, stimulated, passionate, lusty, aroused, heated, horny, vibrant, orgasmic, satiated, over-sensitive, pulsating, spasming, throbbing and ahegao.
 The specification of arousal is "Arousal is a discrete measure of how aroused a person is. Unaroused is the neutral zero-point, with frigid as a negative value and the intolerable (as the last value defined) as the unset/null-value. These methods for arousing and cooling of a person will take these into account."
 
 A person has an arousal called current arousal. The current arousal of a person is usually unaroused.
@@ -3477,9 +3477,9 @@ The cover locations of a vagina is usually {the crotch area}.
 Understand "pussy", "cunt", "slit", "crotch", "snatch", "twat" as vagina.
 A vagina is usually rubbable. A vagina is usually orificial.
 
-A clitoris is a kind of appendage.
-The cover locations of a clitoris is usually {the crotch area}.
-Understand "clit" as clitoris.
+A clit is a kind of appendage.
+The cover locations of a clit is usually {the crotch area}.
+Understand "clitoris" as clit.
 
 Some labia is a kind of appendage.
 The cover locations of Some labia is usually {the crotch area}.
@@ -4001,14 +4001,14 @@ Chapter 5.2.2d - Rough Play
 [This part deals with the "rough" actions, which share the same thresholds by default.]
 
 [Rough-play threshold is the minimum arousal at which a person or it's body part will engage in the rough-play actions.]
-A person has an arousal called the rough-play threshold. The rough-play threshold of a person is usually inflamed.
-A body part has an arousal called the rough-play threshold. The rough-play threshold of a body part is usually inflamed.
+A person has an arousal called the rough-play threshold. The rough-play threshold of a person is usually heated.
+A body part has an arousal called the rough-play threshold. The rough-play threshold of a body part is usually heated.
 
 [Active/passive rough-play arousal is the arousal attainable by rough-play actions, as the active and passive participant.]
-A person has an arousal called the rough-play performer limit. The rough-play performer limit of a person is usually inflamed.
-A person has an arousal called the rough-play recipient limit. The rough-play recipient limit of a person is usually inflamed.
-A body part has an arousal called the rough-play performer limit. The rough-play performer limit of a body part is usually inflamed.
-A body part has an arousal called the rough-play recipient limit. The rough-play recipient limit of a body part is usually inflamed.
+A person has an arousal called the rough-play performer limit. The rough-play performer limit of a person is usually heated.
+A person has an arousal called the rough-play recipient limit. The rough-play recipient limit of a person is usually heated.
+A body part has an arousal called the rough-play performer limit. The rough-play performer limit of a body part is usually heated.
+A body part has an arousal called the rough-play recipient limit. The rough-play recipient limit of a body part is usually heated.
 
 [Create a default consent rule]
 The rough-playing consent rule is listed after the default consent rule in the consent rules.
@@ -4093,10 +4093,10 @@ A person has an arousal called the oral-play threshold. The oral-play threshold 
 A body part has an arousal called the oral-play threshold. The oral-play threshold of a body part is usually aroused.
 
 [Active/passive oral-play arousal is the arousal attainable by oral-play actions, as the active and passive participant.]
-A person has an arousal called the oral-play performer limit. The oral-play performer limit of a person is usually inflamed.
-A person has an arousal called the oral-play recipient limit. The oral-play recipient limit of a person is usually inflamed.
-A body part has an arousal called the oral-play performer limit. The oral-play performer limit of a body part is usually inflamed.
-A body part has an arousal called the oral-play recipient limit. The oral-play recipient limit of a body part is usually inflamed.
+A person has an arousal called the oral-play performer limit. The oral-play performer limit of a person is usually heated.
+A person has an arousal called the oral-play recipient limit. The oral-play recipient limit of a person is usually heated.
+A body part has an arousal called the oral-play performer limit. The oral-play performer limit of a body part is usually heated.
+A body part has an arousal called the oral-play recipient limit. The oral-play recipient limit of a body part is usually heated.
 
 [Create a default consent rule]
 The oral-playing consent rule is listed after the default consent rule in the consent rules.
@@ -4166,10 +4166,10 @@ A person has an arousal called the fuck-play threshold. The fuck-play threshold 
 A body part has an arousal called the fuck-play threshold. The fuck-play threshold of a body part is usually aroused.
 
 [Active/passive fucking-play arousal is the arousal attainable by fucking, as the active and passive participant.]
-A person has an arousal called the fuck-play performer limit. The fuck-play performer limit of a person is usually inflamed.
-A person has an arousal called the fuck-play recipient limit. The fuck-play recipient limit of a person is usually inflamed.
-A body part has an arousal called the fuck-play performer limit. The fuck-play performer limit of a body part is usually inflamed.
-A body part has an arousal called the fuck-play recipient limit. The fuck-play recipient limit of a body part is usually inflamed.
+A person has an arousal called the fuck-play performer limit. The fuck-play performer limit of a person is usually heated.
+A person has an arousal called the fuck-play recipient limit. The fuck-play recipient limit of a person is usually heated.
+A body part has an arousal called the fuck-play performer limit. The fuck-play performer limit of a body part is usually heated.
+A body part has an arousal called the fuck-play recipient limit. The fuck-play recipient limit of a body part is usually heated.
 
 [Create a default consent rule:
 Due to prior checks, we assume that the actor is enclosing one of the nouns, so we only check consent for the controller of each noun:]
@@ -4290,92 +4290,146 @@ We set them all explicitly, even if some are the same as the default values.]
 Chapter 5.2.3a - Ass
 
 [No Change: The soft-play threshold of an ass is usually stimulated.]
-The soft-play performer limit of an ass is usually inflamed.
-The soft-play recipient limit of an ass is usually inflamed.
+The soft-play performer limit of an ass is usually heated.
+The soft-play recipient limit of an ass is usually heated.
 
-[No Change: The rough-play threshold of an ass is usually inflamed.]
-[No Change: The rough-play performer limit of an ass is usually inflamed.]
-[No Change: The rough-play recipient limit of an ass is usually inflamed.]
+[No Change: The rough-play threshold of an ass is usually horny.]
+[No Change: The rough-play performer limit of an ass is usually horny.]
+[No Change: The rough-play recipient limit of an ass is usually horny.]
 
 [No Change: The oral-play threshold of an ass is usually aroused.]
 The oral-play performer limit of an ass is usually aroused.
-[No Change: The oral-play recipient limit of an ass is usually inflamed.]
+[No Change: The oral-play recipient limit of an ass is usually heated.]
 
-[No Change: The fuck-play threshold of an ass is usually inflamed.]
-[No Change: The fuck-play performer limit of an ass is usually inflamed.]
-[No Change: The fuck-play recipient limit of an ass is usually inflamed.]
+[No Change: The fuck-play threshold of an ass is usually heated.]
+[No Change: The fuck-play performer limit of an ass is usually heated.]
+[No Change: The fuck-play recipient limit of an ass is usually heated.]
 
 Chapter 5.2.3b - Breasts
 
 The soft-play threshold of some breasts is usually aroused.
-The soft-play performer limit of some breasts is usually inflamed.
-The soft-play recipient limit of some breasts is usually inflamed.
+The soft-play performer limit of some breasts is usually heated.
+The soft-play recipient limit of some breasts is usually heated.
 
-[No Change: The rough-play threshold of some breasts is usually inflamed.]
-[No Change: The rough-play performer limit of some breasts is usually inflamed.]
-[No Change: The rough-play recipient limit of some breasts is usually inflamed.]
+[No Change: The rough-play threshold of some breasts is usually horny.]
+[No Change: The rough-play performer limit of some breasts is usually horny.]
+[No Change: The rough-play recipient limit of some breasts is usually horny.]
 
 [No Change: The oral-play threshold of some breasts is usually aroused.]
-[No Change: The oral-play performer limit of some breasts is usually inflamed.]
-[No Change: The oral-play recipient limit of some breasts is usually inflamed.]
+[No Change: The oral-play performer limit of some breasts is usually heated.]
+[No Change: The oral-play recipient limit of some breasts is usually heated.]
 
 The fuck-play threshold of some breasts is usually aroused.
-[No Change: The fuck-play performer limit of some breasts is usually inflamed.]
-[No Change: The fuck-play recipient limit of some breasts is usually inflamed.]
+[No Change: The fuck-play performer limit of some breasts is usually heated.]
+[No Change: The fuck-play recipient limit of some breasts is usually heated.]
 
 Chapter 5.2.3c - Penis
 
 The soft-play threshold of a penis is usually aroused.
-The soft-play performer limit of a penis is usually inflamed.
+The soft-play performer limit of a penis is usually heated.
 The soft-play recipient limit of a penis is usually orgasmic.
 
-[No Change: The rough-play threshold of a penis is usually inflamed.]
-[No Change: The rough-play performer limit of a penis is usually inflamed.]
-[No Change: The rough-play recipient limit of a penis is usually inflamed.]
+[No Change: The rough-play threshold of a penis is usually horny.]
+[No Change: The rough-play performer limit of a penis is usually horny.]
+[No Change: The rough-play recipient limit of a penis is usually horny.]
 
 [No Change: The oral-play threshold of a penis is usually aroused.]
-[No Change: The oral-play performer limit of a penis is usually inflamed.]
+[No Change: The oral-play performer limit of a penis is usually heated.]
 The oral-play recipient limit of a penis is usually orgasmic.
 
-[No Change: The fuck-play threshold of a penis is usually inflamed.]
+[No Change: The fuck-play threshold of a penis is usually heated.]
 The fuck-play performer limit of a penis is usually orgasmic.
 The fuck-play recipient limit of a penis is usually orgasmic.
 
 Chapter 5.2.3d - Vagina
 
 The soft-play threshold of a vagina is usually aroused.
-The soft-play performer limit of a vagina is usually inflamed.
+The soft-play performer limit of a vagina is usually heated.
 The soft-play recipient limit of a vagina is usually orgasmic.
 
-[No Change: The rough-play threshold of a vagina is usually inflamed.]
-[No Change: The rough-play performer limit of a vagina is usually inflamed.]
-[No Change: The rough-play recipient limit of a vagina is usually inflamed.]
+[No Change: The rough-play threshold of a vagina is usually horny.]
+[No Change: The rough-play performer limit of a vagina is usually horny.]
+[No Change: The rough-play recipient limit of a vagina is usually horny.]
 
 [No Change: The oral-play threshold of a vagina is usually aroused.]
-[No Change: The oral-play performer limit of a vagina is usually inflamed.]
+[No Change: The oral-play performer limit of a vagina is usually heated.]
 The oral-play recipient limit of a vagina is usually orgasmic.
 
-[No Change: The fuck-play threshold of a vagina is usually inflamed.]
+[No Change: The fuck-play threshold of a vagina is usually heated.]
 The fuck-play performer limit of a vagina is usually orgasmic.
 The fuck-play recipient limit of a vagina is usually orgasmic.
 
-Chapter 5.2.3b - Nipples
+Chapter 5.2.3e - Nipples
 
 The soft-play threshold of some nipples is usually aroused.
-The soft-play performer limit of some nipples is usually inflamed.
-The soft-play recipient limit of some nipples is usually inflamed.
+The soft-play performer limit of some nipples is usually heated.
+The soft-play recipient limit of some nipples is usually heated.
 
-[No Change: The rough-play threshold of some nipples is usually inflamed.]
-[No Change: The rough-play performer limit of some nipples is usually inflamed.]
-[No Change: The rough-play recipient limit of some nipples is usually inflamed.]
+[No Change: The rough-play threshold of some nipples is usually horny.]
+[No Change: The rough-play performer limit of some nipples is usually horny.]
+[No Change: The rough-play recipient limit of some nipples is usually horny.]
 
 [No Change: The oral-play threshold of some nipples is usually aroused.]
-[No Change: The oral-play performer limit of some nipples is usually inflamed.]
-[No Change: The oral-play recipient limit of some nipples is usually inflamed.]
+[No Change: The oral-play performer limit of some nipples is usually heated.]
+[No Change: The oral-play recipient limit of some nipples is usually heated.]
 
 The fuck-play threshold of some nipples is usually aroused.
-[No Change: The fuck-play performer limit of some nipples is usually inflamed.]
-[No Change: The fuck-play recipient limit of some nipples is usually inflamed.]
+[No Change: The fuck-play performer limit of some nipples is usually heated.]
+[No Change: The fuck-play recipient limit of some nipples is usually heated.]
+
+Chapter 5.2.3d - Clit
+
+The soft-play threshold of a clit is usually aroused.
+The soft-play performer limit of a clit is usually heated.
+The soft-play recipient limit of a clit is usually orgasmic.
+
+[No Change: The rough-play threshold of a clit is usually orgasmic.]
+[No Change: The rough-play performer limit of a clit is usually orgasmic.]
+[No Change: The rough-play recipient limit of a clit is usually orgasmic.]
+
+[No Change: The oral-play threshold of a clit is usually aroused.]
+[No Change: The oral-play performer limit of a clit is usually heated.]
+The oral-play recipient limit of a clit is usually orgasmic.
+
+[No Change: The fuck-play threshold of a clit is usually heated.]
+The fuck-play performer limit of a clit is usually orgasmic.
+The fuck-play recipient limit of a clit is usually orgasmic.
+
+Chapter 5.2.3d - Labia
+
+The soft-play threshold of some labia is usually aroused.
+The soft-play performer limit of some labia is usually heated.
+The soft-play recipient limit of some labia is usually orgasmic.
+
+[No Change: The rough-play threshold of some labia is usually vibrant.]
+[No Change: The rough-play performer limit of some labia is usually vibrant.]
+[No Change: The rough-play recipient limit of some labia is usually vibrant.]
+
+[No Change: The oral-play threshold of some labia is usually aroused.]
+[No Change: The oral-play performer limit of some labia is usually heated.]
+The oral-play recipient limit of some labia is usually orgasmic.
+
+[No Change: The fuck-play threshold of some labia is usually heated.]
+The fuck-play performer limit of some labia is usually orgasmic.
+The fuck-play recipient limit of some labia is usually orgasmic.
+
+Chapter 5.2.3d - Anus
+
+The soft-play threshold of an anus is usually aroused.
+The soft-play performer limit of an anus is usually heated.
+The soft-play recipient limit of an anus is usually orgasmic.
+
+[No Change: The rough-play threshold of an anus is usually over-sensitive.]
+[No Change: The rough-play performer limit of an anus is usually over-sensitive.]
+[No Change: The rough-play recipient limit of an anus is usually over-sensitive.]
+
+[No Change: The oral-play threshold of an anus is usually aroused.]
+[No Change: The oral-play performer limit of an anus is usually heated.]
+The oral-play recipient limit of an anus is usually orgasmic.
+
+[No Change: The fuck-play threshold of an anus is usually heated.]
+The fuck-play performer limit of an anus is usually orgasmic.
+The fuck-play recipient limit of an anus is usually orgasmic.
 
 Erotic Storytelling ends here.
 
