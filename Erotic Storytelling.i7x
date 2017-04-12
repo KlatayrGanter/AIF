@@ -49,6 +49,9 @@ Book 1.1 - Concepts
 
 [We start by defining the necessary kinds and values we need to make layered clothing work.]
 
+A thing can be penetrating. A thing is usually not penetrating.
+A thing can be orificial. A thing is usually not orificial.
+
 Part 1.1.1 - Coverage
 
 Chapter 1.1.1a - Decency
@@ -1807,6 +1810,34 @@ A body part can be lickable. A body part is usually lickable.
 A body part can be tickleable. A body part is usually tickleable.
 
 An orifice is a kind of body part. The indefinite article is usually "an".
+A widening is a kind of value. The widenings are defined by the Table of Looseness.
+
+Table of Looseness
+Widening              Value
+congested             0
+squeezed              1
+contracted            2
+compressed            3
+tuck                  4
+tight                 5
+together              6
+joined                7
+coupled               8
+connected             9
+touching             10
+nearly touching      11
+approximate          12
+parted               13
+ajar                 14
+separate             15
+apart                16
+widened              17
+agape                18
+spread               19
+stretched            20
+gaped                21
+
+An orifice has a widening. [The widening of an orifice is usually together.]
 
 A body part can be biteable. A body part is usually biteable. An orifice is usually not biteable.
 A body part can be pinchable. A body part is usually pinchable. An orifice is usually not pinchable.
@@ -1817,17 +1848,38 @@ An appendage is a kind of body part. The indefinite article is usually "an".
 An appendage can be twistable. An appendage is usually twistable.
 An appendage can be pierceable. An appendage is usually pierceable.
 
-[Erogenous zones, female:
-Parts of the vulva, especially the clitoris, are erogenous zones.[14][15][16] While the vagina is not especially sensitive as a whole, its lower third (the area close to the entrance) has concentrations of the nerve endings that can provide pleasurable sensations during sexual activity when stimulated; this is also called the anterior wall of the vagina or the outer one-third of the vagina, and it contains the majority of the vaginal nerve endings, making it more sensitive to touch than the inner two-thirds of the vaginal barrel.[15][16][17][18]
-
-Within the anterior wall of the vagina, there is a patch of ribbed rough tissue which has a texture that is sometimes described as similar to the palate (the roof of a mouth) or a raspberry, and may feel spongy when a woman is sexually aroused. This is the urethral sponge, which may also be the location of the G-spot ¿ a structure described as an area of the vagina that some women report is an erogenous zone which, when stimulated, can lead to sexual arousal, orgasms and female ejaculation.[19] The existence of the G-spot and whether or not it is a distinct structure is debated among researchers, as reports of its location vary from woman to woman, it appears to be nonexistent in some women, and scientists commonly believe that it is an extension of the clitoris.
-
-Erogenous zones, male:
-Males can be aroused by stimulation to the sides of the glans and penis, upper side of the glans, the foreskin, the front side of the scrotum, the skin between the scrotum and anus perineum, and around the anus.[5] The prostate gland may be stimulated from inside the rectum, such as by anal sex, or by applying pressure on the base of the perineum near the anus.[6][7][8] Men who report the sensation of prostate and seminal vesicles stimulation often give descriptions similar to females' accounts of G-spot stimulation.[9]
-
-The foreskin, which carries the ridged band and lower frenular delta,[10] has mucocutaneous end-organs extending from the distal margin to the point where hairy skin starts.[11] The thin dermis and minimal subcutaneous tissue results in closely set nerve networks. Vater-Pacini corpuscles are present. The mucocutaneous end-organs are formed after birth, with few in newborn infants and many well-organized endings in adults.]
-
 A body part can be penetrating. A body part is usually not penetrating.
+An endowment is a kind of value. The endowments are defined by the Table of Packing.
+
+Table of Packing
+Endowment                Value
+insignificantly willied  0
+miniscule willied       1
+meagerly willied       2
+tiny peckered          3
+little peckered        4
+small packed           5
+short packed           6
+compactly hung         7
+passable provisioned   8
+adequately packed      9
+decently packed       10
+sizeably packed       11
+significantly packed  12
+substantially packed  13
+thickly shafted       14
+largely hung          15
+well endowed         16
+massively endowed   17
+grandly hung        18
+imposingly endowed  19
+immensely endowed   20
+hugely hung        21
+mighty endowed    22
+humongous        23
+monstrous       24
+collosal       25
+gargantuan     26
 
 Book 3.2 - Body Part Actions
 
@@ -3491,6 +3543,7 @@ Understand "asshole" as anus.
 A penis is a kind of appendage.
 The cover locations of a penis is usually {the crotch area}.
 Understand "cock", "dick", "wang", "dong", "wiener", "willy", "schlong", "boner", "pecker" as penis.
+A penis has an endowment. [The endowment of a penis is usually decently packed.]
 
 A vagina is a kind of orifice.
 The cover locations of a vagina is usually {the crotch area}.
