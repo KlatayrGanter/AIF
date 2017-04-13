@@ -58,28 +58,58 @@ Chapter 1.1.1a - Decency
 
 [a control mechanism to control what a person should be allowed to do.]
 
-[dependent on the number of actions encountered - go slow with this.]
-A Purity is a kind of value. The purities are defiled, filthy, dirty, soiled, stained, blemished, messy, untidy, untouched, clean, prim, proper, spotless, immaculate, pure and virgin.
+[peculiarity]
+A peculiarity is a kind of value. The peculiarities are mundane, conventional, ordinary, quirky, peculiar, mysterious, enigmatic, exotic and mystical.
 
-[Resistance to negatively affect another, given the relation. Decreases with purity.]
-Ethics are a kind of value. It is usually ambiguously plural. The indefinite article is usually "some".
-The ethics are fallen, corrupt, unethical, wanton, tainted, unprincipled, malleable, indifferent, careless, naive, innocent, guiltless, concerned, strict, honest, virtuous, honourable and incorruptible.
+[refinement]
+A refinement is a kind of value. The refinements are hideous, ugly, repelling, plain, comely, cute, lovely, pretty, beautiful, elegant, refined, fair, exquisite and angelic.
 
-[decency: persons, clothed and actions can have it. Resistance to expose oneself.]
-A decency is a kind of value. The decencies are depraved, profane, obscene, debased, nasty, provoking, unashamed, lewd, indecent, teasing, naughty, sensual, seducing, enticing, flirting, nonchalant, casual, modest, formal, reserved, prudent, puritan, devout, chaste and undefined decency.
+[naivete. personal. factor to resistance responses.]
+Naivete is a kind of value. The naivetes are mistrusting, skeptical, cynical, critical, suspicious, unconvinced, analytical, sensible, intuitive, innocent, ignorant, trusting, naive, easy, misled, misguided, deceived, exploited, twisted, deflowered, violated, perverted, defiled and corrupted.
+[or towards wisdom?]
 
-[levels of exposure. Increases arousal, decreases purity.]
+[levels of exposure. persons, clothes and actions can have it. (e.g. stealing)]
 An exposure is a kind of value. The indefinite article is usually "an".
-The exposures are exhibited, advertised, blatant, naked, denuded, stripped, displayed, bared, exposed, unveiled, presented, revealed, obvious, evident, manifest, noticeable discernable and covered.
+The exposures are secret, obscured, hidden, covered, masked, veiled, observable, discernible, see-able, noticeable, appreciable, disclosed, evident, manifest, obvious, revealed, presented, bared, exposed, displayed, advertised and exhibited.
+[stripped, denuded, naked]
 
-[general resistance. Inverse related to ethics and arousal, normal relation with excitation.]
-A defiance is a kind of value. The defiances are broken, puppet-like, slavish, servile, tame, docile, trained, disciplined, obedient, willing, prompt, amenable, cooperating, reluctant, manageable, hesitant, self-willed, mischievous, involuntary, uncompliant, restrained, insubordinate, disobedient, misbehaving, resisting and violent.
+[decency: persons, clothes and actions can have it. Resistance to expose oneself.]
+A decency is a kind of value. The decencies are depraved, profane, obscene, debased, outrageous, flagrant, scandalous, immoral, shocking, shameless, misplaced, lewd, naughty, indecent, sensual, unconcerned, nonchalant, casual, modest, formal, reserved, conservative, prudent, puritan, devout, orthodox, chaste and undefined decency.
 
-[non-sexual excitation, general elation. High at start, decreases with high ethics and exposure, unless aroused.]
-An excitation is a kind of value. The indefinite article is usually "an".
-The excitations are suicidal, unworthy, guilted, sluggish, demure, resignated, worn-out, sad, half-hearted, spiritless, apathetic, disregarding, tranced, mesmerized, captivated, fascinated, impressed, pleased, glad, amused, enjoying, merry, elated, cheerful, thrilled, overjoyed, delighted and euphoric.
+[hygiene.]
+A hygiene is a kind of value. The hygienes are putrid, decayed, polluted, disgusting, filthy, foul, dirty, soiled, blemished, shabby, messy, scruffy, stained, touched, unsoiled, tidy, clean, prim, proper, spotless, immaculate, pure and virginal.
 
+[Stamina.]
+Stamina is a kind of value. The staminas are dying, infected, diseased, contaminated, ill, afflicted, sick, frail, feeble, depleted, wasted, weakened, drained, spent, exhausted, beat, tired, fatigued, weary, affected, exerted, operating, fit, performing, achieving, steady, healthy, lasting, persisting, enduring, tireless, inexhaustible and everlasting.
 
+[ethics: Resistance to do bad things in general.]
+An ethic is a kind of value. The indefinite article is usually "an".
+The ethics are rotten, poisoned, fallen, crooked, corrupt, criminal, fraudulent, guilty, deceitful, cheating, dishonest, unfair, flawed, prejudiced, shallow, neutral, sound, accurate, valid, reliable, correct, sincere, just, honest, thrust-worthy, ethical, honorable, virtuous and holy.
+
+[empathy: Resistance to negatively affect another.]
+Empathy is a kind of value. The empathies are sadistic, malignant, vengeful, cruel, merciless, nasty, vicious, unkind, rigid, stern, stringent, strict, straight, principled, conscientious, tolerant, lenient, indulgent, permissive, understanding, forgiving, merciful, considerate, sympathetic, compassionate and warmhearted.
+
+[Arrogance is a kind of value. The Arrogances are haughty, arrogant, pretentious, cocky, spoiled, indulged, snotty, selfish, pampered, catered, favored, accommodated, comforted,]
+
+[defiance: Resistance towards another.]
+A defiance is a kind of value. The defiances are broken, puppet-like, slavish, servile, tame, docile, trained, disciplined, obedient, willing, prompt, amenable, compliant, cooperating, reluctant, manageable, hesitant, self-willed, mischievous, involuntary, restrained, insubordinate, disobedient, misbehaving, resisting and violent.
+
+[dominance: Force over another.]
+An dominance is a kind of value. The dominances are spineless, cowardly, uncertain, nervous, humble, careless, independent, serious, steadfast, determined, willful, leading, commanding, resolute, enforcing, disciplinarian and dominant.
+
+[hypnosis: Mind force over another.]
+Captivation is a kind of value. The captivations are ignoring, negligent, disregarding, overlooking, aware, observing, cognizant, noticing, fascinated, absorbed, committed, preoccupied, engrossed, captivated, mesmerized, consumed, entranced, subdued, hypnotized, subjugate and enthralled.
+
+[enchantment: force of a thing on a person or stat.]
+An enchantment is a kind of value. The indefinite article is usually "an".
+The enchantments are possessed, bedeviled, fiendish, damned, cursed, bewitched, tainted, spellbound, enchanted, charmed, radiant, revered, blessed, glorified, ethereal, sacred, celestial and sacrosanct.
+
+[addiction: substances and actions can have it. Enforces a person to do/take this.]
+An addiction is a kind of value. The indefinite article is usually "an".
+the addictions are addicted, hooked, obsessed, dependent, craving, yearning, longing, desiring, striving, entertaining, rousing, stirring, accepting, anticipating, awaiting, handling, receiving, swallowed, tolerated, coping, sustained, withstood, declined, resisted, rejected, repelled and opposed.
+
+[intellect]
+A intellect is a kind of value. The indefinite article is usually "an". The intellects are imbecile, retarded, moronic, stupid, dumb, dimwitted, sentient, bright, sharp, smart, clever, perceptive, intelligent, ingenious and brilliant.
 
 The specification of decency is "Decency is a measure for the social standards of a situation, it applies to a person, actions and location given the surroundings.
 The undefined decency is not intended to be used, needed to signal that the value hasn't been calculated yet."
@@ -104,13 +134,13 @@ The face area	chaste
 The shoulder area	reserved
 The arm area	casual
 The hand area	prudent
-The upper torso area	indecent
+The upper torso area	lewd
 The upper back area	formal
 The lower torso area	naughty
 The lower back area	sensual
-The crotch area	provoking
-The thigh area	teasing
-The leg area	enticing
+The crotch area	shameless
+The thigh area	indecent
+The leg area	unconcerned
 The feet area	nonchalant
 The neck area	modest
 The wrist area	devout
@@ -1691,6 +1721,8 @@ A default description generation rule for a person (called P) (this is the gener
 A status description generation rule for a person (called P) (this is the clothing status rule):
 	If P is nude:
 		Say "[Regarding P][They] [are] completely naked.";
+	Else if the crotch area can be seen for P and P is wearing a sex toy:
+		Say "[Regarding P][They] [are] displaying a sex toy.";
 	Else if P is nearly nude:
 		Say "[Regarding P][They] [are] almost naked.";
 	Else if P is topless:
@@ -1893,7 +1925,7 @@ The specification of the touching action is "Touching is just that, touching som
 In the Standard Rules there are no check touching rules, since touchability is already a requirement of the noun for the action anyway, and no carry out rules because nothing in the standard Inform world model reacts to a mere touch - though report rules do mean that attempts to touch other people provoke a special reply.
 In Erotic Storytelling however, touching is 'passive' touching where the player softly feels the target, while the related rubbing action is 'active' touching where the player actively massages the target."
 
-The touching decency is initially enticing.
+The touching decency is initially sensual.
 
 Chapter 3.2.1a - Understanding
 
@@ -1961,7 +1993,7 @@ Part 3.2.2 - Rubbing
 The specification of the rubbing action is "The Standard Rules define this action in only a minimal way, blocking it with a check rule which stops it in all cases. It exists so that before or instead rules can be written to make it do interesting things in special cases. (Or to reconstruct the action as something more substantial, unlist the block rule and supply carry out and report rules, together perhaps with some further check rules.)
 For Erotic Story Actions, rubbing is intended for when the actor uses their hands to rub something (as opposed to the softer touch action), and reponds to commands like RUB ANNA, MASSAGE ANNA'S BREASTS, etc. It only works only body parts that are set to rubbable."
 
-The rubbing decency is initially unashamed.
+The rubbing decency is initially lewd.
 
 Chapter 3.2.2a - Understanding
 
@@ -2114,7 +2146,7 @@ Part 3.2.4 - Spanking
 Spanking is an action applying to one touchable thing.
 The specification of the spanking action is "Spanking is the act of hitting or slapping a person's body parts. Attempts to spank a person will redirect to the rear end."
 
-The spanking decency is initially indecent.
+The spanking decency is initially misplaced.
 
 Chapter 3.2.4a - Understanding
 
@@ -2274,7 +2306,7 @@ Part 3.2.6 - Licking
 Licking is an action applying to one touchable thing.
 The specification of the licking action is "This action is intended for when the actor uses their mouth on a body part. Trying to lick a person will try to find a better part of that person to lick."
 
-The licking decency is initially indecent.
+The licking decency is initially naughty.
 
 Chapter 3.2.6a - Understanding
 
@@ -2364,7 +2396,7 @@ Part 3.2.7 - Biting
 Biting is an action applying to one touchable thing.
 The specification of the biting action is "This action is intended for when the actor bites on something. Attempts to bite something edible redirects to eating."
 
-The biting decency is initially indecent.
+The biting decency is initially shocking.
 
 Chapter 3.2.7a - Understanding
 
@@ -2451,7 +2483,7 @@ See also the person-oriented redirect actions.]
 Fucking it with is an action applying to one touchable thing and one thing.
 The specification of the fucking it with action is "Fucking it with is the action of putting something into something else. By default it expects to receive an orifice to put something penetrating into. See also the person-oriented actions 'fuck', 'assfuck' and 'titfuck' which redirect here."
 
-The fucking decency is initially indecent.
+The fucking decency is initially shameless.
 
 Chapter 3.2.8a - Understanding
 
@@ -2550,7 +2582,7 @@ Part 3.2.9 - Twisting
 Twisting is an action applying to one touchable thing.
 The specification of the twisting action is "Twisting is the act of hurtful turning a person's body parts. Attempts to twist a person will redirect to the nipple."
 
-The twisting decency is initially indecent.
+The twisting decency is initially misplaced.
 
 Chapter 3.2.9a - Understanding
 
@@ -2626,7 +2658,7 @@ Part 3.2.10 - Piercing
 Piercing is an action applying to one touchable thing.
 The specification of the piercing action is "Piercing is the act of hurtful turning a person's body parts. Attempts to pierce a person will redirect to the nipple."
 
-The piercing decency is initially indecent.
+The piercing decency is initially scandalous.
 
 Chapter 3.2.10a - Understanding
 
@@ -3047,7 +3079,7 @@ Part 3.5.1 - Definitions
 
 Chapter 3.5.1a - Discrete Arousals
 
-An arousal is a kind of value. The arousals are frigid, desinterested, lifeless, stiff, passive, unaroused, shy, hesitating, animated, spirited, excited, stimulated, passionate, lusty, aroused, heated, horny, vibrant, orgasmic, satiated, over-sensitive, pulsating, oversexed, spasming, throbbing, nymphomaniac and ahegao.
+An arousal is a kind of value. The arousals are frigid, desinterested, lifeless, stiff, passive, unaroused, hesitating, animated, spirited, excited, stimulated, passionate, lusty, aroused, heated, horny, vibrant, orgasmic, satiated, over-sensitive, pulsating, oversexed, spasming, throbbing, nymphomaniac and ahegao.
 The specification of arousal is "Arousal is a discrete measure of how aroused a person is. Unaroused is the neutral zero-point, with frigid as a negative value and the intolerable (as the last value defined) as the unset/null-value. These methods for arousing and cooling of a person will take these into account."
 
 A person has an arousal called current arousal. The current arousal of a person is usually unaroused.
@@ -3576,9 +3608,9 @@ Some panties is usually shiftable. The shiftyness of some panties is usually dis
 Some panties is usually rippable. The ripping revealed cover areas of some panties is usually {crotch area}.
 
 A bra is a kind of garment.
-The specification of bra is "Bras are usually indecent underwear, and go on the upper torso/back."
+The specification of bra is "Bras are usually sensual underwear, and go on the upper torso/back."
 A bra is usually underwear.
-The cloth decency of a bra is usually indecent.
+The cloth decency of a bra is usually sensual.
 A bra is usually allow touching through.
 The cover areas of a bra is usually {upper torso area, upper back area}.
 A bra is usually shiftable. The shiftyness of a bra is usually displaceable. The shifting revealed cover areas of bra is usually {upper torso area}.
@@ -3594,18 +3626,18 @@ The cover areas of an undershirt is usually {upper torso area, lower torso area,
 An undershirt is usually rippable. The ripping revealed cover areas of an undershirt is usually a {upper torso area}.
 
 A swimsuit is a kind of garment.
-The specification of swimsuit is "A swimsuit is unashamed underwear that covers the upper torso, lower back/torso and crotch. It doesn't necessarily have to be for swimming; teddies and similar underwear can also use the same template. It can usually be moved aside to expose upper torso."
+The specification of swimsuit is "A swimsuit is unconcerned underwear that covers the upper torso, lower back/torso and crotch. It doesn't necessarily have to be for swimming; teddies and similar underwear can also use the same template. It can usually be moved aside to expose upper torso."
 A swimsuit is usually underwear.
-The cloth decency of a swimsuit is usually unashamed.
+The cloth decency of a swimsuit is usually unconcerned.
 A swimsuit is usually allow touching through.
 The cover areas of a swimsuit is usually {upper torso area, lower torso area, lower back area, crotch area}.
 A swimsuit is usually shiftable. The shiftyness of a swimsuit is usually moveable. The shifting revealed cover areas of a swimsuit is usually a {upper torso area}.
 Some swimsuit is usually not rippable. The ripping revealed cover areas of swimsuit is usually {upper torso area}.
 
 A bodysuit is a kind of garment.
-The specification of bodysuit is "A bodysuit is a special form of indecent underwear that covers most of a person, only leaving the hands and head/face uncovered."
+The specification of bodysuit is "A bodysuit is a special form of sensual underwear that covers most of a person, only leaving the hands and head/face uncovered."
 A bodysuit is usually underwear.
-The cloth decency of a bodysuit is usually indecent.
+The cloth decency of a bodysuit is usually sensual.
 The cover areas of a bodysuit is usually {shoulder area, arm area, upper torso area, upper back area, lower torso area, lower back area, crotch area, thigh area, leg area, feet area}.
 
 A mask is a kind of garment.
@@ -3788,9 +3820,9 @@ Chapter 5.1.4 - Strap-On
 
 A strap-on is a kind of garment.
 The indefinite article is usually "a".
-The specification of a strap-on is "A strap-on is a special garment that is intended for use with the fucking it with action, and therefore also supports the adjective penetrating (which it usually is). It is indecent and outerwear, so it can be worn over pants and dresses if needed."
+The specification of a strap-on is "A strap-on is a special garment that is intended for use with the fucking it with action, and therefore also supports the adjective penetrating (which it usually is). It is shameless and outerwear, so it can be worn over pants and dresses if needed."
 A strap-on is usually outerwear.
-The cloth decency of a strap-on is usually indecent.
+The cloth decency of a strap-on is usually shameless.
 A strap-on is usually allow touching through.
 The cover areas of a strap-on is usually {crotch area}.
 A strap-on can be penetrating. A strap-on is usually penetrating.
