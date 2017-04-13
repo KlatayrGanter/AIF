@@ -4698,7 +4698,7 @@ Below is an overview of the body part templates, with the most pertinent propert
 	Eyes (Formal): plural
 	Face (Formal):
 	Feet (Immodest): plural; touchable, rubbable, lickable, biteable, tickleable
-	Hair (Formal): plural (ambigously)
+	Hair (Formal): plural (ambiguously)
 	Hands (Formal): plural; touchable, rubbable
 	Head (Formal):
 	Legs (Casual): plural; touchable, rubbable
@@ -4942,7 +4942,7 @@ A player might also expect an order to 'fuck someone' to work, even though that 
 We therefore create some helper actions that redirect to using the correct nouns with the fucking it with action.
 In total, we have six person related actions; a reworking of the existing kissing action, the new hugging and dancing with actions, and three helper actions that redirect to fucking it with.
 
-Dancing with is a slightly special action; it's valid to use without a noun, implying that a person dances with themself. Thus the command "Dance" turns into "Dance with yourself" for the purpose of responses and consent.
+Dancing with is a slightly special action; it's valid to use without a noun, implying that a person dances with themselves. Thus the command "Dance" turns into "Dance with yourself" for the purpose of responses and consent.
 Hugging is a rather simple action, checking that a person does not try to hug oneself.
 We've already briefly covered kissing; the standard rules of Inform block the action.
 We interfere and redirect attempts to kiss body parts to lick them instead, and allow kissing people while blocking any other types of noun.
@@ -4973,7 +4973,7 @@ Similar to touching and rubbing, the clothing coverage check here takes into acc
 The scope of which things these actions apply to can be controlled by the adjectives described in section 2.1, and both spanking and tickling are by default severly limited.
 
 Besides kissing (which target persons), we have licking and biting as the oral-oriented actions.
-Unlike the touching actions, these require bare skin contact, which means that atleast one cover area of the body part is not covered by garments.
+Unlike the touching actions, these require bare skin contact, which means that at least one cover area of the body part is not covered by garments.
 
 Lastly, we have perhaps the most important action, fucking it with.
 Unlike the previous body part actions, it's associated with two adjectives: orificial and penetrating, and requires one thing of each type.
@@ -5023,7 +5023,7 @@ Section 1.4 contains a complete list of all garment and body part templates incl
 
 In theory, any thing that has the penetrating and orificial properties can potentially be used in the fucking it with action.
 For ease of use however we create the two template kinds sex toy and strap-on.
-A sex toy is simply a thing that canbe penetrating and orificial and defaults to being penetrating.
+A sex toy is simply a thing that can be penetrating and orificial and defaults to being penetrating.
 A strap-on is slightly more complicated; it's a garment that covers the crotch area on the outerwear level (allowing it to fit over trousers) that's penetrating.
 
 If you feel the included templates are lacking, feel free to contact the extension author as described earlier.
@@ -5130,7 +5130,7 @@ In other circumstances the body part doesn't vary much by clothing, so it might 
 
 In summary, the following new properties deal with descriptions for body parts:
 
-	Short description: The essentials of the part, used in automatic description generation for perons.
+	Short description: The essentials of the part, used in automatic description generation for persons.
 	Covered description: Printed if all the cover areas for the body part are concealed by opaque garments.
 	Uncovered description: Printed if atleast one of the cover areas for the body part is not concealed by an opaque garment.
 
@@ -5158,7 +5158,7 @@ Section 4.3 - Persons
 A person often has many dynamic parts of their description, making it hard to fit it all into a text description property.
 This implies that a rule-based approach for generating descriptions of people is the better way to go.
 This allows us to write explicit rules for describing a given person, but also to create a framework for autogeneration.
-Both of these approaches are intended to supplment the normal description property for a person, and will be printed after the normal description if it's defined.
+Both of these approaches are intended to supplement the normal description property for a person, and will be printed after the normal description if it's defined.
 The autogeneration approach is the most complex under the hood, but should be the easier way to implement, while using explicit rules for each person gives the most flexibility at the cost of more work to implement.
 [The rules should take care of all the dynamic aspects while the text property covers the static parts.]
 
@@ -5237,7 +5237,7 @@ One optional feature of the extension is a mechanism to check for orgasms that m
 The algorithm used is the attempt number of of the given orgasm divided by the orgasm number.
 This makes the first orgasm 'free' (a 1 in 1 chance), while the second orgasm has a 1 in 2 chance (and then a 2 in 2 chance if the first attempt failed), and so on.
 The phrase to use to invoke this check is 'person ORGASMS', and the example below shows how this can be implemented.
-When writing responses for actions with multiple actors to check for simultaneous orgams it's important to remember that each successive call will update the underlying variables.
+When writing responses for actions with multiple actors to check for simultaneous orgasms it's important to remember that each successive call will update the underlying variables.
 
 *:
 	After rubbing a vagina enclosed by a person (called owner):
