@@ -4543,40 +4543,28 @@ Erotic Storytelling ends here.
 
 Chapter 1 - Using this Extension
 
-To use this framework, you need to download and install it (which you probably have if you're reading this) and include it in your story:
+To use this framework, download and install it, and include it in your story:
 
 *:
 	Include Erotic Storytelling by Fictitious Frode.
 
-By including this extension, you will enable most of what's necessary to write erotic stories.
-Most of the content is not automatically available out-of-the-box, but has to be specifically included by the author for the player to notice.
-Only the expanded actions (listed in the action overview below) are available by default, but these don't do anything without proper targets such as the templated garments and body parts.
-There is also an introductory warning/information screen at the start of the story in the form of the 'adult introduction' rule.
-This rule will also inform the player about the contents that can be expected from the story if these are defined (Section 6.1 explains how this can be used).
+Declare the persons, especially the player character, with gender before invoking body part creation.
+This ensures inform names properties of the character correctly, see chapter 4.15 of 'Writing with Inform'.
+If the player is declared after a body part, then the body part will lack the 'your part' reference.
+Any gender-specific creations may not occur if the gender of the player was undetermined at that point.
+Likewise, changing the identity of the player during play can give unexpected results.
 
-The sections of this chapter introduces the various concepts available within the extension, and subsequent chapters will go into further detail.
-Towards the end of the documentation you will find a fully fleshed out tutorial and sample adventure, and a complete technical reference.
-All kinds and actions are also documented inside the Inform IDE.
-
-Note; Inform can behave slightly odd regarding the naming (and creation) of things which are part of the character, this is described in chapter 4.15 of 'Writing with Inform'.
-As long as the player is declared after the creation of the body part, then the body part will be named after what the character was named instead of 'your part'.
-Any gender-specific creations might not occur if the gender of the player was undetermined at that point.
-Likewise, changing the identity of the player during play might give unexpected results.
-
-In short, declare the persons (i.e. characters), especially the player character, with gender before invoking body part creation.
 
 Section 1.1 - Documentation Overview
 
-As this is a large and complex, a proper overview of what can be found in the documentation is in order.
-
-	Chapter 1: An overview of the included concepts, necessary reading for using the extension.
-	Chapter 2: A deeper look at the actions available, and how to make them work.
-	Chapter 3: In-depth explanation of how the layered clothing system works.
-	Chapter 4: Guidelines on how to write better descriptions, using both the hooks in the extension and Inform's standard rules.
-	Chapter 5: Techniques for writing better Non-Player Characters (NPCs) using the extension.
-	Chapter 6: The various out-of-world functions, such as completion tracking, hint system and debugging.
-	Chapter 7: A tutorial on how to write Erotic Stories in Inform.
-	Chapter 8: A complete technical reference for everything added or changed with this extension.
+	Chapter 1: Concepts
+	Chapter 2: Actions
+	Chapter 3: Layers
+	Chapter 4: Guidelines to descriptions
+	Chapter 5: How to improve your NPCs.
+	Chapter 6: Various out-of-world functions, such as completion tracking, hint system and debugging.
+	Chapter 7: A tutorial
+	Chapter 8: Technical reference
 
 The following examples are included:
 
@@ -4587,28 +4575,14 @@ The following examples are included:
 
 Section 1.2 - Responses and Descriptions
 
-Reduced to its most basic components, an interactive fiction story (adult or not) can be seen as the printing of responses to the player's actions.
-It follows that an extension should focus on making it easier for the story author to write these responses by taking care of the details such as checking if actions are valid.
-This allows the author to focus on the creative work, like the plot, characters, and stylistic writing.
+Inform offers three rulebooks to alter responses for specific actions.
+See 'Writing with Inform', chapter 12.2 ("How actions are processed") for details.
 
-Inform offers several ways of altering responses for specific actions.
-Inform's standard documentation 'Writing with Inform' has several examples on how to vary text, and chapter 12.2 ("How actions are processed") goes into some detail on how action responses are chosen.
-What follows is a quick overview of how to best utilize this extension to generate responses and description:
+After: rules that are applied after the action, in place of the default action report rules. Useful for most custom responses.
+Before: Rules applied before the action takes place, to flesh out some standard actions.
+Instead: Rules applied in place of the action  (unless explicitly allowed by `continue'). Useful for writing custom "errors" to the player.
 
-After: As the name implies, these rules are processed after the action has taken place, in place of the default action report rules.
-This is where most custom responses would go.
-[Comment:
-RalphWiggumPhD: A somewhat generic example could be useful here.
-FictitiousFrode: Added an example.]
-
-Before/Instead: As the name implies, these rules are processed before the action takes place.
-The difference (also implied by the naming) is that "instead" rules will stop the action from taking place (unless explicitly told to allow it to continue), while "before" rules are the opposite.
-"Instead" rules are great for writing custom "errors" to the player, while "before" rules are often used to flesh out some of the standard actions.
-
-The differences between these three rulebooks can be illustrated by the following small example.
-To truly appreciate the different results you should try to alter the type of each of the three rules.
-If we were to use "instead" and not "after" for eating the apple, that rule would be processed regardless of whether the apple held by the player or the apple was even edible.
-
+Example.
 *:
 	Garden is a room.
 	An apple is an edible thing in Garden. "An apple is growing here."
@@ -4618,98 +4592,99 @@ If we were to use "instead" and not "after" for eating the apple, that rule woul
 	Test me with "down / eat apple"
 
 Descriptions: Descriptions are a special form of response, issued by the "x/examine" action.
-All things in Inform can have the description property, which is printed when the thing is examined.
-Two of the new kinds in this extension, garments and body parts, also have some special description properties which are printed under certain circumstances, while persons get an entire rulebook dedicated to generating descriptions.
-See the later chapter "Descriptions in Detail" for more on this.
+Two new kinds in this extension, garments and body parts, receive description properties; a persons gets a rulebook to generate descriptions.
+See also chapter "Descriptions in Detail".
 
-Persuasion/Consent: Persuasion is a built-in rulebook, and is invoked when the player asks another person to do something.
-This can be a common occurrence in AIFs, so it's important to include (or at least provide better rules to govern failed persuasion attempts).
+Persuasion/Consent: Persuasion is a built-in rulebook, invoked when the player asks another person to do something, common in AIFs,
+so you probably want to include it. Alternatively provide some rules to override failed persuasion attempts.
 Chapter 12.4 of 'Writing with Inform' covers the use of persuasion.
-Consent is a new rulebook for this extension, and works in a similar way to make it possible for persons to object to the player's actions if they are directly involved.
-To avoid having to write both consent and persuasion rules for the same action, persuasion for the actions included can be granted from the consent rules.
-The Discrete-Arousal-based Consent and Stimulation (DACS) system is always enabled.
-Both consent in general and DACS are covered in more detail in chapter 5.
 
-Inform is quite smart about processing rulebooks, allowing you to write a mixture of general and specific rules.
-Generally speaking, Inform will always pick the most specific rule to process when faced with a conflict.
-In general, the more specific the parameters are, the higher priority the rule gets.
-(E.g., a named person beats a generic person, and a templated body part beats the generic body part.)
-Handily, if a scene is listed (with the "during" keyword), it is considered more specific than without.
-This makes it very easy to give different responses for the same action but at different times (scenes) in the story.
+Consent is a new rulebook for this extension, and works in a similarly to enable a persons to object to the player's actions.
+To avoid having to write both consent and persuasion rules for the same action, persuasion for the actions included can be granted from the consent rules.
+Consent is covered in more detail in chapter 5.
+
+Inform allows a mixture of general and specific rules. When faced with a conflict, Inform gives priority to the most specific rule.
+E.g. a named person before a generic person; a templated body part beats the generic body part.
+Handily, if a scene is listed - with the "during" keyword - it is considered more specific than without.
+This facilitates to give different responses for the same action, at different times (scenes) in the story.
 For reference, the exact rules used to sort rulebooks are described in 19.16 of 'Writing with Inform'.
 
 Section 1.3 - Action Overview
 
 The extension provides or modifies a few actions, listed in the table below.
 These are detailed both in the IDE, and covered in Chapter 2 of this documentation.
-[Comment:
-RalphWiggumPhD: I wish there were a better way to format this table...
-FictitiousFrode: Tables are auto-formated when viewed inside Inform.]
 
 	Table of Modified Actions
 	Action	Category	Type
-	Assfucking	Person	New	Redirect
-	Biting	Body Part	New	Rough-play
-	Dancing	Person	New	Soft-play
-	Dressing	Clothing	New
-	Fucking	Person	New	Redirect
-	Fucking it with	Body Part	New	Fuck-play
-	Hugging	Person	New	Soft-play
-	Kissing	Person	Modified	Soft-play
-	Licking	Body Part	New	Oral-play
-	Pinching	Body Part	New	Rough-play
-	Ripping	Clothing	New
-	Rubbing	Body Part	Modified	Soft-play
-	Shifting	Clothing	New
-	Spanking	Body Part	New	Rough-play
-	Stripping	Clothing	New
 	Taking	Clothing	Modified
+	Wearing	Clothing	Modified
+	Ripping	Clothing	New
+	Biting	Body Part	New	Rough-play
+	Licking	Body Part	New	Oral-play
+	Kissing	Person	Modified	Soft-play
+	Rubbing	Body Part	Modified	Soft-play
+	Dancing	Person	New	Soft-play
+	Hugging	Person	New	Soft-play
+	Fucking	Person	New	Redirect
+	Assfucking	Person	New	Redirect
+	Titfucking	Person	New	Redirect
+	Dressing	Clothing	New
+	Shifting	Clothing	New
+	Stripping	Clothing	New
 	Taking Off	Clothing	Modified
 	Tickling	Body Part	New	Soft-play
-	Titfucking	Person	New	Redirect
+	Pinching	Body Part	New	Rough-play
+	Spanking	Body Part	New	Rough-play
+	Fucking it with	Body Part	New	Fuck-play
 	Touching	Body Part	Modified	Soft-play
 	Unshifting	Clothing	New
-	Wearing	Clothing	Modified
 
 There are also some actions for support functions, described in chapter 6.
 
 Section 1.4 - Layering and Templates
 
-A common feature to promote realism in AIFs is clothing which can be examined and removed one piece at a time.
-The most common technical implementation of this in libraries is called layered clothing.
-In order to facilitate layered clothing, this extension uses "cover areas" to link people, body parts, and garments.
-The technical specifics of this are covered in chapter 3, but the extension provides templates for garments and body parts which cover most normal situations.
-Example A shows a simple setup with templated body parts and garments.
+Layered clothing, examined or removed one piece at a time, make AIFs more realistic.
+This extension uses "cover areas" for layered clothing, to link people, body parts, and garments.
+More info in chapter 3; als see example A for a simple setup of templated body parts and garments.
+
+The extension provides templates for garments and body parts which cover most normal situations.
 One notable difference between garments and body parts relates to knowledge and visiblitity.
-Garments that are not visible are considered to be concealed and un-interactive for the player, while body parts are always known regardless of visibility and can thus be refered to by the player.
-For example, a player may not know whether a person is wearing a bra, but the player does know that that person has breasts.
+When invisible, garments are un-interactive for the player. Conversely, body parts are known and remain accessible when hidden.
 
-While you're free to create your own body parts as you please, this extension comes with a variety of ready-made template parts you can use.
-Below is an overview of the body part templates, with the most pertinent properties controlling which actions are possible (see section 2.1) and the default decency (as implied by their cover locations):
+Below the body parts, with their minimum enabling decency - as implied by cover location - and their associated actions (more in section 2.1).
+Some actions are provided by default: touchable, rubbable, lickable, tickleable, pinchable, biteable spankable and pierceable.
+Orifices, and appendages are body parts that have selective actions. Orifices (mouth, vagina, anus) are not biteable.
+Appendages are twistable. A penis is a penetrating body part which allows actions not listed here.
 
-	Abdomen (Immodest): touchable, rubbable, lickable, tickleable
-	Ass (Indecent): touchable, rubbable, spankable, pinchable, lickable, orificial.
-	Ankles (Immodest): plural;
-	Arms (Casual): plural; touchable, rubbable
-	Backside (Immodest): rubbable, spankable
-	Breasts (Indecent): plural; touchable, rubbable, lickable, biteable, tickleable, pinchable
-	Nipple (Indecent): plural; touchable, rubbable, lickable, biteable, tickleable, pinchable, twistable
-	Chest (Indecent): touchable, rubbable, lickable, biteable, tickleable
-	Eyes (Formal): plural
-	Face (Formal):
-	Feet (Immodest): plural; touchable, rubbable, lickable, biteable, tickleable
-	Hair (Formal): plural (ambiguously)
-	Hands (Formal): plural; touchable, rubbable
-	Head (Formal):
-	Legs (Casual): plural; touchable, rubbable
-	Mouth (Formal):
-	Neck (Casual): lickable, biteable
-	Penis (Indecent): touchable, rubbable, pinchable, lickable, biteable, penetrating.
-	Shoulders (Casual): plural; rubbable
-	Thighs (Immodest): plural; touchable, rubbable
-	Vagina (Indecent): touchable, rubbable, lickable, orificial.
-	Waist (Immodest):
-	Wrists (Casual): plural;
+This list can be expanded.
+
+	Ankles (Immodest): discerning, indifferent.
+	Wrists (Casual): discerning, indifferent.
+	Head (Formal): sensitive, stimulating.
+	Face (Formal): sensitive, stimulating.
+	Shoulders (Casual): discerning, stimulating.
+	Hands (Formal): responsive, stimulating.
+	Backside (Immodest): discerning, stimulating.
+        Scalp (): insensitive, passionate.
+	Legs (Casual): discerning, stimulating.
+	Arms (Casual): discerning, stimulating.
+	Waist (Immodest): sensitive, stimulating.
+	Chest (Indecent): sensitive, stimulating.
+	Feet (Immodest): perceiving, stimulating.
+	Ass (Indecent): discerning, arousing.
+	Neck (Casual): sensitive, arousing.
+        Ears (): discerning, arousing.
+	Thighs (Immodest): discerning, arousing.
+	Breasts (Indecent): tender, arousing.
+        Nose [appendage] (): sensitive, twistable, stimulating.
+	Nipple [appendage] (Indecent): discerning; erogenous, twistable.
+	Penis [appendage] (Indecent): sensitive, erogenous; twistable, penetrating.
+        Clit [appendage] (): sensitive, erogenous.
+	Mouth [orifice] (Formal): sensitive, arousing; orificial.
+	Vagina [orifice] (Indecent): perceiving, erogenous; orificial, not biteable.
+        Anus [orifice] (): tender, arousing; orificial, not biteable.
+	Eyes (Formal): delicate, stimulating; not biteable, not lickable.
+	Hair (Formal): unfeeling, cold; not spankable, not pierceable.
 
 [Comment:
 FictitiousFrode: The following clarification isn't needed, as orificial and penetrating are properties detailed in 2.1, just like the others.
@@ -4867,11 +4842,11 @@ The adjectives, along with which templates they are set for, are:
 	Lickable: Ass, Breasts
 	Orificial: Ass, Vagina
 	Penetrating: Penis
-	Pinchable: Ass, Breasts, Chest, Feet, Abdomen, Neck, Penis, Vagina
-	Rubbable: Arms, Ass, Backside, Breasts, Chest, Feet, Hands, Legs, Abdomen, Penis, Shoulders, Thighs, Vagina
+	Pinchable: Ass, Breasts, Chest, Feet, Neck, Penis, Vagina
+	Rubbable: Arms, Ass, Backside, Breasts, Chest, Feet, Hands, Legs, Penis, Shoulders, Thighs, Vagina
 	Spankable: Ass, Backside
-	Tickleable: Breasts, Chest, Feet, Abdomen
-	Touchable: Arms, Ass, Breasts, Chest, Feet, Hands, Legs, Abdomen, Penis, Thighs, Vagina
+	Tickleable: Breasts, Chest, Feet
+	Touchable: Arms, Ass, Breasts, Chest, Feet, Hands, Legs, Penis, Thighs, Vagina
 
 To control what behavior is proper in a given location we introduce Decency as a new kind of value, which is explained in more detail in section 3.2.
 By default decency has the four possible values indecent, sensual, casual and formal, as well as the undefined decency to serve as an unset/null-value.
