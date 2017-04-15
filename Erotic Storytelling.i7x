@@ -213,14 +213,14 @@ Part 1.1.2 - Clothing
 
 A garment is a kind of thing. The indefinite article is usually "a".
 The specification of garment is "A garment is something a person can wear over their body parts and related cover areas.
-Garments are quite complex, with several distinct sub-features: Some garments can be shiftable in various ways, or even be ripped apart. Transparency determines whether it blocks vision, and they can allow or block touching through. Clothing size is provided to allow garments to only be wearable by matching persons."
+Garments are quite complex, with several distinct sub-features: Some garments can be shiftable in various ways, or even be ripped apart. Transparency determines whether it blocks vision, and they can allow or bar touch. Clothing size is provided to allow garments to only be wearable by matching persons."
 
 A garment is always wearable.
 A garment has a decency called cloth decency. The cloth decency of a garment is usually casual.
 A garment can be transparent or opaque. A garment is usually opaque. [Determines visibility to underlying parts.]
 A garment has an exposure called cloth transparency. The cloth transparency of a garment is usually observable.
 
-A garment can be allow touching through or block touching through. A garment is usually block touching through. [Determines touchability of underlying parts.]
+A garment can be accepting touch or barring touch. A garment is usually barring touch. [Determines touchability of underlying parts.]
 
 A person has a list of garments called the preferred clothing. [Used by dressing action.]
 
@@ -447,56 +447,53 @@ To decide what list of cover areas is the blocked cover areas of (G - a garment)
 Chapter 1.2.2b - Body Parts
 
 To decide whether (P - a body part) can be seen:
+	Let covered parts be the cover locations of P;
 	Repeat with cloth running through garments worn by the holder of P:
 		If cloth is opaque:
-			Repeat with A running through the cover locations of P:
+			Repeat with A running through covered parts:
 				If A is listed in the revealed cover areas of cloth, decide no;
 	Decide yes;
 
 To decide which list of garments is concealing vision of (P - a body part):
-	Let concealers be a list of garments;
-	Repeat with cloth running through garments worn by the holder of P:
-		If cloth is opaque:
-			Repeat with A running through the cover locations of P:
-				If A is listed in the revealed cover areas of cloth:
-					Add cloth to concealers, if absent;
-	Decide on concealers;
+	Let concealed parts be a list of garments;
+	Let covered parts be the cover locations of P;
+	Repeat with cloth running through opaque garments worn by the holder of P:
+		Repeat with A running through the revealed cover areas of cloth:
+			If A is listed in covered parts:
+				Add cloth to concealed parts, if absent;
+	Decide on concealed parts;
 
 To decide whether (P - a body part) can be touched:
-	Let clothing be the list of block touching through garments worn by the holder of P;
-	Sort clothing in reverse clothing layer order;
-	Repeat with A running through the cover locations of P:
-		Repeat with cloth running through clothing:
+	Let covered parts be the cover locations of P;
+	Repeat with cloth running through barring touch garments worn by the holder of P:
+		Repeat with A running through covered parts:
 			If A is listed in the revealed cover areas of cloth, decide no;
 	Decide yes;
 
 To decide which list of garments is preventing touching of (P - a body part):
-	Let preventers be a list of garments;
-	Let clothing be the list of block touching through garments worn by the holder of P;
-	Sort clothing in reverse clothing layer order;
-	Repeat with A running through the cover locations of P:
-		Repeat with cloth running through clothing:
+	Let blocked parts be a list of garments;
+	Let covered parts be the cover locations of P;
+	Repeat with cloth running through barring touch garments worn by the holder of P:
+		Repeat with A running through covered parts:
 			If A is listed in the revealed cover areas of cloth:
-				Add cloth to preventers, if absent;
-	Decide on preventers;
+				Add cloth to blocked parts, if absent;
+	Decide on blocked parts;
 
 To decide whether (P - a body part) is accessible:
-	Let clothing be the list of garments worn by the holder of P;
-	Sort clothing in reverse clothing layer order;
-	Repeat with A running through the cover locations of P:
-		Repeat with cloth running through clothing:
+	Let covered parts be the cover locations of P;
+	Repeat with cloth running through garments worn by the holder of P:
+		Repeat with A running through covered parts:
 			If A is listed in the revealed cover areas of cloth, decide no;
 	Decide yes;
 
 To decide which list of garments is preventing access to (P - a body part):
-	Let preventers be a list of garments;
-	Let clothing be the list of garments worn by the holder of P;
-	Sort clothing in reverse clothing layer order;
-	Repeat with A running through the cover locations of P:
-		Repeat with cloth running through clothing:
+	Let blocked parts be a list of garments;
+	Let covered parts be the cover locations of P;
+	Repeat with cloth running through garments worn by the holder of P:
+		Repeat with A running through covered parts:
 			If A is listed in the revealed cover areas of cloth:
-				Add cloth to preventers, if absent;
-	Decide on preventers;
+				Add cloth to blocked parts, if absent;
+	Decide on blocked parts;
 
 Chapter 1.2.2c - Cover Areas
 
@@ -585,7 +582,7 @@ To decide whether (G - a garment) can be touched:
 		Sort clothing in reverse clothing layer order;
 		Repeat with A running through cover:
 			Repeat with cloth running through clothing:
-				If cloth is not G and cloth is block touching through and clothing layer of cloth is greater than clothing layer of G:
+				If cloth is not G and cloth is barring touch and clothing layer of cloth is greater than clothing layer of G:
 					If A is listed in revealed cover areas of cloth, decide no;
 	Decide yes;
 
@@ -597,7 +594,7 @@ To decide which list of garments is preventing touching of (G - a garment):
 		Sort clothing in reverse clothing layer order;
 		Repeat with A running through cover:
 			Repeat with cloth running through clothing:
-				If cloth is not G and cloth is block touching through and clothing layer of cloth is greater than clothing layer of G:
+				If cloth is not G and cloth is barring touch and clothing layer of cloth is greater than clothing layer of G:
 					If A is listed in the revealed cover areas of cloth:
 						Add cloth to preventers, if absent;
 	Decide on preventers;
@@ -3608,7 +3605,7 @@ Understand "underwear", "undie", "undies" as some panties.
 The specification of some panties is "Panties (for both sexes, despite the name) cover the crotch. They can be moved aside and ripped apart, and are usually indecent normalwear."
 Some panties is usually underwear.
 The cloth decency of some panties is usually indecent.
-Some panties is usually allow touching through.
+Some panties is usually accepting touch.
 The cover areas of some panties is usually {crotch area}.
 Some panties is usually shiftable. The shiftyness of some panties is usually displaceable. The shifting revealed cover areas of some panties is usually {crotch area}.
 Some panties is usually rippable. The ripping revealed cover areas of some panties is usually {crotch area}.
@@ -3617,7 +3614,7 @@ A bra is a kind of garment.
 The specification of bra is "Bras are usually sensual underwear, and go on the upper torso/back."
 A bra is usually underwear.
 The cloth decency of a bra is usually sensual.
-A bra is usually allow touching through.
+A bra is usually accepting touch.
 The cover areas of a bra is usually {upper torso area, upper back area}.
 A bra is usually shiftable. The shiftyness of a bra is usually displaceable. The shifting revealed cover areas of bra is usually {upper torso area}.
 Some bra is usually not rippable. The ripping revealed cover areas of bra is usually {upper torso area}.
@@ -3627,7 +3624,7 @@ The indefinite article is usually "an".
 The specification of undershirt is "An undershirt is a shirt that's meant to go under a normal shirt, covering just the torso (front/back). It's usually sensual underwear. It can be ripped to expose the upper torso area."
 An undershirt is usually underwear.
 The cloth decency of an undershirt is usually sensual.
-An undershirt is usually allow touching through.
+An undershirt is usually accepting touch.
 The cover areas of an undershirt is usually {upper torso area, lower torso area, upper back area, lower back area}.
 An undershirt is usually rippable. The ripping revealed cover areas of an undershirt is usually a {upper torso area}.
 
@@ -3635,7 +3632,7 @@ A swimsuit is a kind of garment.
 The specification of swimsuit is "A swimsuit is unconcerned underwear that covers the upper torso, lower back/torso and crotch. It doesn't necessarily have to be for swimming; teddies and similar underwear can also use the same template. It can usually be moved aside to expose upper torso."
 A swimsuit is usually underwear.
 The cloth decency of a swimsuit is usually unconcerned.
-A swimsuit is usually allow touching through.
+A swimsuit is usually accepting touch.
 The cover areas of a swimsuit is usually {upper torso area, lower torso area, lower back area, crotch area}.
 A swimsuit is usually shiftable. The shiftyness of a swimsuit is usually moveable. The shifting revealed cover areas of a swimsuit is usually a {upper torso area}.
 Some swimsuit is usually not rippable. The ripping revealed cover areas of swimsuit is usually {upper torso area}.
@@ -3661,7 +3658,7 @@ It is usually ambiguously plural. The indefinite article is usually "some". The 
 The specification of some socks is "Socks cover the feet, and is usually formal and normalwear (in order to match stockings and pantyhose)."
 Some socks is usually normalwear.
 The cloth decency of some socks is usually formal.
-Some socks is usually allow touching through.
+Some socks is usually accepting touch.
 The cover areas of some socks is usually {feet area}.
 
 Some stockings is a kind of garment.
@@ -3669,7 +3666,7 @@ It is usually ambiguously plural. The indefinite article is usually "some". The 
 The specification of some stockings is "Stockings covers feet, legs and thighs, and does not fit over anything. It is not compatible with pantyhose (which also covers the crotch). They are usually formal."
 Some stockings is usually normalwear.
 The cloth decency of some stockings is usually formal.
-Some stockings is usually allow touching through.
+Some stockings is usually accepting touch.
 The cover areas of some stockings is usually {feet area, leg area, thigh area}.
 Some stockings is usually rippable. The ripping revealed cover areas of some stockings is usually {thigh area}.
 
@@ -3678,7 +3675,7 @@ It is usually ambiguously plural. The indefinite article is usually "some". The 
 The specification of some pantyhose is "Pantyhose is similar to stockings, but also covers the crotch, which means they both have to be normalwear to fit over panties. It is usually formal, and can be ripped to expose the crotch."
 Some pantyhose is usually normalwear.
 The cloth decency of a some pantyhose is usually formal.
-Some pantyhose is usually allow touching through.
+Some pantyhose is usually accepting touch.
 The cover areas of some pantyhose is usually {feet area, leg area, thigh area, crotch area}.
 Some pantyhose is usually rippable. The ripping revealed cover areas of some pantyhose is usually {crotch area}.
 
@@ -3830,7 +3827,7 @@ The indefinite article is usually "a".
 The specification of a strap-on is "A strap-on is a special garment that is intended for use with the fucking it with action, and therefore also supports the adjective penetrating (which it usually is). It is shameless and outerwear, so it can be worn over pants and dresses if needed."
 A strap-on is usually outerwear.
 The cloth decency of a strap-on is usually shameless.
-A strap-on is usually allow touching through.
+A strap-on is usually accepting touch.
 The cover areas of a strap-on is usually {crotch area}.
 A strap-on can be penetrating. A strap-on is usually penetrating.
 
@@ -4680,17 +4677,17 @@ Below is an overview of the properties for the default garments; note that all o
 There is also more information available in the kind listing in the IDE.
 
 	Bodysuit (Indecent Underwear): Covers shoulder area, arm area, upper torso area, upper back area, lower torso area, lower back area, crotch area, thigh area, leg area and feet area (Or, everything except hands, head and face).
-	Bra (Indecent Underwear): Covers upper torso/back; allow touching through.
+	Bra (Indecent Underwear): Covers upper torso/back; accepting touch.
 	Mask (Immodest Underwear): Covers face and head.
-	Panties (Indecent Underwear): Covers crotch, but can be moved or ripped to reveal crotch; allow touching through; plural.
-	Swimsuit (Immodest Underwear): Covers upper/lower torso, lower back/crotch, but can be moved aside to reveal upper torso area; allow touching through.
-	Undershirt (Immodest Underwear): Covers upper/lower torso/back, but can be ripped to reveal upper torso; allow touching through.
+	Panties (Indecent Underwear): Covers crotch, but can be moved or ripped to reveal crotch; accepting touch; plural.
+	Swimsuit (Immodest Underwear): Covers upper/lower torso, lower back/crotch, but can be moved aside to reveal upper torso area; accepting touch.
+	Undershirt (Immodest Underwear): Covers upper/lower torso/back, but can be ripped to reveal upper torso; accepting touch.
 
 	Glasses (Formal Normalwear): Covers the face; plural.
-	Pantyhose (Formal Normalwear): Covers feet, leg, thigh and crotch, but can be ripped to expose crotch; allow touching through; plural.
+	Pantyhose (Formal Normalwear): Covers feet, leg, thigh and crotch, but can be ripped to expose crotch; accepting touch; plural.
 	Shirt (Casual Normalwear): Covers upper/lower torso/back, arm and shoulder, but can be unbuttoned or ripped to reveal shoulder and upper/lower torso.
-	Socks (Formal Normalwear): Covers feet; allow touching through; plural.
-	Stockings (Formal Normalwear): Covers feet, leg and thigh, but can be ripped to expose thigh; allow touching through; plural.
+	Socks (Formal Normalwear): Covers feet; accepting touch; plural.
+	Stockings (Formal Normalwear): Covers feet, leg and thigh, but can be ripped to expose thigh; accepting touch; plural.
 
 	Dress (Casual Overwear): Covers upper/lower torso/back, shoulder, crotch, thigh and leg, but can be unbuttoned to reveal the shoulder and upper/lower torso (without altering full access).
 	Minidress (Immodest Overwear): Covers upper/lower torso/back, shoulder, crotch, and thigh, but can be pulled up to reveal crotch and thigh.
@@ -4924,11 +4921,11 @@ The touching and rubbing actions are part of the standard library in Inform 7, s
 As the specification states, touching is just that: touching something without applying pressure, while rubbing is more active.
 There's nothing wrong with redirecting rubbing to touching through an instead of rule or the like, to cut down on the number of action responses.
 Both follow the general limiting factors set out in section 2.1 in mostly the same way, but both touching and rubbing can be done to yourself.
-The clothing coverage check allows for some garments to be 'allow touching through', which allows these action to succeed even if the part in question is obscured by the garment.
+The clothing coverage check allows for some garments to be 'accepting touch', which allows these action to succeed even if the part in question is obscured by the garment.
 
 To cater to more special conditions, we also have the tickling, pinching and spanking actions, of which only spanking can be done to oneself.
 Apart from that, these actions also follow the general limiting factors set out in section 2.1 in mostly the same way.
-Similar to touching and rubbing, the clothing coverage check here takes into account 'allow touching through' on the covering garments.
+Similar to touching and rubbing, the clothing coverage check here takes into account 'accepting touch' on the covering garments.
 The scope of which things these actions apply to can be controlled by the adjectives described in section 2.1, and both spanking and tickling are by default severly limited.
 
 Besides kissing (which target persons), we have licking and biting as the oral-oriented actions.
@@ -4998,7 +4995,7 @@ For simplicity sake we'll refer to something as 'covered' if the related person 
 
 The visibility checks require that atleast one cover area is not covered by any garments that are opaque.
 Transparent garments will allow visibility even through multiple layers of garments.
-Touching is similarly calculated if atleast one cover area is not covered by any garments that are not allow touching through.
+Touching is similarly calculated if atleast one cover area is not covered by any garments that are not accepting touch.
 Accesibility however is used for 'major' actions such as taking off garments and sexual contact with body parts, and therefore it requires that all the cover areas are not covered and touching through is not considered.
 
 Visibility is further enhanced by the 'decency' value which we briefly introduced in section 2.1 on limiting factors for actions.
@@ -6260,7 +6257,7 @@ We make it transparent because we don't want it to block vision.
 Note that because this only covers the tail, a person without a tail will be unable to wear it.
 
 	A ribbon is a garment worn by Kitsune.
-	It is transparent. It is allow touching through.
+	It is transparent. It is accepting touch.
 	The cover areas is {tail area}.
 	The worn description is "A pink ribbon is tied around the tail."
 	The unworn description is "A pink strip of fabric that can be tied into a ribbon."
