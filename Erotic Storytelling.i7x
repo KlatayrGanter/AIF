@@ -218,6 +218,8 @@ Garments are quite complex, with several distinct sub-features: Some garments ca
 A garment is always wearable.
 A garment has a decency called cloth decency. The cloth decency of a garment is usually casual.
 A garment can be transparent or opaque. A garment is usually opaque. [Determines visibility to underlying parts.]
+A garment has an exposure called cloth transparency. The cloth transparency of a garment is usually observable.
+
 A garment can be allow touching through or block touching through. A garment is usually block touching through. [Determines touchability of underlying parts.]
 
 A person has a list of garments called the preferred clothing. [Used by dressing action.]
@@ -445,21 +447,19 @@ To decide what list of cover areas is the blocked cover areas of (G - a garment)
 Chapter 1.2.2b - Body Parts
 
 To decide whether (P - a body part) can be seen:
-	Let clothing be the list of opaque garments worn by the holder of P;
-	Sort clothing in reverse clothing layer order;
-	Repeat with A running through the cover locations of P:
-		Repeat with cloth running through clothing:
-			If A is listed in the modified cover areas of cloth, decide no;
+	Repeat with cloth running through garments worn by the holder of P:
+		If cloth is opaque:
+			Repeat with A running through the cover locations of P:
+				If A is listed in the modified cover areas of cloth, decide no;
 	Decide yes;
 
 To decide which list of garments is concealing vision of (P - a body part):
 	Let concealers be a list of garments;
-	Let clothing be the list of opaque garments worn by the holder of P;
-	Sort clothing in reverse clothing layer order;
-	Repeat with A running through the cover locations of P:
-		Repeat with cloth running through clothing:
-			If A is listed in the modified cover areas of cloth:
-				Add cloth to concealers, if absent;
+	Repeat with cloth running through garments worn by the holder of P:
+		If cloth is opaque:
+			Repeat with A running through the cover locations of P:
+				If A is listed in the modified cover areas of cloth:
+					Add cloth to concealers, if absent;
 	Decide on concealers;
 
 To decide whether (P - a body part) can be touched:
@@ -501,10 +501,8 @@ To decide which list of garments is preventing access to (P - a body part):
 Chapter 1.2.2c - Cover Areas
 
 To decide whether (A - cover area) can be seen for (P - a person):
-	Let clothing be the list of opaque garments worn by P;
-	Sort clothing in reverse clothing layer order;
-	Repeat with cloth running through clothing:
-		If A is listed in the modified cover areas of cloth:
+	Repeat with cloth running through garments worn by P:
+		If cloth is opaque and A is listed in the modified cover areas of cloth:
 			Decide no;
 	Decide yes;
 
@@ -561,23 +559,18 @@ An unworn garment is assumed to be visible.]
 
 To decide whether (G - a garment) can be seen:
 	If G is worn by someone:
-		Let clothing be the list of opaque garments worn by the holder of G;
-		Sort clothing in reverse clothing layer order;
-		Repeat with A running through the cover areas of G:
-			Repeat with cloth running through clothing:
-				If cloth is not G and clothing layer of cloth is greater than clothing layer of G:
+		Repeat with cloth running through garments worn by the holder of G:
+			If cloth is not G and cloth is opaque and clothing layer of cloth is greater than clothing layer of G:
+				Repeat with A running through the cover areas of G:
 					If A is listed in the modified cover areas of cloth, decide no;
 	Decide yes;
 
 To decide which list of garments is concealing vision of (G - a garment):
 	Let concealers be a list of garments;
 	If G is worn by someone:
-		Let clothing be the list of opaque garments worn by the holder of G;
-		Sort clothing in reverse clothing layer order;
-		Repeat with A running through the cover areas of G:
-			Repeat with cloth running through clothing:
-				[Only consider opaque garments with a higher clothing layer]
-				If cloth is not G and clothing layer of cloth is greater than clothing layer of G:
+		Repeat with cloth running through garments worn by the holder of G:
+			If cloth is opaque and cloth is not G and clothing layer of cloth is greater than clothing layer of G:
+				Repeat with A running through the cover areas of G:
 					If A is listed in the modified cover areas of cloth: [Take shifted/ripped into account]
 						Add cloth to concealers, if absent;
 	Decide on concealers;
