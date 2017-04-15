@@ -62,7 +62,7 @@ Chapter 1.1.1a - Decency
 A peculiarity is a kind of value. The peculiarities are mundane, conventional, ordinary, quirky, peculiar, mysterious, enigmatic, exotic and mystical.
 
 [refinement]
-A refinement is a kind of value. The refinements are hideous, ugly, repelling, plain, comely, cute, lovely, pretty, beautiful, elegant, refined, fair, exquisite and angelic.
+A refinement is a kind of value. The refinements are hideous, ugly, repelling, plain, comely, sweet, cute, lovely, pretty, beautiful, elegant, refined, fair, exquisite and angelic.
 
 [naivete. personal. factor to resistance responses.]
 Naivete is a kind of value. The naivetes are mistrusting, skeptical, cynical, critical, suspicious, unconvinced, analytical, sensible, intuitive, innocent, ignorant, trusting, naive, easy, misled, misguided, deceived, exploited, twisted, deflowered, violated, perverted, defiled and corrupted.
@@ -73,11 +73,43 @@ An exposure is a kind of value. The indefinite article is usually "an".
 The exposures are secret, obscured, hidden, covered, masked, veiled, observable, discernible, see-able, noticeable, appreciable, disclosed, evident, manifest, obvious, revealed, presented, bared, exposed, displayed, advertised and exhibited.
 [stripped, denuded, naked]
 
+An Erotica is a kind of value. The indefinite article is usually "an". The Eroticas are defined by the Table of Eros.
+
+Table of Eros
+Erotica	describe Erocism (text)	describe Erogen (text)	eron (number)
+frigid	"frigidness"	"frigid"	-5
+desinterested	"desinterest"	"desinteresting"	-4
+stiff	"stiffness"	"stiffening"	-3
+cold	"cold"	"cooling"	-2
+passive	"passivity"	"passive"	-1
+indifferent	"indifference"	"causing indifference"	0
+unaroused	"unarousal"	"unarousing"	1
+lukewarm	"lukewarm"	"making lukewarm"	2
+stimulated	"stimulance"	"stimulating"	3
+animated	"animation"	"animating"	4
+enspired	"ensipiring"	"enspiring"	5
+heated	"heat"	"heating"	6
+excited	"excitement"	"exciting"	7
+aroused	"arousal"	"arousing"	8
+passionate	"passion"	"passionating"	9
+lusted	"lust"	"lusty"	10
+horny	"horniness"	"horny"	11
+vibrant	"vibration"	"vibrating"	12
+orgastic	"orgasm"	"orgasmic"	13
+satiated	"satiation"	"satiating"	14
+over-sensitised	"over-sensitisation"	"over-sensitising"	15
+throbbing	"throbs"	"throbbing"	16
+oversexed	"oversexism"	"oversexing"	17
+spasming	"spasms"	"spasming"	18
+nymphomania	"nymphomania"	"nymphomaniac"	19
+[State	Effect	Cause	(value)]
+
+
 [decency: persons, clothes and actions can have it. Resistance to expose oneself.]
 A decency is a kind of value. The decencies are depraved, profane, obscene, debased, outrageous, flagrant, scandalous, immoral, shocking, shameless, misplaced, lewd, naughty, indecent, sensual, unconcerned, nonchalant, casual, modest, formal, reserved, conservative, prudent, puritan, devout, orthodox, chaste and undefined decency.
 
 [hygiene.]
-A hygiene is a kind of value. The hygienes are putrid, decayed, polluted, disgusting, filthy, foul, dirty, soiled, blemished, shabby, messy, scruffy, stained, touched, unsoiled, tidy, clean, prim, proper, spotless, immaculate, pure and virginal.
+A hygiene is a kind of value. The hygienes are putrid, decayed, polluted, pungent, exuding, disgusting, stenching, filthy, foul, reeking, dirty, scenting, soiled, blemished, shabby, messy, scruffy, stained, touched, unsoiled, tidy, clean, prim, proper, spotless, immaculate, pure and virginal.
 
 [Stamina.]
 Stamina is a kind of value. The staminas are dying, infected, diseased, contaminated, ill, afflicted, sick, frail, feeble, depleted, wasted, weakened, drained, spent, exhausted, beat, tired, fatigued, weary, affected, exerted, operating, fit, performing, achieving, steady, healthy, lasting, persisting, enduring, tireless, inexhaustible and everlasting.
@@ -88,6 +120,9 @@ The ethics are rotten, poisoned, fallen, crooked, corrupt, criminal, fraudulent,
 
 [empathy: Resistance to negatively affect another.]
 Empathy is a kind of value. The empathies are sadistic, malignant, vengeful, cruel, merciless, nasty, vicious, unkind, rigid, stern, stringent, strict, straight, principled, conscientious, tolerant, lenient, indulgent, permissive, understanding, forgiving, merciful, considerate, sympathetic, compassionate and warmhearted.
+
+[sensitivity.]
+Sensitivity is a kind of value. The sensitivities are lifeless, unfeeling, oblivious, insensitive, discerning, perceiving, responsive, sensitive, tender, delicate, itching, agitated, sore, irritated, raw, stinging, smarting, aching, chafed, bruised, lacerated, damaged.
 
 [Arrogance is a kind of value. The Arrogances are haughty, arrogant, pretentious, cocky, spoiled, indulged, snotty, selfish, pampered, catered, favored, accommodated, comforted,]
 
@@ -1835,14 +1870,22 @@ Chapter 3.1.3a - Action Control Adjectives
 [The following properties are specified to control which things the correspondingly named action is applicable to.
 These can be applied to other things than body part if wanted, and access to garments are supported.]
 
+A body part has an Erotica called stimulance. [The stimulance of a body part is usually stimulating.]
+[The specification of stimulance is "Stimulance is a discrete measure of how aroused a person is. Indifferent is the neutral zero-point, with frigid as a negative value and the intolerable (as the last value defined) as the unset/null-value. These methods for arousing and cooling of a person will take these into account."]
+
+[A body part can be sensitive. A body part is usually not sensitive.
+A body part can be tender. A body part is usually not tender.
+A body part can be delicate. A body part is usually not delicate.]
+
 A body part can be touchable or untouchable. A body part is usually touchable.
 A body part can be rubbable. A body part is usually rubbable.
-A body part can be spankable. A body part is usually spankable.
 A body part can be lickable. A body part is usually lickable.
 A body part can be tickleable. A body part is usually tickleable.
+A body part can be pinchable. A body part is usually pinchable.
+A body part can be spankable. A body part is usually spankable.
 
 An orifice is a kind of body part. The indefinite article is usually "an".
-A widening is a kind of value. The widenings are defined by the Table of Looseness.
+A widening is a kind of value. The widening are defined by the Table of Looseness.
 
 Table of Looseness
 Widening              Value
@@ -1872,16 +1915,15 @@ gaped                21
 An orifice has a widening. [The widening of an orifice is usually together.]
 
 A body part can be biteable. A body part is usually biteable. An orifice is usually not biteable.
-A body part can be pinchable. A body part is usually pinchable. An orifice is usually not pinchable.
 A orifice can be orificial. An orifice is usually orificial.
+A body part can be pierceable. A body part is usually pierceable. An orifice is usually not pierceable.
+A body part can be pierced. A body part is usually pierced. An orifice is usually not pierced.
 
 An appendage is a kind of body part. The indefinite article is usually "an".
-
 An appendage can be twistable. An appendage is usually twistable.
-An appendage can be pierceable. An appendage is usually pierceable.
 
 A body part can be penetrating. A body part is usually not penetrating.
-An endowment is a kind of value. The endowments are defined by the Table of Packing.
+An endowment is a kind of value. The endowment are defined by the Table of Packing.
 
 Table of Packing
 Endowment                Value
@@ -3079,10 +3121,7 @@ Part 3.5.1 - Definitions
 
 Chapter 3.5.1a - Discrete Arousals
 
-An arousal is a kind of value. The arousals are frigid, desinterested, lifeless, stiff, passive, unaroused, hesitating, animated, spirited, excited, stimulated, passionate, lusty, aroused, heated, horny, vibrant, orgasmic, satiated, over-sensitive, pulsating, oversexed, spasming, throbbing, nymphomaniac and ahegao.
-The specification of arousal is "Arousal is a discrete measure of how aroused a person is. Unaroused is the neutral zero-point, with frigid as a negative value and the intolerable (as the last value defined) as the unset/null-value. These methods for arousing and cooling of a person will take these into account."
-
-A person has an arousal called current arousal. The current arousal of a person is usually unaroused.
+A person has an Erotica called current arousal. The current arousal of a person is usually unaroused.
 
 Chapter 3.5.1b - Orgasms
 
@@ -3094,13 +3133,13 @@ Part 3.5.2 - Working with Arousals
 Part 3.5.2a - Comparisons
 
 [Note: Unattainable is treated as a null value, and is never considered more or less than anything.]
-To decide whether (P - a person) is (A - an arousal) or more:
+To decide whether (P - a person) is (A - an Erotica) or more:
 	If the current arousal of P is the satiated, decide no;
 	If the current arousal of P is at least A, decide yes;
 	Decide no;
 
 [Note: Unattainable is treated as a null value, and is never considered more or less than anything.]
-To decide whether (P - a person) is (A - an arousal) or less:
+To decide whether (P - a person) is (A - an Erotica) or less:
 	If the current arousal of P is the satiated, decide no;
 	If the current arousal of P is at most A, decide yes;
 	Decide no;
@@ -3109,26 +3148,26 @@ Part 3.5.2b - Arousing
 
 [Increase the arousal of a person by one grade, with a maxmimum level.
 Note: Unattainable is treated as a null value, and calls to increase to it are ignored.]
-To arouse (P - a person) up to (A - an arousal):
+To arouse (P - a person) up to (A - an Erotica):
 	If the current arousal of P is less than A and A is not the satiated:
-		Now the current arousal of P is the arousal after the current arousal of P;
+		Now the current arousal of P is the Erotica after the current arousal of P;
 
 [Increase the arousal of a person by one grade, without a maxmimum.
 Note: Will not increase to the satiated.]
 To arouse (P - a person):
-	Arouse P up to (the arousal before the satiated);
+	Arouse P up to (the Erotica before the satiated);
 
 Part 3.5.2c - Cooling Down
 
 [Move the arousal of a person by one grade towards the neutral unaroused, with a minimum level.
 Note: Unattainable is treated as a null value, and will not be moved from.]
-To cool (P - a person) down to (A - an arousal):
+To cool (P - a person) down to (A - an Erotica):
 	If the current arousal of P is greater than unaroused and the current arousal of P is not the satiated:
 		If the current arousal of P is greater than A:
-			Now the current arousal of P is the arousal before the current arousal of P;
+			Now the current arousal of P is the Erotica before the current arousal of P;
 	Else if the current arousal of P is less than unaroused:
 		If the current arousal of P is less than A:
-			Now the current arousal of P is the arousal after the current arousal of P;
+			Now the current arousal of P is the Erotica after the current arousal of P;
 
 [Decrease the arousal of a person by one grade, without a minimum.]
 To cool down (P - a person):
@@ -3136,13 +3175,13 @@ To cool down (P - a person):
 
 Part 3.5.2d - Attaining Orgasms
 
-A person has an arousal called the orgasm reset arousal. The orgasm reset arousal of a person is usually aroused.
+A person has an Erotica called the orgasm reset arousal. The orgasm reset arousal of a person is usually aroused.
 
 [We want to make it so that every time a person orgasms, it's harder to achieve the next one.
 The chance to succed is attempts : orgasms; the first orgasm is 'free'; the second is 50% at first attempt and 100% at second, third is 1/3 then 2/3, and so on.]
 To decide whether (P - a person) orgasms:
 	If the current arousal of P is the satiated, decide no;
-	If P is orgasmic or more:
+	If P is orgastic or more:
 		Increase the orgasmic attempts of P by 1;
 		Let X be the orgasmic attempts of P;
 		Let Y be the orgasms of P + 1;
@@ -3474,10 +3513,10 @@ Chapter 5.1.1a - Head
 A head is a kind of body part.
 The cover locations of a head is usually {the head area}.
 
-Some hair is a kind of appendage.
+Some hair is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some".
 The cover locations of hair is usually {the head area}.
-Some hair is usually not spankable. Some hair is usually not lickable. Some hair is usually not tickleable. Some hair is usually not pinchable. Some hair is usually not pierceable.
+Some hair is usually not spankable. Some hair is usually not lickable. Some hair is usually not tickleable. Some hair is usually not pinchable. Some hair is usually not pierceable. Some hair is usually not rubbable. 
 
 A face is a kind of body part.
 The cover locations of face is usually {the face area}.
@@ -3492,7 +3531,7 @@ The cover locations of nose is usually {the face area}.
 Some eyes is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some eyes is pairs of eyes.
 The cover locations of some eyes is usually {the face area}.
-Some eyes is usually not spankable. Some eyes is usually not lickable. Some eyes is usually not tickleable. Some eyes is usually not pinchable.
+Some eyes is usually not spankable. Some eyes is usually not lickable. Some eyes is usually not tickleable. Some eyes is usually not pinchable. Some eyes is usually not pierceable. Some hair is usually not rubbable.
 
 Chapter 5.1.1b - Limbs
 
@@ -3576,11 +3615,12 @@ A penis is a kind of appendage.
 The cover locations of a penis is usually {the crotch area}.
 Understand "cock", "dick", "wang", "dong", "wiener", "willy", "schlong", "boner", "pecker" as penis.
 A penis has an endowment. [The endowment of a penis is usually decently packed.]
+[A penis is usually penetrating.]
 
 A vagina is a kind of orifice.
 The cover locations of a vagina is usually {the crotch area}.
 Understand "pussy", "cunt", "slit", "crotch", "snatch", "twat" as vagina.
-A vagina is usually rubbable. A vagina is usually orificial.
+A vagina is usually orificial.
 
 A clit is a kind of appendage.
 The cover locations of a clit is usually {the crotch area}.
@@ -3815,6 +3855,7 @@ The indefinite article is usually "a".
 The specification of a sex toy is "A sex toy is a thing that is intended for use with the fucking it with action, and therefore supports the adjectives penetrating and orificial. It is usually penetrating but not orificial."
 A sex toy can be penetrating. A sex toy is usually penetrating.
 A sex toy can be orificial. A sex toy is usually not orificial.
+A sex toy has an Erotica called toy erogen. the toy erogen of a sex toy is usually the excited.
 
 Chapter 5.1.4 - Strap-On
 
@@ -3827,34 +3868,11 @@ A strap-on is usually allow touching through.
 The cover areas of a strap-on is usually {crotch area}.
 A strap-on can be penetrating. A strap-on is usually penetrating.
 
-Book 5.2 - Generalizations
-
-
-A body part can be tender. A body part is usually not tender.
-A body part can be agitated. A body part is usually not agitated.
-A body part can be sore. A body part is usually not sore.
-A body part can be raw. A body part is usually not raw.
-A body part can be aching. A body part is usually not aching.
-
-A body part can be chafed. A body part is usually not chafed.
-A body part can be bruised. A body part is usually not bruised.
-A body part can be lacerated. A body part is usually not lacerated.
+Book 5.2 - Specific messing
 
 A body part can be spermed. A body part is usually not spermed.
 A body part can be urinated. A body part is usually not urinated.
 A body part can be defecated. A body part is usually not defecated.
-
-A body part can be scenting. A body part is usually not scenting.
-A body part can be reeking. A body part is usually not reeking.
-A body part can be pungent. A body part is usually not pungent.
-A body part can be stenching. A body part is usually not stenching.
-A body part can be exuding. A body part is usually not exuding.
-
-A body part can be irritated. A body part is usually not irritated.
-A body part can be itching. A body part is usually not itching.
-A body part can be stinging. A body part is usually not stinging.
-A body part can be smarting. A body part is usually not smarting.
-
 
 Part 5.2.1 - Responses
 
@@ -3938,8 +3956,8 @@ A consent rule (this is the love interest consent rule):
 Chapter 5.2.2b - Clothing
 
 [Clothing threshold is the minimum arousal at which a person or a garment will (un-)dress.]
-A person has an arousal called the clothing threshold. The clothing threshold of a person is usually stimulated.
-A garment has an arousal called the clothing threshold. The clothing threshold of a garment is usually stimulated.
+A person has an Erotica called the clothing threshold. The clothing threshold of a person is usually stimulated.
+A garment has an Erotica called the clothing threshold. The clothing threshold of a garment is usually stimulated.
 
 Section - Wearing
 
@@ -4008,14 +4026,14 @@ Chapter 5.2.2c - Soft-play
 [This part deals with the "soft" touching actions, which share the same thresholds by default.]
 
 [Soft-play threshold is the minimum arousal at which a person or it's body part will engage in the soft-play actions.]
-A person has an arousal called the soft-play threshold. The soft-play threshold of a person is usually unaroused.
-A body part has an arousal called the soft-play threshold. The soft-play threshold of a body part is usually stimulated.
+A person has an Erotica called the soft-play threshold. The soft-play threshold of a person is usually unaroused.
+A body part has an Erotica called the soft-play threshold. The soft-play threshold of a body part is usually stimulated.
 
 [Active/passive soft-play arousal is the arousal attainable by soft-play actions, as the active and passive participant.]
-A person has an arousal called the soft-play performer limit. The soft-play performer limit of a person is usually stimulated.
-A person has an arousal called the soft-play recipient limit. The soft-play recipient limit of a person is usually stimulated.
-A body part has an arousal called the soft-play performer limit. The soft-play performer limit of a body part is usually aroused.
-A body part has an arousal called the soft-play recipient limit. The soft-play recipient limit of a body part is usually aroused.
+A person has an Erotica called the soft-play performer limit. The soft-play performer limit of a person is usually stimulated.
+A person has an Erotica called the soft-play recipient limit. The soft-play recipient limit of a person is usually stimulated.
+A body part has an Erotica called the soft-play performer limit. The soft-play performer limit of a body part is usually aroused.
+A body part has an Erotica called the soft-play recipient limit. The soft-play recipient limit of a body part is usually aroused.
 
 [Create a default soft-playing consent rule]
 The soft-playing consent rule is listed after the default consent rule in the consent rules.
@@ -4106,14 +4124,14 @@ Chapter 5.2.2d - Rough Play
 [This part deals with the "rough" actions, which share the same thresholds by default.]
 
 [Rough-play threshold is the minimum arousal at which a person or it's body part will engage in the rough-play actions.]
-A person has an arousal called the rough-play threshold. The rough-play threshold of a person is usually heated.
-A body part has an arousal called the rough-play threshold. The rough-play threshold of a body part is usually heated.
+A person has an Erotica called the rough-play threshold. The rough-play threshold of a person is usually heated.
+A body part has an Erotica called the rough-play threshold. The rough-play threshold of a body part is usually heated.
 
 [Active/passive rough-play arousal is the arousal attainable by rough-play actions, as the active and passive participant.]
-A person has an arousal called the rough-play performer limit. The rough-play performer limit of a person is usually heated.
-A person has an arousal called the rough-play recipient limit. The rough-play recipient limit of a person is usually heated.
-A body part has an arousal called the rough-play performer limit. The rough-play performer limit of a body part is usually heated.
-A body part has an arousal called the rough-play recipient limit. The rough-play recipient limit of a body part is usually heated.
+A person has an Erotica called the rough-play performer limit. The rough-play performer limit of a person is usually heated.
+A person has an Erotica called the rough-play recipient limit. The rough-play recipient limit of a person is usually heated.
+A body part has an Erotica called the rough-play performer limit. The rough-play performer limit of a body part is usually heated.
+A body part has an Erotica called the rough-play recipient limit. The rough-play recipient limit of a body part is usually heated.
 
 [Create a default consent rule]
 The rough-playing consent rule is listed after the default consent rule in the consent rules.
@@ -4194,14 +4212,14 @@ Chapter 5.2.2e - Oral Play
 [This part deals with the "oral" actions, which share the same thresholds by default.]
 
 [Oral-play threshold is the minimum arousal at which a person or it's body part will engage in the oral-play actions.]
-A person has an arousal called the oral-play threshold. The oral-play threshold of a person is usually aroused.
-A body part has an arousal called the oral-play threshold. The oral-play threshold of a body part is usually aroused.
+A person has an Erotica called the oral-play threshold. The oral-play threshold of a person is usually aroused.
+A body part has an Erotica called the oral-play threshold. The oral-play threshold of a body part is usually aroused.
 
 [Active/passive oral-play arousal is the arousal attainable by oral-play actions, as the active and passive participant.]
-A person has an arousal called the oral-play performer limit. The oral-play performer limit of a person is usually heated.
-A person has an arousal called the oral-play recipient limit. The oral-play recipient limit of a person is usually heated.
-A body part has an arousal called the oral-play performer limit. The oral-play performer limit of a body part is usually heated.
-A body part has an arousal called the oral-play recipient limit. The oral-play recipient limit of a body part is usually heated.
+A person has an Erotica called the oral-play performer limit. The oral-play performer limit of a person is usually heated.
+A person has an Erotica called the oral-play recipient limit. The oral-play recipient limit of a person is usually heated.
+A body part has an Erotica called the oral-play performer limit. The oral-play performer limit of a body part is usually heated.
+A body part has an Erotica called the oral-play recipient limit. The oral-play recipient limit of a body part is usually heated.
 
 [Create a default consent rule]
 The oral-playing consent rule is listed after the default consent rule in the consent rules.
@@ -4267,14 +4285,14 @@ Chapter 5.2.2f - Fucking
 [This part deals with the fucking.]
 
 [Fuck-play threshold is the minimum arousal at which a person or it's body part will engage in the oral-play actions.]
-A person has an arousal called the fuck-play threshold. The fuck-play threshold of a person is usually aroused.
-A body part has an arousal called the fuck-play threshold. The fuck-play threshold of a body part is usually aroused.
+A person has an Erotica called the fuck-play threshold. The fuck-play threshold of a person is usually aroused.
+A body part has an Erotica called the fuck-play threshold. The fuck-play threshold of a body part is usually aroused.
 
 [Active/passive fucking-play arousal is the arousal attainable by fucking, as the active and passive participant.]
-A person has an arousal called the fuck-play performer limit. The fuck-play performer limit of a person is usually heated.
-A person has an arousal called the fuck-play recipient limit. The fuck-play recipient limit of a person is usually heated.
-A body part has an arousal called the fuck-play performer limit. The fuck-play performer limit of a body part is usually heated.
-A body part has an arousal called the fuck-play recipient limit. The fuck-play recipient limit of a body part is usually heated.
+A person has an Erotica called the fuck-play performer limit. The fuck-play performer limit of a person is usually heated.
+A person has an Erotica called the fuck-play recipient limit. The fuck-play recipient limit of a person is usually heated.
+A body part has an Erotica called the fuck-play performer limit. The fuck-play performer limit of a body part is usually heated.
+A body part has an Erotica called the fuck-play recipient limit. The fuck-play recipient limit of a body part is usually heated.
 
 [Create a default consent rule:
 Due to prior checks, we assume that the actor is enclosing one of the nouns, so we only check consent for the controller of each noun:]
@@ -4432,7 +4450,7 @@ Chapter 5.2.3c - Penis
 
 The soft-play threshold of a penis is usually aroused.
 The soft-play performer limit of a penis is usually heated.
-The soft-play recipient limit of a penis is usually orgasmic.
+The soft-play recipient limit of a penis is usually orgastic.
 
 [No Change: The rough-play threshold of a penis is usually horny.]
 [No Change: The rough-play performer limit of a penis is usually horny.]
@@ -4440,17 +4458,17 @@ The soft-play recipient limit of a penis is usually orgasmic.
 
 [No Change: The oral-play threshold of a penis is usually aroused.]
 [No Change: The oral-play performer limit of a penis is usually heated.]
-The oral-play recipient limit of a penis is usually orgasmic.
+The oral-play recipient limit of a penis is usually orgastic.
 
 [No Change: The fuck-play threshold of a penis is usually heated.]
-The fuck-play performer limit of a penis is usually orgasmic.
-The fuck-play recipient limit of a penis is usually orgasmic.
+The fuck-play performer limit of a penis is usually orgastic.
+The fuck-play recipient limit of a penis is usually orgastic.
 
 Chapter 5.2.3d - Vagina
 
 The soft-play threshold of a vagina is usually aroused.
 The soft-play performer limit of a vagina is usually heated.
-The soft-play recipient limit of a vagina is usually orgasmic.
+The soft-play recipient limit of a vagina is usually orgastic.
 
 [No Change: The rough-play threshold of a vagina is usually horny.]
 [No Change: The rough-play performer limit of a vagina is usually horny.]
@@ -4458,11 +4476,11 @@ The soft-play recipient limit of a vagina is usually orgasmic.
 
 [No Change: The oral-play threshold of a vagina is usually aroused.]
 [No Change: The oral-play performer limit of a vagina is usually heated.]
-The oral-play recipient limit of a vagina is usually orgasmic.
+The oral-play recipient limit of a vagina is usually orgastic.
 
 [No Change: The fuck-play threshold of a vagina is usually heated.]
-The fuck-play performer limit of a vagina is usually orgasmic.
-The fuck-play recipient limit of a vagina is usually orgasmic.
+The fuck-play performer limit of a vagina is usually orgastic.
+The fuck-play recipient limit of a vagina is usually orgastic.
 
 Chapter 5.2.3e - Nipples
 
@@ -4486,25 +4504,25 @@ Chapter 5.2.3d - Clit
 
 The soft-play threshold of a clit is usually aroused.
 The soft-play performer limit of a clit is usually heated.
-The soft-play recipient limit of a clit is usually orgasmic.
+The soft-play recipient limit of a clit is usually orgastic.
 
-[No Change: The rough-play threshold of a clit is usually orgasmic.]
-[No Change: The rough-play performer limit of a clit is usually orgasmic.]
-[No Change: The rough-play recipient limit of a clit is usually orgasmic.]
+[No Change: The rough-play threshold of a clit is usually orgastic.]
+[No Change: The rough-play performer limit of a clit is usually orgastic.]
+[No Change: The rough-play recipient limit of a clit is usually orgastic.]
 
 [No Change: The oral-play threshold of a clit is usually aroused.]
 [No Change: The oral-play performer limit of a clit is usually heated.]
-The oral-play recipient limit of a clit is usually orgasmic.
+The oral-play recipient limit of a clit is usually orgastic.
 
 [No Change: The fuck-play threshold of a clit is usually heated.]
-The fuck-play performer limit of a clit is usually orgasmic.
-The fuck-play recipient limit of a clit is usually orgasmic.
+The fuck-play performer limit of a clit is usually orgastic.
+The fuck-play recipient limit of a clit is usually orgastic.
 
 Chapter 5.2.3d - Labia
 
 The soft-play threshold of some labia is usually aroused.
 The soft-play performer limit of some labia is usually heated.
-The soft-play recipient limit of some labia is usually orgasmic.
+The soft-play recipient limit of some labia is usually orgastic.
 
 [No Change: The rough-play threshold of some labia is usually vibrant.]
 [No Change: The rough-play performer limit of some labia is usually vibrant.]
@@ -4512,17 +4530,17 @@ The soft-play recipient limit of some labia is usually orgasmic.
 
 [No Change: The oral-play threshold of some labia is usually aroused.]
 [No Change: The oral-play performer limit of some labia is usually heated.]
-The oral-play recipient limit of some labia is usually orgasmic.
+The oral-play recipient limit of some labia is usually orgastic.
 
 [No Change: The fuck-play threshold of some labia is usually heated.]
-The fuck-play performer limit of some labia is usually orgasmic.
-The fuck-play recipient limit of some labia is usually orgasmic.
+The fuck-play performer limit of some labia is usually orgastic.
+The fuck-play recipient limit of some labia is usually orgastic.
 
 Chapter 5.2.3d - Anus
 
 The soft-play threshold of an anus is usually aroused.
 The soft-play performer limit of an anus is usually heated.
-The soft-play recipient limit of an anus is usually orgasmic.
+The soft-play recipient limit of an anus is usually orgastic.
 
 [No Change: The rough-play threshold of an anus is usually over-sensitive.]
 [No Change: The rough-play performer limit of an anus is usually over-sensitive.]
@@ -4530,11 +4548,11 @@ The soft-play recipient limit of an anus is usually orgasmic.
 
 [No Change: The oral-play threshold of an anus is usually aroused.]
 [No Change: The oral-play performer limit of an anus is usually heated.]
-The oral-play recipient limit of an anus is usually orgasmic.
+The oral-play recipient limit of an anus is usually orgastic.
 
 [No Change: The fuck-play threshold of an anus is usually heated.]
-The fuck-play performer limit of an anus is usually orgasmic.
-The fuck-play recipient limit of an anus is usually orgasmic.
+The fuck-play performer limit of an anus is usually orgastic.
+The fuck-play recipient limit of an anus is usually orgastic.
 
 
 Erotic Storytelling ends here.
