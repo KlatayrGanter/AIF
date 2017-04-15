@@ -271,8 +271,6 @@ A garment can be ripped. A garment is usually not ripped.
 
 Chapter 1.1.2b - Clothing Size
 
-[Status: Complete]
-
 A garment has a number called clothing size. The clothing size of a garment is usually 0.
 A person has a number called clothing size. The clothing size of a person is usually 0.
 
@@ -289,8 +287,6 @@ A garment can be default cover blocking. A garment is usually not default cover 
 
 Chapter 1.1.2d - Descriptions
 
-[Status: Complete]
-
 [A garment has four different descriptions, depending on it's state (in reverse order of priority):
 * Unworn is the description for when nobody is wearing the garment.
 * Worn is the description for when the garment is worn.
@@ -303,8 +299,6 @@ A garment has some text called the worn description.
 A garment has some text called the unworn description.
 
 Chapter 1.1.2e - Layering
-
-[Status: Complete]
 
 A clothing layer is a kind of value. The clothing layers are skinwear, underwear, normalwear, overwear, outerwear.
 The specification of clothing layer is "Clothing layer is used together with the covered areas to determine which garments are compatible with each other. A person can only be wearing one garment for each layer over each cover area."
@@ -320,8 +314,7 @@ Does the player mean examining a garment that is worn by player: It is unlikely.
 
 Part 1.1.3 - Outfits
 
-[Status: Complete, minimal implementation
-Can re-use reactive crowds and table-based descriptions from outfits extension.]
+[Can re-use reactive crowds and table-based descriptions from outfits extension.]
 
 Chapter 1.1.3a - Definition
 
@@ -415,8 +408,6 @@ To update decency for (P - a person):
 		If considered is less than the current decency of P, now the current decency of P is considered;
 
 Chapter 1.2.1b - Privacy
-
-[Status: Complete]
 
 Check an actor going (this is the check decency before going rule):
 	If the decency threshold of the room gone to is greater than current decency of the actor:
