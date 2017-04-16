@@ -584,29 +584,12 @@ Section - Wearing Garments
 
 [A garment can be taken off if none of the blocking cover areas underlies anything]
 To decide whether (G - a garment) can be worn by (P - a person):
-	If G is not worn by P: [if already worn, this is stopped elsewhere]
-		Let cover be the concealed cover areas of G;
-		Let clothing be the list of garments worn by P;
-		Sort clothing in reverse clothing layer order;
-		Repeat with cloth running through clothing:
-			If clothing layer of cloth >= clothing layer of G:
-				Repeat with A running through cover:
-					If A is listed in the concealed cover areas of cloth, decide no;
+	If G is worn by P and the list of garments worn by P lie atop G, Decide no;
 	Decide yes;
 
 To decide which list of garments is preventing wearing of (G - a garment) by (P - a person):
-	Let preventers be a list of garments;
-	If G is not worn by P:
-		Let cover be the concealed cover areas of G;
-		Let clothing be the list of garments worn by P;
-		Sort clothing in reverse clothing layer order;
-		Repeat with cloth running through clothing:
-			If clothing layer of cloth >= clothing layer of G:
-				Repeat with A running through cover:
-					If A is listed in concealed cover areas of cloth:
-						Add cloth to preventers;
-						break;
-	Decide on preventers;
+	If G is not worn by P, Decide on {};
+	Decide on the list of garments worn by P atop G;
 
 Section - Taking Off Garments
 
