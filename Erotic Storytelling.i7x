@@ -535,52 +535,50 @@ Section - Visibility of Garments
 a shifted/ripped garment can be seen even if the only visible cover area is visible.
 An unworn garment is assumed to be visible.]
 
+[underneath, beside, atop]
+
+To decide whether (clothing - a list of garments) lie atop (G - a garment):
+	Let clothing atop be a list of garments;
+	let L be the clothing layer of G;
+	let CA be the cover areas of G;
+	Sort clothing in reverse clothing layer order;
+	Repeat with cloth running through clothing:
+		If clothing layer of cloth is greater than L:
+			Repeat with A running through CA:
+				If A is listed in the concealed cover areas of cloth, decide no;
+	Decide yes;
+
+To decide which list of garments is (clothing - a list of garments) atop (G - a garment):
+	Let clothing atop be a list of garments;
+	let L be the clothing layer of G;
+	let CA be the cover areas of G;
+	Sort clothing in reverse clothing layer order;
+	Repeat with cloth running through clothing:
+		If clothing layer of cloth is greater than L:
+			Repeat with A running through CA:
+				If A is listed in the concealed cover areas of cloth: [Take shifted/ripped into account]
+					Add cloth to clothing atop;
+					break; [cheaper to prevent adding clothes multiple times]
+	Decide on clothing atop;
+
 To decide whether (G - a garment) can be seen:
-	If G is worn by someone:
-		Repeat with cloth running through garments worn by the holder of G:
-			If cloth is not G and cloth is opaque and clothing layer of cloth is greater than clothing layer of G:
-				Repeat with A running through the cover areas of G:
-					If A is listed in the concealed cover areas of cloth, decide no;
+	If G is worn by someone and the list of opaque garments worn by the holder of G lie atop G, Decide no;
 	Decide yes;
 
 To decide which list of garments is concealing vision of (G - a garment):
-	Let concealers be a list of garments;
-	If G is worn by someone:
-		Repeat with cloth running through garments worn by the holder of G:
-			If cloth is opaque and cloth is not G and clothing layer of cloth is greater than clothing layer of G:
-				Repeat with A running through the cover areas of G:
-					If A is listed in the concealed cover areas of cloth: [Take shifted/ripped into account]
-						Add cloth to concealers;
-						break; [cheaper to prevent adding clothes multiple times]
-	Decide on concealers;
+	If G is worn by someone, Decide on {};
+	Decide on the list of opaque garments worn by the holder of G atop G;
 
 Section - Touching Garments
 
 [A garment can be touched if all of the cover areas of it are not blocked by anything that doesn't allow touching]
 To decide whether (G - a garment) can be touched:
-	If G is worn by someone:
-		Let cover be the concealed cover areas of G;
-		Let clothing be the list of garments worn by the holder of G;
-		Sort clothing in reverse clothing layer order;
-		Repeat with cloth running through clothing:
-			If cloth is not G and cloth is barring touch and clothing layer of cloth is greater than clothing layer of G:
-				Repeat with A running through cover:
-					If A is listed in concealed cover areas of cloth, decide no;
+	If G is worn by someone and the list of barring touch garments worn by the holder of G lie atop G, Decide no;
 	Decide yes;
 
 To decide which list of garments is preventing touching of (G - a garment):
-	Let preventers be a list of garments;
-	If G is worn by someone:
-		Let cover be the concealed cover areas of G;
-		Let clothing be the list of garments worn by the holder of G;
-		Sort clothing in reverse clothing layer order;
-		Repeat with cloth running through clothing:
-			If cloth is not G and cloth is barring touch and clothing layer of cloth is greater than clothing layer of G:
-				Repeat with A running through cover:
-					If A is listed in the concealed cover areas of cloth:
-						Add cloth to preventers;
-						break;
-	Decide on preventers;
+	If G is worn by someone, Decide on {};
+	Decide on the list of barring touch garments worn by the holder of G atop G;
 
 Section - Wearing Garments
 
