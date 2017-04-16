@@ -231,7 +231,7 @@ Chapter 1.1.2a - Shifting and Ripping
 A shiftyness is a kind of value. The shiftyness are defined by the Table of Shift.
 The specification of shiftyness is "Shiftyness (which isn't really a word) are the positions that a garment can be shifted to in order to allow (usually) more access to underlying parts.
 Mechanic-wise, it functions similarly to open, with the shiftable property determining whether the player can shift it, and shifted determining if it has been. Shiftyness determines what verbs the player can use to move the garment, and the textual responses.
-Shifting a garment also has the possibility of altering the areas covered (through the list property shifted cover areas), and default cover blocking determines wheter to use the default cover areas or the ripped/shifted cover areas to determine if blocks unwearing."
+Shifting a garment also has the possibility of altering the areas covered (through the list property shifted areas), and default cover blocking determines wheter to use the default cover areas or the ripped/shifted areas to determine if blocks unwearing."
 
 Table of Shift
 Shiftyness	describe shifting (text)	describe shifted (text)	describe unshifting (text)	describe unshifted (text)
@@ -278,13 +278,13 @@ A person has a number called clothing size. The clothing size of a person is usu
 
 Chapter 1.1.2c - Cover Areas
 
-[A garment fits over a set of cover areas, which can be modified by ripping or shifting the garment. This will subtract certain cover areas.]
+[A garment fits over a set of cover areas. when ripped or shifted, some revealed areas are in the shifted/ripped lists.]
 
 A garment has a list of cover areas called cover areas.
-A garment has a list of cover areas called shifting revealed cover areas. [The cover areas revealed when the garment is shifted.]
-A garment has a list of cover areas called ripping revealed cover areas. [The cover areas revealed when the garment is ripped.]
+A garment has a list of cover areas called shifted areas.
+A garment has a list of cover areas called ripped areas.
 
-[This weirdly named property determines wheter to use the default cover areas or the ripped/shifted cover areas to determine if blocks unwearing.]
+[This weirdly named property determines wheter to use the default cover areas or the ripped/shifted areas to determine if blocks unwearing.]
 A garment can be default cover blocking. A garment is usually not default cover blocking.
 
 Chapter 1.1.2d - Descriptions
@@ -429,20 +429,18 @@ There's probably a need for more functions here later on, but as of now all nece
 
 Chapter 1.2.2a - Determining Cover Areas
 
-To decide what list of cover areas is the revealed cover areas of (G - a garment):
+To decide what list of cover areas is the concealed cover areas of (G - a garment):
 	Let cover be the cover areas of G;
 	If G is ripped:
-		Repeat with A running through the ripping revealed cover areas of G:
-			If A is listed in cover, remove A from cover;
+		Decide on not in the ripped areas of cover;
 	Else if G is shifted:
-		Repeat with A running through the shifting revealed cover areas of G:
-			If A is listed in cover, remove A from cover;
+		Decide on not in the shifted areas of cover;
 	Decide on cover;
 
 To decide what list of cover areas is the blocked cover areas of (G - a garment):
 	If G is default cover blocking:
 		Decide on the cover areas of G;
-	Decide on the revealed cover areas of G;
+	Decide on the concealed cover areas of G;
 
 Chapter 1.2.2b - Body Parts
 
@@ -559,7 +557,7 @@ To decide whether (G - a garment) can be seen:
 		Repeat with cloth running through garments worn by the holder of G:
 			If cloth is not G and cloth is opaque and clothing layer of cloth is greater than clothing layer of G:
 				Repeat with A running through the cover areas of G:
-					If A is listed in the revealed cover areas of cloth, decide no;
+					If A is listed in the concealed cover areas of cloth, decide no;
 	Decide yes;
 
 To decide which list of garments is concealing vision of (G - a garment):
@@ -568,7 +566,7 @@ To decide which list of garments is concealing vision of (G - a garment):
 		Repeat with cloth running through garments worn by the holder of G:
 			If cloth is opaque and cloth is not G and clothing layer of cloth is greater than clothing layer of G:
 				Repeat with A running through the cover areas of G:
-					If A is listed in the revealed cover areas of cloth: [Take shifted/ripped into account]
+					If A is listed in the concealed cover areas of cloth: [Take shifted/ripped into account]
 						Add cloth to concealers, if absent;
 	Decide on concealers;
 
@@ -577,7 +575,7 @@ Section - Touching Garments
 [A garment can be touched if all of the cover areas of it are not blocked by anything that doesn't allow touching]
 To decide whether (G - a garment) can be touched:
 	If G is worn by someone:
-		Let cover be the revealed cover areas of G;
+		Let cover be the concealed cover areas of G;
 		Let clothing be the list of garments worn by the holder of G;
 		Sort clothing in reverse clothing layer order;
 		Repeat with A running through cover:
@@ -589,13 +587,13 @@ To decide whether (G - a garment) can be touched:
 To decide which list of garments is preventing touching of (G - a garment):
 	Let preventers be a list of garments;
 	If G is worn by someone:
-		Let cover be the revealed cover areas of G;
+		Let cover be the concealed cover areas of G;
 		Let clothing be the list of garments worn by the holder of G;
 		Sort clothing in reverse clothing layer order;
 		Repeat with A running through cover:
 			Repeat with cloth running through clothing:
 				If cloth is not G and cloth is barring touch and clothing layer of cloth is greater than clothing layer of G:
-					If A is listed in the revealed cover areas of cloth:
+					If A is listed in the concealed cover areas of cloth:
 						Add cloth to preventers, if absent;
 	Decide on preventers;
 
@@ -605,19 +603,19 @@ Section - Wearing Garments
 To decide whether (G - a garment) can be worn by (P - a person):
 	If G is worn by P:
 		Decide yes; [Technically no, but that's stopped elsewhere]
-	Let cover be the revealed cover areas of G;
+	Let cover be the concealed cover areas of G;
 	Let clothing be the list of garments worn by P;
 	Sort clothing in reverse clothing layer order;
 	Repeat with A running through cover:
 		Repeat with cloth running through clothing:
 			If clothing layer of cloth >= clothing layer of G:
-				If A is listed in the revealed cover areas of cloth, decide no;
+				If A is listed in the concealed cover areas of cloth, decide no;
 	Decide yes;
 
 To decide which list of garments is preventing wearing of (G - a garment) by (P - a person):
 	Let preventers be a list of garments;
 	If G is not worn by P:
-		Let cover be the revealed cover areas of G;
+		Let cover be the concealed cover areas of G;
 		Let clothing be the list of garments worn by P;
 		Sort clothing in reverse clothing layer order;
 		Repeat with A running through cover:
@@ -660,7 +658,7 @@ To decide which list of things is revealed by taking off (G - a garment):
 	If G is not worn by someone or G is transparent: [It doesn't conceal anything, so nothing will be revealed]
 		Decide on revealed;
 	[Use modified cover, as the areas revealed by shifting/ripping are already revealed:]
-	Let cover be the revealed cover areas of G;
+	Let cover be the concealed cover areas of G;
 	Repeat with A running through cover:
 		Let items be the concealed by G for A;
 		Repeat with I running through items:
@@ -672,7 +670,7 @@ To decide which decency is exposed by taking off (G - a garment):
 	If G is not worn by someone or G is transparent: [It doesn't conceal anything, so nothing will be revealed]
 		Decide on exposed;
 	[Use modified cover, as the areas revealed by shifting/ripping are already revealed:]
-	Let cover be the revealed cover areas of G;
+	Let cover be the concealed cover areas of G;
 	Repeat with A running through cover:
 		Let items be the concealed by G for A;
 		Repeat with I running through items:
@@ -687,7 +685,7 @@ Section - Shifting Garments
 To decide whether (G - a garment) can be shifted:
 	If G is not worn by someone:
 		Decide yes;[Technically, no; but we don't want to stop that here.]
-	Let cover be the shifting revealed cover areas of G;
+	Let cover be the shifted areas of G;
 	Let clothing be the list of garments worn by the holder of G;
 	Sort clothing in reverse clothing layer order;
 	Repeat with A running through cover:
@@ -699,7 +697,7 @@ To decide whether (G - a garment) can be shifted:
 To decide which list of garments is preventing shifting of (G - a garment):
 	Let preventers be a list of garments;
 	If G is worn by someone:
-		Let cover be the shifting revealed cover areas of G;
+		Let cover be the shifted areas of G;
 		Let clothing be the list of garments worn by the holder of G;
 		Sort clothing in reverse clothing layer order;
 		Repeat with A running through cover:
@@ -715,7 +713,7 @@ To decide which list of things is revealed by shifting (G - a garment):
 	If G is not worn by someone or G is transparent: [It doesn't conceal anything, so nothing will be revealed]
 		Decide on revealed;
 	[Use the shifting revealed cover]
-	Let cover be the shifting revealed cover areas of G;
+	Let cover be the shifted areas of G;
 	Repeat with A running through cover:
 		Let items be the concealed by G for A;
 		Repeat with I running through items:
@@ -727,7 +725,7 @@ To decide which decency is exposed by shifting (G - a garment):
 	If G is not worn by someone or G is transparent: [It doesn't conceal anything, so nothing will be revealed]
 		Decide on exposed;
 	[Use the shifting revealed cover]
-	Let cover be the shifting revealed cover areas of G;
+	Let cover be the shifted areas of G;
 	Repeat with A running through cover:
 		Let items be the concealed by G for A;
 		Repeat with I running through items:
@@ -742,7 +740,7 @@ Section - Ripping Garments
 To decide whether (G - a garment) can be ripped:
 	If G is not worn by someone:
 		Decide yes;[Technically, no; but we don't want to stop that here.]
-	Let cover be the ripping revealed cover areas of G;
+	Let cover be the ripped areas of G;
 	Let clothing be the list of garments worn by the holder of G;
 	Sort clothing in reverse clothing layer order;
 	Repeat with A running through cover:
@@ -754,7 +752,7 @@ To decide whether (G - a garment) can be ripped:
 To decide which list of garments is preventing ripping of (G - a garment):
 	Let preventers be a list of garments;
 	If G is worn by someone:
-		Let cover be the ripping revealed cover areas of G;
+		Let cover be the ripped areas of G;
 		Let clothing be the list of garments worn by the holder of G;
 		Sort clothing in reverse clothing layer order;
 		Repeat with A running through cover:
@@ -770,7 +768,7 @@ To decide which list of things is revealed by ripping (G - a garment):
 	If G is not worn by someone or G is transparent: [It doesn't conceal anything, so nothing will be revealed]
 		Decide on revealed;
 	[Use the ripping revealed cover]
-	Let cover be the ripping revealed cover areas of G;
+	Let cover be the ripped areas of G;
 	Repeat with A running through cover:
 		Let items be the concealed by G for A;
 		Repeat with I running through items:
@@ -782,7 +780,7 @@ To decide which decency is exposed by ripping (G - a garment):
 	If G is not worn by someone or G is transparent: [It doesn't conceal anything, so nothing will be revealed]
 		Decide on exposed;
 	[Use the ripping revealed cover]
-	Let cover be the ripping revealed cover areas of G;
+	Let cover be the ripped areas of G;
 	Repeat with A running through cover:
 		Let items be the concealed by G for A;
 		Repeat with I running through items:
@@ -3351,12 +3349,12 @@ Carry out debug examining something (this is the debug examine garments rule):
 		Now debug text printed is true;
 		Let P be the holder of the noun;
 		Say "[The noun] is a garment that [if noun is shiftable]can be [describe shifted of shiftyness of noun][else]can't be shifted[end if], and is [if noun is rippable]rippable[else]not rippable[end if]. It is [if noun can be seen]visible[else]concealed[end if] and [if noun can be touched]touchable[else]covered[end if].";
-		If noun is shiftable, say "[The noun] is [if noun is shifted]shifted, revealing[else]not shifted. Shifting it will reveal[end if] the [shifting revealed cover areas of noun].";
-		If noun is rippable, say "[The noun] is [if noun is ripped]ripped, revealing[else]not ripped. Ripping it will reveal[end if] the [ripping revealed cover areas of noun].";
+		If noun is shiftable, say "[The noun] is [if noun is shifted]shifted, revealing[else]not shifted. Shifting it will reveal[end if] the [shifted areas of noun].";
+		If noun is rippable, say "[The noun] is [if noun is ripped]ripped, revealing[else]not ripped. Ripping it will reveal[end if] the [ripped areas of noun].";
 		Repeat with L running through the cover areas of the noun:
 			Say "[L]:";
-			If L is listed in the shifting revealed cover areas of noun, say "(shifting-revealed)";
-			If L is listed in the ripping revealed cover areas of noun, say "(shifting-revealed)";
+			If L is listed in the shifted areas of noun, say "(shifting-revealed)";
+			If L is listed in the ripped areas of noun, say "(shifting-revealed)";
 			Say "[if L can be seen for P]visible[else]hidden[end if].";
 
 Chapter 4.1.1d - Person
@@ -3607,7 +3605,7 @@ Some panties is usually underwear.
 The cloth decency of some panties is usually indecent.
 Some panties is usually accepting touch.
 The cover areas of some panties is usually {crotch area}.
-Some panties is usually shiftable. The shiftyness of some panties is usually displaceable. The shifting revealed cover areas of some panties is usually {crotch area}.
+Some panties is usually shiftable. The shiftyness of some panties is usually displaceable. The shifted areas of some panties is usually {crotch area}.
 Some panties is usually rippable. The ripping revealed cover areas of some panties is usually {crotch area}.
 
 A bra is a kind of garment.
@@ -3616,8 +3614,8 @@ A bra is usually underwear.
 The cloth decency of a bra is usually sensual.
 A bra is usually accepting touch.
 The cover areas of a bra is usually {upper torso area, upper back area}.
-A bra is usually shiftable. The shiftyness of a bra is usually displaceable. The shifting revealed cover areas of bra is usually {upper torso area}.
-Some bra is usually not rippable. The ripping revealed cover areas of bra is usually {upper torso area}.
+A bra is usually shiftable. The shiftyness of a bra is usually displaceable. The shifted areas of bra is usually {upper torso area}.
+Some bra is usually not rippable. The ripped areas of bra is usually {upper torso area}.
 
 An undershirt is a kind of garment.
 The indefinite article is usually "an".
@@ -3626,7 +3624,7 @@ An undershirt is usually underwear.
 The cloth decency of an undershirt is usually sensual.
 An undershirt is usually accepting touch.
 The cover areas of an undershirt is usually {upper torso area, lower torso area, upper back area, lower back area}.
-An undershirt is usually rippable. The ripping revealed cover areas of an undershirt is usually a {upper torso area}.
+An undershirt is usually rippable. The ripped areas of an undershirt is usually a {upper torso area}.
 
 A swimsuit is a kind of garment.
 The specification of swimsuit is "A swimsuit is unconcerned underwear that covers the upper torso, lower back/torso and crotch. It doesn't necessarily have to be for swimming; teddies and similar underwear can also use the same template. It can usually be moved aside to expose upper torso."
@@ -3634,8 +3632,8 @@ A swimsuit is usually underwear.
 The cloth decency of a swimsuit is usually unconcerned.
 A swimsuit is usually accepting touch.
 The cover areas of a swimsuit is usually {upper torso area, lower torso area, lower back area, crotch area}.
-A swimsuit is usually shiftable. The shiftyness of a swimsuit is usually moveable. The shifting revealed cover areas of a swimsuit is usually a {upper torso area}.
-Some swimsuit is usually not rippable. The ripping revealed cover areas of swimsuit is usually {upper torso area}.
+A swimsuit is usually shiftable. The shiftyness of a swimsuit is usually moveable. The shifted areas of a swimsuit is usually a {upper torso area}.
+Some swimsuit is usually not rippable. The ripped areas of swimsuit is usually {upper torso area}.
 
 A bodysuit is a kind of garment.
 The specification of bodysuit is "A bodysuit is a special form of sensual underwear that covers most of a person, only leaving the hands and head/face uncovered."
@@ -3668,7 +3666,7 @@ Some stockings is usually normalwear.
 The cloth decency of some stockings is usually formal.
 Some stockings is usually accepting touch.
 The cover areas of some stockings is usually {feet area, leg area, thigh area}.
-Some stockings is usually rippable. The ripping revealed cover areas of some stockings is usually {thigh area}.
+Some stockings is usually rippable. The ripped areas of some stockings is usually {thigh area}.
 
 Some pantyhose is a kind of garment.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some pantyhose is pairs of pantyhose.
@@ -3677,7 +3675,7 @@ Some pantyhose is usually normalwear.
 The cloth decency of a some pantyhose is usually formal.
 Some pantyhose is usually accepting touch.
 The cover areas of some pantyhose is usually {feet area, leg area, thigh area, crotch area}.
-Some pantyhose is usually rippable. The ripping revealed cover areas of some pantyhose is usually {crotch area}.
+Some pantyhose is usually rippable. The ripped areas of some pantyhose is usually {crotch area}.
 
 A shirt is a kind of garment.
 The specification of shirt is "Shirt covers the entire back and torso, as well as shoulders and arms. It is usually casual and normalwear."
@@ -3685,8 +3683,8 @@ A shirt is usually normalwear.
 The cloth decency of shirt is usually casual.
 The cover areas of a shirt is usually {shoulder area, arm area, upper torso area, lower torso area, upper back area, lower back area}.
 A shirt is usually default cover blocking.
-A shirt is usually shiftable. The shiftyness of a shirt is usually buttonable. The shifting revealed cover areas of a shirt is usually {shoulder area, upper torso area, lower torso area}.
-A shirt is usually rippable. The ripping revealed cover areas of a shirt is usually {shoulder area, upper torso area, lower torso area}.
+A shirt is usually shiftable. The shiftyness of a shirt is usually buttonable. The shifted areas of a shirt is usually {shoulder area, upper torso area, lower torso area}.
+A shirt is usually rippable. The ripped areas of a shirt is usually {shoulder area, upper torso area, lower torso area}.
 A t-shirt and blouse is a kind of shirt.
 
 Some glasses is a kind of garment.
@@ -3703,7 +3701,7 @@ The specification of a minidress is "A minidress is a short dress that doesn't c
 A minidress is usually normalwear.
 The cloth decency of minidress is usually profane.
 The cover areas of a minidress is usually {shoulder area, arm area, upper torso area, lower torso area, upper back area, lower back area, crotch area, thigh area}.
-A minidress is usually shiftable. The shiftyness of a minidress is usually raisable. The shifting revealed cover areas of a minidress is usually {crotch area, thigh area}.
+A minidress is usually shiftable. The shiftyness of a minidress is usually raisable. The shifted areas of a minidress is usually {crotch area, thigh area}.
 A miniskirt is a kind of minidress.
 
 Chapter 5.1.2c - Overwear
@@ -3717,7 +3715,7 @@ A dress is usually overwear.
 The cloth decency of dress is usually casual.
 The cover areas of a dress is usually {shoulder area, arm area, upper torso area, lower torso area, upper back area, lower back area, crotch area, thigh area, leg area}.
 A dress is usually default cover blocking.
-A dress is usually shiftable. The shiftyness of a dress is usually buttonable. The shifting revealed cover areas of a dress is usually {shoulder area, upper torso area, lower torso area}.
+A dress is usually shiftable. The shiftyness of a dress is usually buttonable. The shifted areas of a dress is usually {shoulder area, upper torso area, lower torso area}.
 
 Some trousers is a kind of garment.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some trousers is pairs of trousers.
@@ -3727,7 +3725,7 @@ Some trousers is usually overwear.
 The cloth decency of some trousers is usually casual.
 The cover areas of some trousers is usually {leg area, thigh area, crotch area}.
 Some trousers is usually default cover blocking.
-Some trousers is usually shiftable. The shiftyness of some trousers is usually zipable. The shifting revealed cover areas of some trousers is usually {crotch area}.
+Some trousers is usually shiftable. The shiftyness of some trousers is usually zipable. The shifted areas of some trousers is usually {crotch area}.
 
 Some shorts is a kind of garment.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some shorts is pairs of shorts.
@@ -3736,14 +3734,14 @@ Some shorts is usually overwear.
 The cloth decency of some shorts is usually casual.
 The cover areas of some shorts is usually {thigh area, crotch area}.
 Some shorts is usually default cover blocking.
-Some shorts is usually shiftable. The shiftyness of some shorts is usually zipable. The shifting revealed cover areas of some shorts is usually {crotch area}.
+Some shorts is usually shiftable. The shiftyness of some shorts is usually zipable. The shifted areas of some shorts is usually {crotch area}.
 
 A skirt is a kind of garment.
 The specification of skirt is "A skirt is usually a casual overwear that covers the crotch and thighs, and can easily be made longer by changing the default cover areas. It's usually liftable to expose everything."
 A skirt is usually overwear.
 The cloth decency of skirt is usually casual.
 The cover areas of a skirt is usually {thigh area, crotch area}.
-A skirt is usually shiftable. The shiftyness of a skirt is usually raisable. The shifting revealed cover areas of a skirt is usually a {thigh area, crotch area}.
+A skirt is usually shiftable. The shiftyness of a skirt is usually raisable. The shifted areas of a skirt is usually a {thigh area, crotch area}.
 
 A sweater is a kind of garment.
 The specification of a sweater is "A sweater is a casual overwear that covers the entire upper body and arms. It can be pulled up to expose the upper and lower torso."
@@ -3751,7 +3749,7 @@ A sweater is usually overwear.
 The cloth decency of sweater is usually casual.
 The cover areas of a sweater is usually {shoulder area, arm area, upper torso area, lower torso area, upper back area, lower back area}.
 A sweater is usually default cover blocking.
-A sweater is usually shiftable. The shiftyness of a sweater is usually raisable. The shifting revealed cover areas of a sweater is usually a {upper torso area, lower torso area}.
+A sweater is usually shiftable. The shiftyness of a sweater is usually raisable. The shifted areas of a sweater is usually a {upper torso area, lower torso area}.
 
 A suit is a kind of garment.
 The specification of a suit is "A suit is really a combination of a sweater-jacket and pants. It's usually formal overwear, and covers the  front and back of the torso, arms, legs/thighs and crotch. It can be unzipped to access the crotch."
@@ -3759,7 +3757,7 @@ The cover areas of a suit is usually {upper torso area, lower torso area, arm ar
 A suit is usually overwear.
 The cloth decency of suit is usually casual.
 A suit is usually default cover blocking.
-A suit is usually shiftable. The shiftyness of a suit is usually zipable. The shifting revealed cover areas of a suit is usually {crotch area}.
+A suit is usually shiftable. The shiftyness of a suit is usually zipable. The shifted areas of a suit is usually {crotch area}.
 
 Chapter 5.1.2d - Outerwear
 
@@ -3792,7 +3790,7 @@ The cover areas of a jacket is usually {arm area, shoulder area, upper torso are
 A jacket is usually outerwear.
 The cloth decency of jacket is usually formal.
 A jacket is usually default cover blocking.
-A jacket is usually shiftable. The shiftyness of a jacket is usually buttonable. The shifting revealed cover areas of a jacket is usually {upper torso area, lower torso area}.
+A jacket is usually shiftable. The shiftyness of a jacket is usually buttonable. The shifted areas of a jacket is usually {upper torso area, lower torso area}.
 
 A coat is a kind of garment.
 The specification of coat is "A coat a longer version of a jacket, that also covers the thighs and crotch. It can be unbuttoned to expose the front and thighs/crotch."
@@ -3800,7 +3798,7 @@ The cover areas of a coat is usually {arm area, shoulder area, upper torso area,
 A coat is usually outerwear.
 The cloth decency of coat is usually formal.
 A coat is usually default cover blocking.
-A coat is usually shiftable. The shiftyness of a coat is usually buttonable. The shifting revealed cover areas of a coat is usually {shoulder area, upper torso area, lower torso area, crotch area, thigh area}.
+A coat is usually shiftable. The shiftyness of a coat is usually buttonable. The shifted areas of a coat is usually {shoulder area, upper torso area, lower torso area, crotch area, thigh area}.
 
 Some gloves is a kind of garment.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some gloves is pairs of gloves.
@@ -4964,7 +4962,7 @@ Garments are then implemented as a type of clothing that can be worn over cover 
 For simplicity this layering is discrete using the new kind of value clothing layer.
 Determining the cover areas that a garment covers is slightly more complex, because the system supports garments that can be altered to be more revealing.
 Each garment has a default list of areas covered, stored in the cover areas property.
-Depending on the status of the garment, this list can be modified by either the shifting revealed cover areas or ripping revealed cover areas, and the MODIFIED COVER AREAS OF (garment) phrase selects the correct list of cover areas based on the garment's status.
+Depending on the status of the garment, this list can be modified by either the shifted areas or ripped areas, and the MODIFIED COVER AREAS OF (garment) phrase selects the correct list of cover areas based on the garment's status.
 This is detailed further in section 3.3.
 Garments also have a clothing size property that is used to match against the clothing size of a person.
 Every person and garments defaults to the same size, but this is an easy way of limiting certain garments to certain persons.
@@ -5015,7 +5013,7 @@ Garments can also be manipulated in other ways, specifically the have the possib
 These work in much the same way, except that ripping is permanent and shifting is only applicable to worn garments and a ripped garment can no longer be shifted.
 Shiftable garments also have a property called shiftyness, which determines the verbs the player can use and how the feedback on the action is given.
 Both of these options are controlled by a property on each garment, and some templated garments have these properties set.
-Garments that can be manipulated in this way should also include the ripping or shifting revealed cover areas property to say which areas are revealed by the action.
+Garments that can be manipulated in this way should also include the ripping or shifted areas property to say which areas are revealed by the action.
 In order to manipulate a garment in this way, these revealed cover areas have to be not covered by anything (although the access might be temporary in the form of a shifted garment).
 
 The following templates are rippable and will reveal:
@@ -5988,12 +5986,12 @@ These phrases deals with determining full access to garments and body parts:
 	whether (body part) is ACCESSIBLE: Checks if a body part is reachable for full access (not through clothing).
 	whether (garment) CAN BE WORN BY (person): Checks if the current clothing of the person allows that person to wear a given garment.
 	whether (garment) CAN BE TAKEN OFF: Checks if the current clothing of the wearer of the garment allows that garment to be taken off.
-	whether (garment) CAN BE SHIFTED: Checks if the current clothing of the wearer of the garment gives access to the shifting revealed cover areas.
-	whether (garment) CAN BE RIPPED: Checks if the current clothing of the wearer of the garment gives access to the ripping revealed cover areas.
+	whether (garment) CAN BE SHIFTED: Checks if the current clothing of the wearer of the garment gives access to the shifted areas.
+	whether (garment) CAN BE RIPPED: Checks if the current clothing of the wearer of the garment gives access to the ripped areas.
 	which (list of garments) is PREVENTING WEARING OF (garment) BY (person): The garments that stops a garment from being worn by a given person.
 	which (list of garments) is PREVENTING TAKING OFF (garment): The garments that stops access to a garment being taken off.
-	which (list of garments) is PREVENTING SHIFTING OF (garment): The garments that stops access to the shifting revealed cover areas of the garment.
-	which (list of garments) is PREVENTING RIPPING OF (garment): The garments that stops access to the ripping revealed cover areas of the garment.
+	which (list of garments) is PREVENTING SHIFTING OF (garment): The garments that stops access to the shifted areas of the garment.
+	which (list of garments) is PREVENTING RIPPING OF (garment): The garments that stops access to the ripped areas of the garment.
 
 These phrases deals with arousal and orgasms:
 
@@ -6250,7 +6248,7 @@ We also change the dress to be raisable instead of buttonable
 
 	The cover areas of pink dress is usually {shoulder area, arm area, upper torso area, lower torso area, upper back area, lower back area, crotch area, thigh area, leg area, tail area}.
 	A pink dress is not default cover blocking.
-	The shiftyness of a pink dress is raisable. The shifting revealed cover areas of a dress is usually {crotch area, thigh area, leg area, tail area}.
+	The shiftyness of a pink dress is raisable. The shifted areas of a dress is usually {crotch area, thigh area, leg area, tail area}.
 
 We can also create new garments for just this body part.
 We make it transparent because we don't want it to block vision.
