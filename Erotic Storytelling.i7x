@@ -587,7 +587,7 @@ To decide which list of garments is concealing vision of (G - a garment):
 
 Section - Touching Garments
 
-[A garment can be touched if all of the cover areas of it are not blocked by anything that doesn't allow touching]
+[A garment can be touched if none of its cover areas are covered by something barring touch]
 To decide whether (G - a garment) can be touched:
 	If G is worn by someone and the list of barring touch garments worn by the holder of G lie atop G, Decide no;
 	Decide yes;
