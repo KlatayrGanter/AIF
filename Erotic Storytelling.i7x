@@ -539,26 +539,42 @@ An unworn garment is assumed to be visible.]
 
 To decide whether (clothing - a list of garments) lie atop (G - a garment):
 	Let clothing atop be a list of garments;
-	let L be the clothing layer of G;
-	let CA be the cover areas of G;
 	Sort clothing in reverse clothing layer order;
 	Repeat with cloth running through clothing:
-		If clothing layer of cloth is greater than L:
-			Repeat with A running through CA:
-				If A is listed in the concealed cover areas of cloth, decide no;
+		If clothing layer of cloth <= the clothing layer of G, Break;
+		Repeat with A running through the cover areas of G:
+			If A is listed in the concealed cover areas of cloth, decide no;
 	Decide yes;
 
-To decide which list of garments is (clothing - a list of garments) atop (G - a garment):
+To decide which list of garments is (clothing - a list of garments) which ones lie atop (G - a garment):
 	Let clothing atop be a list of garments;
-	let L be the clothing layer of G;
-	let CA be the cover areas of G;
 	Sort clothing in reverse clothing layer order;
 	Repeat with cloth running through clothing:
-		If clothing layer of cloth is greater than L:
-			Repeat with A running through CA:
-				If A is listed in the concealed cover areas of cloth: [Take shifted/ripped into account]
-					Add cloth to clothing atop;
-					break; [cheaper to prevent adding clothes multiple times]
+		If clothing layer of cloth <= the clothing layer of G, Break;
+		Repeat with A running through the cover areas of G:
+			If A is listed in the concealed cover areas of cloth: [Take shifted/ripped into account]
+				Add cloth to clothing atop;
+				break; [(inner): cheaper to prevent adding clothes multiple times]
+	Decide on clothing atop;
+
+To decide whether (clothing - a list of garments) block atop (G - a garment):
+	Let clothing atop be a list of garments;
+	Sort clothing in reverse clothing layer order;
+	Repeat with cloth running through clothing:
+		If the clothing layer of cloth < the clothing layer of G, Break;
+		Repeat with A running through the cover areas of G:
+			If A is listed in the blocked cover areas of cloth, decide no;
+	Decide yes;
+
+To decide which list of garments is (clothing - a list of garments) which ones block atop (G - a garment):
+	Let clothing atop be a list of garments;
+	Sort clothing in reverse clothing layer order;
+	Repeat with cloth running through clothing:
+		If the clothing layer of cloth < the clothing layer of G, Break;
+		Repeat with A running through the cover areas of G:
+			If A is listed in the blocked cover areas of cloth:
+				Add cloth to clothing atop;
+				break;
 	Decide on clothing atop;
 
 To decide whether (G - a garment) can be seen:
@@ -566,8 +582,8 @@ To decide whether (G - a garment) can be seen:
 	Decide yes;
 
 To decide which list of garments is concealing vision of (G - a garment):
-	If G is worn by someone, Decide on {};
-	Decide on the list of opaque garments worn by the holder of G atop G;
+	If G is not worn by someone, Decide on {};
+	Decide on the list of opaque garments worn by the holder of G which ones lie atop G;
 
 Section - Touching Garments
 
@@ -577,8 +593,8 @@ To decide whether (G - a garment) can be touched:
 	Decide yes;
 
 To decide which list of garments is preventing touching of (G - a garment):
-	If G is worn by someone, Decide on {};
-	Decide on the list of barring touch garments worn by the holder of G atop G;
+	If G is not worn by someone, Decide on {};
+	Decide on the list of barring touch garments worn by the holder of G which ones lie atop G;
 
 Section - Wearing Garments
 
@@ -589,35 +605,17 @@ To decide whether (G - a garment) can be worn by (P - a person):
 
 To decide which list of garments is preventing wearing of (G - a garment) by (P - a person):
 	If G is not worn by P, Decide on {};
-	Decide on the list of garments worn by P atop G;
+	Decide on the list of garments worn by P which ones lie atop G;
 
 Section - Taking Off Garments
 
 To decide whether (G - a garment) can be taken off:
-	If G is not worn by someone:
-		Decide yes;[Technically, no; but we don't want to stop that here.]
-	Let cover be the blocked cover areas of G;
-	Let clothing be the list of garments worn by the holder of G;
-	Sort clothing in reverse clothing layer order;
-	Repeat with A running through cover:
-		Repeat with cloth running through clothing:
-			If cloth is not G and clothing layer of cloth is greater than clothing layer of G:
-				If A is listed in the blocked cover areas of cloth, decide no;
+	If G is worn by someone and the list of barring touch garments worn by the holder of G block atop G, Decide no;
 	Decide yes;
 
 To decide which list of garments is preventing taking off (G - a garment):
-	Let preventers be a list of garments;
-	If G is worn by someone:
-		Let cover be the blocked cover areas of G;
-		Let clothing be the list of garments worn by the holder of G;
-		Sort clothing in reverse clothing layer order;
-		Repeat with cloth running through clothing:
-			If cloth is not G and clothing layer of cloth is greater than clothing layer of G:
-				Repeat with A running through cover:
-					If A is listed in the blocked cover areas of cloth:
-						Add cloth to preventers;
-						break;
-	Decide on preventers;
+	If G is not worn by someone, Decide on {};
+	Decide on the list of barring touch garments worn by the holder of G which ones block atop G;
 
 [For each cover area removed, check if G is the current concealer, and if it is, add what it conceals]
 To decide which list of things is revealed by taking off (G - a garment):
