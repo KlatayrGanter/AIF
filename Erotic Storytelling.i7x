@@ -592,7 +592,6 @@ Section - Taking Off Garments
 To decide whether (clothing - a list of garments) fall over (cover - a list of cover areas) for (G - a garment):
 	Let clothing atop be a list of garments;
 	Sort clothing in reverse clothing layer order;
-	Let cover be the blocked cover areas of G;
 	Repeat with cloth running through clothing:
 		If the clothing layer of cloth < the clothing layer of G, Break;
 		Repeat with A running through cover:
@@ -602,7 +601,6 @@ To decide whether (clothing - a list of garments) fall over (cover - a list of c
 To decide which list of garments is (clothing - a list of garments) which ones fall over (cover - a list of cover areas) for (G - a garment):
 	Let clothing atop be a list of garments;
 	Sort clothing in reverse clothing layer order;
-	Let cover be the blocked cover areas of G;
 	Repeat with cloth running through clothing:
 		If the clothing layer of cloth < the clothing layer of G, Break;
 		Repeat with A running through cover:
@@ -655,7 +653,7 @@ To decide whether (G - a garment) can be shifted:
 
 To decide which list of garments is preventing shifting of (G - a garment):
 	If G is not worn by someone, Decide on {};
-	Decide on the list of garments worn by the holder of G which ones fall over the shift areas areas of G for G;
+	Decide on the list of garments worn by the holder of G which ones fall over the shift areas of G for G;
 
 [For each cover area removed, check if G is the current concealer, and if it is, add what it conceals]
 To decide which list of things is revealed by shifting (G - a garment):
@@ -688,30 +686,12 @@ Section - Ripping Garments
 
 [A garment can be ripped if the cover areas that are exposed by the ripping are not under the blocking areas of overlying garments.]
 To decide whether (G - a garment) can be ripped:
-	If G is not worn by someone:
-		Decide yes;[Technically, no; but we don't want to stop that here.]
-	Let cover be the rip areas of G;
-	Let clothing be the list of garments worn by the holder of G;
-	Sort clothing in reverse clothing layer order;
-	Repeat with A running through cover:
-		Repeat with cloth running through clothing:
-			If cloth is not G and clothing layer of cloth is greater than clothing layer of G:
-				If A is listed in the blocked cover areas of cloth, decide no;
+	If G is worn by someone and the list of garments worn by the holder of G fall over the rip areas of G for G, Decide no;
 	Decide yes;
 
 To decide which list of garments is preventing ripping of (G - a garment):
-	Let preventers be a list of garments;
-	If G is worn by someone:
-		Let cover be the rip areas of G;
-		Let clothing be the list of garments worn by the holder of G;
-		Sort clothing in reverse clothing layer order;
-		Repeat with cloth running through clothing:
-			If cloth is not G and clothing layer of cloth is greater than clothing layer of G:
-				Repeat with A running through cover:
-					If A is listed in the blocked cover areas of cloth:
-						Add cloth to preventers;
-						break;
-	Decide on preventers;
+	If G is not worn by someone, Decide on {};
+	Decide on the list of garments worn by the holder of G which ones fall over the rip areas of G for G;
 
 [For each cover area removed, check if G is the current concealer, and if it is, add what it conceals]
 To decide which list of things is revealed by ripping (G - a garment):
