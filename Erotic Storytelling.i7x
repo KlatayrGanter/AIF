@@ -508,33 +508,29 @@ To decide which decency is exposed by (A - cover area) on (P - a person):
 [Determine what would be revealed if G was removed from a cover area]
 To decide which list of things is concealed by (G - a garment) for (A - cover area):
 	Let revealed be a list of things;
-	[First; determine whether G would reveal anything at all]
 	Let clothing be the list of garments worn by the holder of G;
-	If G is listed in clothing, remove G from clothing; [We don't want to let G block or reveal itself]
-	Sort clothing in reverse clothing layer order;
-	[Determine if G is the topmost concealer for the area:]
-	Let concealed clothing be clothing;
-	Repeat with cloth running through clothing:
+	Sort clothing in reversed clothing layer order;
+	Let last be the number of entries in clothing;
+	While last > 0:
+		Let cloth be entry last in clothing;
+		Decrement last;
 		If clothing layer of cloth is less than clothing layer of G:
-			Break; [What remains in clothing are the potentially revealed garments]
-		If clothing layer of cloth is clothing layer of G:
-			Remove cloth from concealed clothing;
-			Next;
-		If cloth is transparent:
-			Remove cloth from concealed clothing;
-			Next;
-		If A is listed in the revealed cover areas of cloth:
-			[Cloth overlies G for the area, so nothing would be revealed here]
-			Decide on revealed;
-	[Determine which garments would be revealed, and whether body parts are visible too.]
-	Repeat with cloth running through concealed clothing:
-		If A is not listed in the revealed cover areas of cloth:
-			Next;
+			If cloth is transparent or clothing layer of cloth is clothing layer of G, Next;
+			If A is listed in the concealed cover areas of cloth:
+				[Cloth overlies G for the area, so nothing would be revealed here => why all? ]
+				While last > 0:
+					Add entry last in clothing to revealed, if absent;
+					Decrement last;
+		Else If cloth is G:
+			next;
+		If A is not listed in the concealed cover areas of cloth, Next;
 		Add cloth to revealed, if absent;
 		If cloth is opaque:
 			[The area is covered, so body parts and underlying garments won't be revealed.]
-			Decide on revealed;
-	[Determine which body parts would be revealed]
+			While last > 0:
+				Add entry last in clothing to revealed, if absent;
+				Decrement last;
+			break;
 	Repeat with P running through the body parts enclosed by the holder of G:
 		If A is listed in the cover locations of P:
 			Add P to revealed, if absent;
