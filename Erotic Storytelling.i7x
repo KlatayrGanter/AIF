@@ -543,8 +543,8 @@ To decide whether (clothing - a list of garments) lie atop (G - a garment):
 	Repeat with cloth running through clothing:
 		If clothing layer of cloth <= the clothing layer of G, Break;
 		Repeat with A running through the cover areas of G:
-			If A is listed in the concealed cover areas of cloth, decide no;
-	Decide yes;
+			If A is listed in the concealed cover areas of cloth, decide yes;
+	Decide no;
 
 To decide which list of garments is (clothing - a list of garments) which ones lie atop (G - a garment):
 	Let clothing atop be a list of garments;
@@ -596,8 +596,8 @@ To decide whether (clothing - a list of garments) block atop (G - a garment):
 	Repeat with cloth running through clothing:
 		If the clothing layer of cloth < the clothing layer of G, Break;
 		Repeat with A running through cover:
-			If A is listed in the blocked cover areas of cloth, decide no;
-	Decide yes;
+			If A is listed in the blocked cover areas of cloth, decide yes;
+	Decide no;
 
 To decide which list of garments is (clothing - a list of garments) which ones block atop (G - a garment):
 	Let clothing atop be a list of garments;
