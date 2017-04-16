@@ -612,12 +612,12 @@ To decide which list of garments is (clothing - a list of garments) which ones b
 	Decide on clothing atop;
 
 To decide whether (G - a garment) can be taken off:
-	If G is worn by someone and the list of barring touch garments worn by the holder of G block atop G, Decide no;
+	If G is worn by someone and the list of garments worn by the holder of G block atop G, Decide no;
 	Decide yes;
 
 To decide which list of garments is preventing taking off (G - a garment):
 	If G is not worn by someone, Decide on {};
-	Decide on the list of barring touch garments worn by the holder of G which ones block atop G;
+	Decide on the list of garments worn by the holder of G which ones block atop G;
 
 [For each cover area removed, check if G is the current concealer, and if it is, add what it conceals]
 To decide which list of things is revealed by taking off (G - a garment):
