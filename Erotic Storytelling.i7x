@@ -444,68 +444,64 @@ To decide what list of cover areas is the blocked cover areas of (G - a garment)
 
 Chapter 1.2.2b - Body Parts
 
+To decide whether (cloth - a garment) whether any cover (P - a body part):
+	Let body part areas is the cover locations of P
+	Repeat with cloth running through the selected garments:
+		If cloth is not ripped and cloth is not shifted, decide yes;
+		If cloth is shifted:
+			Repeat with A running through the cover locations of P:
+				If A is listed in shifted areas of cloth, decide yes;
+		If cloth is ripped:
+			Repeat with A running through the cover locations of P:
+				If A is listed in ripped areas of cloth, decide yes;
+	decide no;
+
+To decide which list of garments (selected garments - a list of garments) which ones cover (P - a body part):
+	Let covering parts be a list of garments;
+	Repeat with cloth running through the selected garments:
+		If cloth is not ripped and cloth is not shifted:
+			Add cloth to covering parts, if absent;
+		Else:
+			If cloth is shifted:
+				Repeat with A running through the cover locations of P:
+					If A is listed in shifted areas of cloth:
+						Add cloth to covering parts, if absent;
+						break;
+			If cloth is ripped:
+				Repeat with A running through the cover locations of P:
+					If A is listed in ripped areas of cloth:
+						Add cloth to covering parts, if absent;
+						break;
+	Decide on covering parts;
+
 To decide whether (P - a body part) can be seen:
-	Let covered parts be the cover locations of P;
-	Repeat with cloth running through garments worn by the holder of P:
-		If cloth is opaque:
-			Repeat with A running through covered parts:
-				If A is listed in the revealed cover areas of cloth, decide no;
-	Decide yes;
+	Decide on opaque garments worn by the holder of P whether any cover P;
 
 To decide which list of garments is concealing vision of (P - a body part):
-	Let concealed parts be a list of garments;
-	Let covered parts be the cover locations of P;
-	Repeat with cloth running through opaque garments worn by the holder of P:
-		Repeat with A running through the revealed cover areas of cloth:
-			If A is listed in covered parts:
-				Add cloth to concealed parts, if absent;
-	Decide on concealed parts;
+	Decide on opaque garments worn by the holder of P which ones cover P;
 
 To decide whether (P - a body part) can be touched:
-	Let covered parts be the cover locations of P;
-	Repeat with cloth running through barring touch garments worn by the holder of P:
-		Repeat with A running through covered parts:
-			If A is listed in the revealed cover areas of cloth, decide no;
-	Decide yes;
+	Decide on barring touch garments worn by the holder of P whether any cover P;
 
 To decide which list of garments is preventing touching of (P - a body part):
-	Let blocked parts be a list of garments;
-	Let covered parts be the cover locations of P;
-	Repeat with cloth running through barring touch garments worn by the holder of P:
-		Repeat with A running through covered parts:
-			If A is listed in the revealed cover areas of cloth:
-				Add cloth to blocked parts, if absent;
-	Decide on blocked parts;
+	Decide on barring touch garments worn by the holder of P which ones cover P;
 
 To decide whether (P - a body part) is accessible:
-	Let covered parts be the cover locations of P;
-	Repeat with cloth running through garments worn by the holder of P:
-		Repeat with A running through covered parts:
-			If A is listed in the revealed cover areas of cloth, decide no;
-	Decide yes;
+	Decide on garments worn by the holder of P whether any cover P;
 
 To decide which list of garments is preventing access to (P - a body part):
-	Let blocked parts be a list of garments;
-	Let covered parts be the cover locations of P;
-	Repeat with cloth running through garments worn by the holder of P:
-		Repeat with A running through covered parts:
-			If A is listed in the revealed cover areas of cloth:
-				Add cloth to blocked parts, if absent;
-	Decide on blocked parts;
+	Decide on garments worn by the holder of P which ones cover P;
 
 Chapter 1.2.2c - Cover Areas
 
 To decide whether (A - cover area) can be seen for (P - a person):
-	Repeat with cloth running through garments worn by P:
-		If cloth is opaque and A is listed in the revealed cover areas of cloth:
-			Decide no;
+	Repeat with cloth running through opaque garments worn by P:
+		If cloth is listed in the concealed cover areas of cloth, Decide no;
 	Decide yes;
 
 To decide which decency is exposed by (A - cover area) on (P - a person):
-	Let clothing be the list of opaque garments worn by P;
-	Sort clothing in reverse clothing layer order;
-	Repeat with cloth running through clothing:
-		If A is listed in the revealed cover areas of cloth:
+	Repeat with cloth running through opaque garments worn by P:
+		If A is listed in the concealed cover areas of cloth:
 			Decide on the cloth decency of cloth;
 	Decide on the decency of A;
 
