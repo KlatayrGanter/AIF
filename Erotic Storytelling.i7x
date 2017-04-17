@@ -184,16 +184,21 @@ The ankle area	modest
 A person has a list of cover areas called body areas.
 The body areas of a person is usually {head area, face area, shoulder area, arm area, hand area, upper torso area, upper back area, lower torso area, lower back area, crotch area, thigh area, leg area, feet area}.
 
-Chapter 1.1.1c - Body Part
+Chapter 1.1.1c - Layering
+
+A layering is a kind of thing. The indefinite article of a layering is usually "a".
+
+The specification of layering is "A layering is for a player to interact with. There can be several layerings in any given cover area, and although rare, a layering can be in several areas, it is only concealed if all of those areas are covered by other layerings."
+
+A layering has a list of cover areas called cover locations.
+
+Chapter 1.1.1d - Body Part
 
 [Body parts are (as the name implies) parts of a body that the player can interact with.
 It's possible to use body parts directly, but most of the time you would use a specific body part from the template section.]
 
-A body part is a kind of thing. The indefinite article of a body part is usually "a".
-The specification of body part is "A body part represents a part of a person that the player can interact with. While they can be instantiated directly, it's usually better to use one of the templated subclasses.
-There can be several body parts in any given cover area, and although rare a body part can be in several areas and is only concealed if all of those areas have worn garments. The decency of a body part is determined by the least decent area it's in."
-
-A body part has a list of cover areas called cover locations.
+A body part is a kind of layering. The indefinite article of a body part is usually "a".
+The specification of body part is "A body part represents a layering of skin or deeper that the player can interact with. The decency of a body part is determined by the least decent area it's in."
 
 Section - Descriptions
 
@@ -211,7 +216,7 @@ Part 1.1.2 - Clothing
 
 [Garments are implementation of wearable clothing that can be layered over cover areas. They have several complex sub-sets, grouped herein by chapter.]
 
-A garment is a kind of thing. The indefinite article is usually "a".
+A garment is a kind of layering. The indefinite article is usually "a".
 The specification of garment is "A garment is something a person can wear over their body parts and related cover areas.
 Garments are quite complex, with several distinct sub-features: Some garments can be shiftable in various ways, or even be ripped apart. Transparency determines whether it blocks vision, and they can allow or bar touch. Clothing size is provided to allow garments to only be wearable by matching persons."
 
