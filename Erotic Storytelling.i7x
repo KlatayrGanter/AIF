@@ -190,7 +190,7 @@ A layering is a kind of thing. The indefinite article of a layering is usually "
 
 The specification of layering is "A layering is for a player to interact with. There can be several layerings in any given cover area, and although rare, a layering can be in several areas, it is only concealed if all of those areas are covered by other layerings."
 
-A layering has a list of cover areas called cover locations.
+A layering has a list of cover areas called cover areas.
 
 Chapter 1.1.1d - Body Part
 
@@ -285,7 +285,6 @@ Chapter 1.1.2c - Cover Areas
 
 [A garment fits over a set of cover areas. when ripped or shifted, some revealed areas are in the shifted/ripped lists.]
 
-A garment has a list of cover areas called cover areas.
 A garment has a list of cover areas called shift areas.
 A garment has a list of cover areas called rip areas.
 
@@ -402,7 +401,7 @@ Section - Body Part
 
 To decide which decency is the base decency of (P - a body part):
 	Let current be the undefined decency;
-	Repeat with A running through the cover locations of P:
+	Repeat with A running through the cover areas of P:
 		If the decency of A is less than current, now current is the decency of A;
 	Decide on current;
 
@@ -461,10 +460,10 @@ To decide whether (clothing - a list of garments) do not cover (L - a layering):
 		If the body layer of cloth < layer, Next;
 		If cloth is not ripped and cloth is not shifted, decide no;
 		If cloth is shifted:
-			Repeat with A running through the cover locations of L:
+			Repeat with A running through the cover areas of L:
 				If A is not listed in shift areas of cloth, decide no;
 		If cloth is ripped:
-			Repeat with A running through the cover locations of L:
+			Repeat with A running through the cover areas of L:
 				If A is not listed in rip areas of cloth, decide no;
 	decide yes;
 
@@ -488,12 +487,12 @@ To decide which list of garments is (clothing - a list of garments) which ones c
 			Add cloth to covering parts, if absent;
 		Else:
 			If cloth is shifted:
-				Repeat with A running through the cover locations of L:
+				Repeat with A running through the cover areas of L:
 					If A is not listed in shift areas of cloth:
 						Add cloth to covering parts, if absent;
 						break;
 			If cloth is ripped:
-				Repeat with A running through the cover locations of L:
+				Repeat with A running through the cover areas of L:
 					If A is not listed in rip areas of cloth:
 						Add cloth to covering parts, if absent;
 						break;
@@ -566,7 +565,7 @@ To decide which list of things is concealed by (G - a garment) for (A - cover ar
 			If cloth is opaque, Decide on revealed; [stop when opaque]
 	[could return just garments; move below to caller, just check for opaque of last revealed, to see adding body parts needed]
 	Repeat with P running through the body parts enclosed by the holder of G:
-		If A is listed in the cover locations of P,	Add P to revealed;
+		If A is listed in the cover areas of P,	Add P to revealed;
 	Decide on revealed;
 
 Chapter 1.2.2d - Garments
@@ -3259,7 +3258,7 @@ Carry out debug examining something (this is the debug examine body parts rule):
 		Let P be the holder of the noun;
 		Say "[The noun] is a body part that can [unless noun can be seen]not [end unless]be seen, [unless noun can be touched]not [end unless]be touched and is [unless noun is accessible]not [end unless] accessible.";
 		Say "Cover Areas:[line break]";
-		Repeat with L running through the cover locations of the noun:
+		Repeat with L running through the cover areas of the noun:
 			Say "[L]: [if L can be seen for P]visible[else]hidden[line break]";
 		Say "Soft-Play:[line break]";
 		If noun is touchable, say "Touchable at [soft-play threshold of noun]([soft-play threshold of P]) up to [soft-play recipient limit of noun]([soft-play recipient limit of P]).";
@@ -3406,26 +3405,26 @@ Part 5.1.1 - Anatomy
 Chapter 5.1.1a - Head
 
 A head is a kind of body part.
-The cover locations of a head is usually {the head area}.
+The cover areas of a head is usually {the head area}.
 
 Some hair is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some".
-The cover locations of hair is usually {the head area}.
+The cover areas of hair is usually {the head area}.
 Some hair is usually not spankable. Some hair is usually not lickable. Some hair is usually not tickleable. Some hair is usually not pinchable. Some hair is usually not pierceable. Some hair is usually not rubbable. 
 
 A face is a kind of body part.
-The cover locations of face is usually {the face area}.
+The cover areas of face is usually {the face area}.
 
 A mouth is a kind of orifice.
-The cover locations of mouth is usually {the face area}.
+The cover areas of mouth is usually {the face area}.
 Understand "lip", "lips" as mouth.
 
 A nose is a kind of appendage.
-The cover locations of nose is usually {the face area}.
+The cover areas of nose is usually {the face area}.
 
 Some eyes is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some eyes is pairs of eyes.
-The cover locations of some eyes is usually {the face area}.
+The cover areas of some eyes is usually {the face area}.
 Some eyes is usually not spankable. Some eyes is usually not lickable. Some eyes is usually not tickleable. Some eyes is usually not pinchable. Some eyes is usually not pierceable. Some hair is usually not rubbable.
 
 Chapter 5.1.1b - Limbs
@@ -3434,95 +3433,95 @@ Section - Legs
 
 Some thighs is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some thighs is pairs of thighs.
-The cover locations of some thighs is usually {the thigh area}.
+The cover areas of some thighs is usually {the thigh area}.
 
 Some legs is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "two". The plural of some legs is pairs of legs.
-The cover locations of some legs is usually {the leg area}.
+The cover areas of some legs is usually {the leg area}.
 
 Some ankles is a kind of appendage.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some ankles is pairs of ankles.
-The cover locations of some ankles is usually {the feet area, the leg area}.
+The cover areas of some ankles is usually {the feet area, the leg area}.
 
 Some feet is a kind of appendage.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some feet is pairs of feet.
-The cover locations of some feet is usually {the feet area}.
+The cover areas of some feet is usually {the feet area}.
 
 Section - Arms
 
 Some arms is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some arms is pairs of arms.
-The cover locations of some arms is usually {the arm area}.
+The cover areas of some arms is usually {the arm area}.
 
 Some wrists is a kind of appendage.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some wrists is pairs of wrists.
-The cover locations of some wrists is usually {the hand area, the arm area}.
+The cover areas of some wrists is usually {the hand area, the arm area}.
 
 Some hands is a kind of appendage.
-The cover locations of some hands is usually {the hand area}.
+The cover areas of some hands is usually {the hand area}.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some hands is pairs of hands.
 
 Chapter 5.1.1c - Torso
 
 A neck is a kind of body part.
-The cover locations of a neck is usually {the shoulder area}.
+The cover areas of a neck is usually {the shoulder area}.
 
 Some shoulders is a kind of body part.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some shoulders is pairs of shoulders.
-The cover locations of some shoulders is usually {the shoulder area}.
+The cover areas of some shoulders is usually {the shoulder area}.
 
 A chest is a kind of body part.
-The cover locations of a chest is usually {the upper torso area}.
+The cover areas of a chest is usually {the upper torso area}.
 
 Some breasts is a kind of appendage.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some breasts is pairs of breasts.
-The cover locations of some breasts is usually {the upper torso area}.
+The cover areas of some breasts is usually {the upper torso area}.
 Understand "tit", "tits", "breast", "boob", "boobs", "tittie", "titties" and "juggs" as some breasts.
 
 A nipple is a kind of appendage.
 It is usually ambiguously plural. The indefinite article is usually "some". The plural of some nipples is two nipples.
-The cover locations of some nipples is usually {the upper torso area}.
+The cover areas of some nipples is usually {the upper torso area}.
 
 An abdomen is a kind of body part.
 The indefinite article is usually "an".
-The cover locations of an abdomen is usually {the lower torso area}.
+The cover areas of an abdomen is usually {the lower torso area}.
 Understand "stomach", "tummy", "belly", "midriff" as abdomen.
 
 A waist is a kind of body part.
-The cover locations of a waist is usually {the lower torso area, the lower back area}.
+The cover areas of a waist is usually {the lower torso area, the lower back area}.
 
 A backside is a kind of body part.
-The cover locations of a backside is usually {the upper back area, the lower back area}.
+The cover areas of a backside is usually {the upper back area, the lower back area}.
 
 Chapter 5.1.1d - Crotch
 
 An ass is a kind of body part.
 The indefinite article is usually "an".
-The cover locations of an ass is usually {the crotch area}.
+The cover areas of an ass is usually {the crotch area}.
 Understand "rear", "rear end", "butt", "bottom", "rump" as ass.
 
 An anus is a kind of orifice.
 The indefinite article is usually "an".
-The cover locations of an anus is usually {the crotch area}.
+The cover areas of an anus is usually {the crotch area}.
 Understand "asshole" as anus.
 
 A penis is a kind of appendage.
-The cover locations of a penis is usually {the crotch area}.
+The cover areas of a penis is usually {the crotch area}.
 Understand "cock", "dick", "wang", "dong", "wiener", "willy", "schlong", "boner", "pecker" as penis.
 A penis has an endowment. [The endowment of a penis is usually decently packed.]
 [A penis is usually penetrating.]
 
 A vagina is a kind of orifice.
-The cover locations of a vagina is usually {the crotch area}.
+The cover areas of a vagina is usually {the crotch area}.
 Understand "pussy", "cunt", "slit", "crotch", "snatch", "twat" as vagina.
 A vagina is usually orificial.
 
 A clit is a kind of appendage.
-The cover locations of a clit is usually {the crotch area}.
+The cover areas of a clit is usually {the crotch area}.
 Understand "clitoris" as clit.
 
 Some labia is a kind of appendage.
-The cover locations of Some labia is usually {the crotch area}.
+The cover areas of Some labia is usually {the crotch area}.
 
 
 Part 5.1.2 - Wardrobe
@@ -4889,7 +4888,7 @@ A case could me made for a hybrid model, using cover areas for coverage and rela
 Section 3.1 - Kinds and Templates
 
 The technical implementation breaks a person down into cover areas, stored in the body area list property for each person.
-Body parts can then be assigned to be in one or more cover areas, stored in the cover locations for each body part.
+Body parts can then be assigned to be in one or more cover areas, stored in the cover areas for each body part.
 Cover areas are defined in the Table of Coverage, which links a given area to a decency.
 
 Garments are then implemented as a type of clothing that can be worn over cover areas in layers.
@@ -4981,8 +4980,7 @@ This customization is shown in example D, which includes creating a custom cover
 Body parts and garments are the easiest to customize, and you have the option of adapting one of the templates or using the base kind as a reference.
 For one-off items you can just create a new thing of the base kind, but most times it's best to create a new template kind.
 Once the thing or template is defined, the real work lies in setting the needed properties on it.
-The most important of these is the relevant cover areas, stored in cover locations for body parts and cover areas for garments.
-Garments also should have decency and a clothing level, which requires some work to fit in with other garments.
+The most important of these is the cover areas.  Garments also should have decency and a clothing level, which requires some work to fit in with other garments.
 As mentioned in the previous section garments can also be manipulated, governed by the rippable and shiftable (with shiftability) properties.
 For a custom body parts to be involved in a sexual action it needs one or more of the limiting properties, as defined in section 2.1.
 The complete set of properties available for these kinds are listed in chapter 8.
@@ -6151,11 +6149,11 @@ The first part is expanding the Table of Coverage to define the new cover area.
 	The tail area	sensual
 
 For creating the body part, we have two options: create a new template kind or a new generic body part.
-Both approaches need all properties set; the most important is the cover locations but any understand phrases or action control adjectives should also be defined.
+Both approaches need all properties set; the most important is the cover areas but any understand phrases or action control adjectives should also be defined.
 If we expect to create multiples of the new part it's best to create a new template so all this is only done once.
 
 	A tail is a kind of body part.
-	The cover locations of a tail is usually {tail area}.
+	The cover areas of a tail is usually {tail area}.
 	A tail is usually touchable. A tail is usually rubbable.
 
 Because the tail uses a new cover area, we need to add that cover area to any persons that have a tail.
