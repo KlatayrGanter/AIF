@@ -536,7 +536,7 @@ An unworn garment is assumed to be visible.]
 
 [A garment can be taken off if none of the blocking cover areas underlies anything]
 To decide whether (G - a garment) can be worn by (P - a person):
-	If G is worn by P and the list of garments worn by P bare G, Decide yes;
+	If G is worn by P or the list of garments worn by P bare G, Decide yes;
 	Decide no;
 
 To decide which list of garments is preventing wearing of (G - a garment) by (P - a person):
