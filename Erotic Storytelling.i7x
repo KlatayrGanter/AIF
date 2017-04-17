@@ -523,6 +523,7 @@ To decide which list of things is concealed by (G - a garment) for (A - cover ar
 			If A is listed in the concealed cover areas of cloth, Next;
 			Add cloth to revealed;
 			If cloth is opaque, Decide on revealed; [stop when opaque]
+	[could return just garments; move below to caller, just check for opaque of last revealed, to see adding body parts needed]
 	Repeat with P running through the body parts enclosed by the holder of G:
 		If A is listed in the cover locations of P,	Add P to revealed;
 	Decide on revealed;
