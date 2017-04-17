@@ -451,17 +451,17 @@ To decide what list of cover areas is the blocked cover areas of (G - a garment)
 
 Chapter 1.2.2b - Body Parts
 
-To decide whether (selected garments - a list of garments) do cover (P - a body part):
+To decide whether (selected garments - a list of garments) do not cover (P - a body part):
 	Let body part areas be the cover locations of P;
 	Repeat with cloth running through the selected garments:
-		If cloth is not ripped and cloth is not shifted, decide yes;
+		If cloth is not ripped and cloth is not shifted, decide no;
 		If cloth is shifted:
 			Repeat with A running through the cover locations of P:
-				If A is not listed in shift areas of cloth, decide yes;
+				If A is not listed in shift areas of cloth, decide no;
 		If cloth is ripped:
 			Repeat with A running through the cover locations of P:
-				If A is not listed in rip areas of cloth, decide yes;
-	decide no;
+				If A is not listed in rip areas of cloth, decide no;
+	decide yes;
 
 To decide which list of garments is (selected garments - a list of garments) which ones cover (P - a body part):
 	Let covering parts be a list of garments;
@@ -482,21 +482,21 @@ To decide which list of garments is (selected garments - a list of garments) whi
 	Decide on covering parts;
 
 To decide whether (P - a body part) can be seen:
-	If the list of opaque garments worn by the holder of P do cover P, decide yes;
+	If the list of opaque garments worn by the holder of P do not cover P, decide yes;
 	Decide no;
 
 To decide which list of garments is concealing vision of (P - a body part):
 	Decide on the list of opaque garments worn by the holder of P which ones cover P;
 
 To decide whether (P - a body part) can be touched:
-	If the list of barring touch garments worn by the holder of P do cover P, decide yes;
+	If the list of barring touch garments worn by the holder of P do not cover P, decide yes;
 	Decide no;
 
 To decide which list of garments is preventing touching of (P - a body part):
 	Decide on the list of barring touch garments worn by the holder of P which ones cover P;
 
 To decide whether (P - a body part) is accessible:
-	If the list of garments worn by the holder of P do cover P, decide yes;
+	If the list of garments worn by the holder of P do not cover P, decide yes;
 	Decide no;
 
 To decide which list of garments is preventing access to (P - a body part):
