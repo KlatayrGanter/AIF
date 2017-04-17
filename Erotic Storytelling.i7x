@@ -609,6 +609,14 @@ To decide which list of garments is (clothing - a list of garments) which ones f
 				break;
 	Decide on clothing atop;
 
+To decide which list of things is (cover - a list of cover areas) exposed by (G - a garment):
+	Let revealed be a list of things;
+	[Use modified cover, as the areas revealed by shifting/ripping are already revealed:]
+	Repeat with A running through cover:
+		Repeat with I running through the concealed by G for A:
+			Add I to revealed, if absent;
+	Decide on revealed;
+
 To decide whether (G - a garment) can be taken off:
 	If G is worn by someone and the list of garments worn by the holder of G fall over the blocked cover areas of G for G, Decide no;
 	Decide yes;
@@ -619,16 +627,8 @@ To decide which list of garments is preventing taking off (G - a garment):
 
 [For each cover area removed, check if G is the current concealer, and if it is, add what it conceals]
 To decide which list of things is revealed by taking off (G - a garment):
-	Let revealed be a list of things;
-	If G is not worn by someone or G is transparent: [It doesn't conceal anything, so nothing will be revealed]
-		Decide on revealed;
-	[Use modified cover, as the areas revealed by shifting/ripping are already revealed:]
-	Let cover be the concealed cover areas of G;
-	Repeat with A running through cover:
-		Let items be the concealed by G for A;
-		Repeat with I running through items:
-			Add I to revealed, if absent;
-	Decide on revealed;
+	If G is not worn by someone or G is transparent, Decide on {};
+	Decide on the concealed cover areas of G exposed by G;
 
 To decide which decency is exposed by taking off (G - a garment):
 	Let exposed be the undefined decency;
@@ -657,16 +657,8 @@ To decide which list of garments is preventing shifting of (G - a garment):
 
 [For each cover area removed, check if G is the current concealer, and if it is, add what it conceals]
 To decide which list of things is revealed by shifting (G - a garment):
-	Let revealed be a list of things;
-	If G is not worn by someone or G is transparent: [It doesn't conceal anything, so nothing will be revealed]
-		Decide on revealed;
-	[Use the shifting revealed cover]
-	Let cover be the shift areas of G;
-	Repeat with A running through cover:
-		Let items be the concealed by G for A;
-		Repeat with I running through items:
-			Add I to revealed, if absent;
-	Decide on revealed;
+	If G is not worn by someone or G is transparent, Decide on {};
+	Decide on the shift areas of G exposed by G;
 
 To decide which decency is exposed by shifting (G - a garment):
 	Let exposed be the undefined decency;
@@ -695,16 +687,8 @@ To decide which list of garments is preventing ripping of (G - a garment):
 
 [For each cover area removed, check if G is the current concealer, and if it is, add what it conceals]
 To decide which list of things is revealed by ripping (G - a garment):
-	Let revealed be a list of things;
-	If G is not worn by someone or G is transparent: [It doesn't conceal anything, so nothing will be revealed]
-		Decide on revealed;
-	[Use the ripped cover]
-	Let cover be the rip areas of G;
-	Repeat with A running through cover:
-		Let items be the concealed by G for A;
-		Repeat with I running through items:
-			Add I to revealed, if absent;
-	Decide on revealed;
+	If G is not worn by someone or G is transparent, Decide on {};
+	Decide on the rip areas of G exposed by G;
 
 To decide which decency is exposed by ripping (G - a garment):
 	Let exposed be the undefined decency;
