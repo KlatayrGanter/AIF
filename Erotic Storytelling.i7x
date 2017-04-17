@@ -452,73 +452,56 @@ To decide what list of cover areas is the blocked cover areas of (G - a garment)
 	Let X be the body layer of T;
 	Decide on filter to greater than X of clothings;]
 
+To decide whether (included - a list of cover areas) do include (areas - a list of cover areas):
+	Repeat with A running through the areas:
+		If A is not listed in the included, Decide no;
+	Decide yes;
+
 Chapter 1.2.2b - Layerings (body parts and Garments)
 
 To decide whether (clothing - a list of garments) do not cover (L - a layering):
 	Let layer be the body layer of L;
+	Let areas be the cover areas of L;
 	Repeat with cloth running through the clothing:
-		If the body layer of cloth < layer, Next;
-		If cloth is not ripped and cloth is not shifted, decide no;
-		If cloth is shifted:
-			Repeat with A running through the cover areas of L:
-				If A is not listed in shift areas of cloth, decide no;
-		If cloth is ripped:
-			Repeat with A running through the cover areas of L:
-				If A is not listed in rip areas of cloth, decide no;
+		If the body layer of cloth >= layer:
+			If cloth is ripped and rip areas of cloth do include areas, Next;
+			If cloth is shifted and shift areas of cloth do include areas, Next;
+			Decide no;
 	decide yes;
+
+To decide which list of garments is (clothing - a list of garments) which ones cover (L - a layering):
+	Let layer be the body layer of L;
+	Let areas be the cover areas of L;
+	Let covering parts be a list of garments;
+	Repeat with cloth running through the clothing:
+		If the body layer of cloth >= layer:
+			If cloth is ripped and rip areas of cloth do include areas, Next;
+			If cloth is shifted and shift areas of cloth do include areas, Next;
+			Add cloth to covering parts;
+	Decide on covering parts;
 
 To decide whether (clothing - a list of garments) lie atop (L - a layering):
 	Let layer be the body layer of L;
 	Let areas be the cover areas of L;
-	Sort clothing in reverse body layer order;
 	Repeat with cloth running through clothing:
-		If body layer of cloth <= layer, Break;
-		Repeat with A running through areas:
-			If A is listed in the concealed cover areas of cloth, decide yes;
+		If body layer of cloth > layer and concealed cover areas of cloth do include areas, decide yes;
 	Decide no;
-
-To decide which list of garments is (clothing - a list of garments) which ones cover (L - a layering):
-	Let layer be the body layer of L;
-	Let covering parts be a list of garments;
-	Sort clothing in reverse body layer order;
-	Repeat with cloth running through the clothing:
-		If the body layer of cloth < layer, Next;
-		If cloth is not ripped and cloth is not shifted:
-			Add cloth to covering parts, if absent;
-		Else:
-			If cloth is shifted:
-				Repeat with A running through the cover areas of L:
-					If A is not listed in shift areas of cloth:
-						Add cloth to covering parts, if absent;
-						break;
-			If cloth is ripped:
-				Repeat with A running through the cover areas of L:
-					If A is not listed in rip areas of cloth:
-						Add cloth to covering parts, if absent;
-						break;
-	Decide on covering parts;
 
 To decide which list of garments is (clothing - a list of garments) which ones lie atop (L - a layering):
 	Let layer be the body layer of L;
 	Let areas be the cover areas of L;
 	Let clothing atop be a list of garments;
-	Sort clothing in reverse body layer order;
 	Repeat with cloth running through clothing:
-		If body layer of cloth <= layer, Break;
-		Repeat with A running through areas:
-			If A is listed in the concealed cover areas of cloth: [Take shifted/ripped into account]
-				Add cloth to clothing atop;
-				break; [(inner): cheaper to prevent adding clothes multiple times]
+		If body layer of cloth > layer and concealed cover areas of cloth do include areas, Add cloth to clothing atop;
 	Decide on clothing atop;
-
 
 To decide whether (L - a layering) can be seen:
 	If the list of opaque garments worn by the holder of L do not cover L, decide yes;
 	Decide no;
+
 To decide whether (G - a garment) can be seen:
 	If G is worn by someone and the list of opaque garments worn by the holder of G lie atop G, Decide no;
 	Decide yes;
-
 
 To decide which list of garments is concealing vision of (L - a layering):
 	Decide on the list of opaque garments worn by the holder of L which ones cover L;
