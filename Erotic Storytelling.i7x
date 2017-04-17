@@ -484,25 +484,15 @@ To decide which list of garments is (clothing - a list of garments) which ones c
 			Add cloth to covering parts;
 	Decide on covering parts;
 
+Definition: a layering is accessible rather than inaccessible if the list of garments worn by the holder of it bare it.
 Definition: a layering is visible rather than invisible if the player can see it and the list of opaque garments worn by the holder of it bare it.
+Definition: a layering is touchable rather than untouchable if the player can touch it and the list of barring touch garments worn by the holder of it bare it.
 
-To decide whether (G - a garment) can be seen:
-	If G is worn by someone and the list of opaque garments worn by the holder of G bare G, Decide yes;
-	Decide no;
-
-To decide which list of garments is concealing vision of (L - a layering):
+To decide which list of garments is concealing (L - a layering):
 	Decide on the list of opaque garments worn by the holder of L which ones cover L;
-
-To decide whether (L - a layering) can be touched:
-	If the list of barring touch garments worn by the holder of L bare L, decide yes;
-	Decide no;
 
 To decide which list of garments is preventing touching of (L - a layering):
 	Decide on the list of barring touch garments worn by the holder of L which ones cover L;
-
-To decide whether (L - a layering) is accessible:
-	If the list of garments worn by the holder of L bare L, decide yes;
-	Decide no;
 
 To decide which list of garments is preventing access to (L - a layering):
 	Decide on the list of garments worn by the holder of L which ones cover L;
@@ -540,30 +530,9 @@ To decide which list of things is concealed by (G - a garment) for (A - cover ar
 
 Chapter 1.2.2d - Garments
 
-Section - Visibility of Garments
-
 [A garment is visible if atleast one (unmodified) cover area is visible;
 a shifted/ripped garment is visible even if the only visible cover area is visible.
 An unworn garment is assumed to be visible.]
-
-[underneath, beside, atop]
-
-To decide which list of garments is concealing vision of (G - a garment):
-	If G is not worn by someone, Decide on {};
-	Decide on the list of opaque garments worn by the holder of G which ones cover G;
-
-Section - Touching Garments
-
-[A garment can be touched if none of its cover areas are covered by something barring touch]
-To decide whether (G - a garment) can be touched:
-	If G is worn by someone and the list of barring touch garments worn by the holder of G bare G, Decide yes;
-	Decide no;
-
-To decide which list of garments is preventing touching of (G - a garment):
-	If G is not worn by someone, Decide on {};
-	Decide on the list of barring touch garments worn by the holder of G which ones cover G;
-
-Section - Wearing Garments
 
 [A garment can be taken off if none of the blocking cover areas underlies anything]
 To decide whether (G - a garment) can be worn by (P - a person):
@@ -1832,7 +1801,7 @@ Check an actor touching (this is the touching specificity rule):
 			Say "[We] [have] to be more specific about what [the actor] should touch." (B);
 		Stop the action;
 
-Check an actor touching (This is the control what can be touched rule):
+Check an actor touching (This is the control what is touchable rule):
 	If the noun is a body part or noun is a garment: [We don't want to block "normal" things here]
 		Unless the noun provides the property touchable and the noun is touchable:
 			If the actor is the player:
@@ -1843,7 +1812,7 @@ Check an actor touching (This is the control what can be touched rule):
 
 Check an actor touching (this is the touching reachability rule):
 	If the noun is a body part or noun is a garment:
-		Unless noun can be touched:
+		Unless noun is touchable:
 			If the player is the actor:
 				Say "[We] [can't] reach that." (A);
 			Else if the player can see the actor:
@@ -1912,7 +1881,7 @@ Check an actor rubbing (This is the control what can be rubbed rule):
 
 Check an actor rubbing (this is the rubbing reachability rule):
 	If the noun is a body part or noun is a garment:
-		Unless noun can be touched:
+		Unless noun is touchable:
 			If the player is the actor:
 				Say "[We] [can't] reach that." (A);
 			Else if the player can see the actor:
@@ -3206,7 +3175,7 @@ Carry out debug examining something (this is the debug examine body parts rule):
 	If noun is a body part:
 		Now debug text printed is true;
 		Let P be the holder of the noun;
-		Say "[The noun] is a body part that can [unless noun is visible]not [end unless]be seen, [unless noun can be touched]not [end unless]be touched and is [unless noun is accessible]not [end unless] accessible.";
+		Say "[The noun] is a body part that can [unless noun is visible]not [end unless]be seen, [unless noun is touchable]not [end unless]be touched and is [unless noun is accessible]not [end unless] accessible.";
 		Say "Cover Areas:[line break]";
 		Repeat with L running through the cover areas of the noun:
 			Say "[L]: [if L can be seen for P]visible[else]hidden[line break]";
@@ -3231,7 +3200,7 @@ Carry out debug examining something (this is the debug examine garments rule):
 	If noun is a garment:
 		Now debug text printed is true;
 		Let P be the holder of the noun;
-		Say "[The noun] is a garment that [if noun is shiftable]can be [describe shifted of shiftyness of noun][else]can't be shifted[end if], and is [if noun is rippable]rippable[else]not rippable[end if]. It is [if noun is visible]visible[else]concealed[end if] and [if noun can be touched]touchable[else]covered[end if].";
+		Say "[The noun] is a garment that [if noun is shiftable]can be [describe shifted of shiftyness of noun][else]can't be shifted[end if], and is [if noun is rippable]rippable[else]not rippable[end if]. It is [if noun is visible]visible[else]concealed[end if] and [if noun is touchable]touchable[else]covered[end if].";
 		If noun is shiftable, say "[The noun] is [if noun is shifted]shifted, revealing[else]not shifted. Shifting it will reveal[end if] the [shift areas of noun].";
 		If noun is rippable, say "[The noun] is [if noun is ripped]ripped, revealing[else]not ripped. Ripping it will reveal[end if] the [rip areas of noun].";
 		Repeat with L running through the cover areas of the noun:
@@ -5710,7 +5679,7 @@ It interacts with body parts through the use of the cover area kind of value, as
 It has several properties to facilitate functionality such as layering, shifting and transparency.
 Garments are also referenced by persons, in the list of preferred clothing which is used by the dressing action.
 
-	Allow Touching Through/Block Touching Through (Default): Determines if body parts (and garments) that are covered by the garment can still be touched. Calculated recursively, so a body part can be touched through several layers of garments that allow it.
+	Allow Touching Through/Block Touching Through (Default): Determines if body parts (and garments) that are covered by the garment can still be touched. Calculated recursively, so a body part is touchable through several layers of garments that allow it.
 	Cloth Decency (Defaults to casual): The decency projected by the garment on the cover areas it currently overlies, used to calculate the current decency of the wearer.
 	Clothing Size (Defaults to 0): Defines what persons can wear the garment, see the same property on persons.
 	Cover Areas (List): The areas of a body that the garment normally covers.
