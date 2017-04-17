@@ -461,6 +461,8 @@ Chapter 1.2.2b - Layerings (body parts and Garments)
 
 To decide whether (clothing - a list of garments) do not cover (L - a layering):
 	Let layer be the body layer of L;
+	if L is a garment: [ is this really necessary? ]
+		Let layer be the body layer after layer;
 	Let areas be the cover areas of L;
 	Repeat with cloth running through the clothing:
 		If the body layer of cloth >= layer:
@@ -471,6 +473,8 @@ To decide whether (clothing - a list of garments) do not cover (L - a layering):
 
 To decide which list of garments is (clothing - a list of garments) which ones cover (L - a layering):
 	Let layer be the body layer of L;
+	if L is a garment: [ Dito? ]
+		Let layer be the body layer after layer;
 	Let areas be the cover areas of L;
 	Let covering parts be a list of garments;
 	Repeat with cloth running through the clothing:
@@ -480,28 +484,13 @@ To decide which list of garments is (clothing - a list of garments) which ones c
 			Add cloth to covering parts;
 	Decide on covering parts;
 
-To decide whether (clothing - a list of garments) lie atop (L - a layering):
-	Let layer be the body layer of L;
-	Let areas be the cover areas of L;
-	Repeat with cloth running through clothing:
-		If body layer of cloth > layer and concealed cover areas of cloth do include areas, decide yes;
-	Decide no;
-
-To decide which list of garments is (clothing - a list of garments) which ones lie atop (L - a layering):
-	Let layer be the body layer of L;
-	Let areas be the cover areas of L;
-	Let clothing atop be a list of garments;
-	Repeat with cloth running through clothing:
-		If body layer of cloth > layer and concealed cover areas of cloth do include areas, Add cloth to clothing atop;
-	Decide on clothing atop;
-
 To decide whether (L - a layering) can be seen:
 	If the list of opaque garments worn by the holder of L do not cover L, decide yes;
 	Decide no;
 
 To decide whether (G - a garment) can be seen:
-	If G is worn by someone and the list of opaque garments worn by the holder of G lie atop G, Decide no;
-	Decide yes;
+	If G is worn by someone and the list of opaque garments worn by the holder of G do not cover G, Decide yes;
+	Decide no;
 
 To decide which list of garments is concealing vision of (L - a layering):
 	Decide on the list of opaque garments worn by the holder of L which ones cover L;
@@ -561,51 +550,31 @@ An unworn garment is assumed to be visible.]
 
 [underneath, beside, atop]
 
-To decide whether (clothing - a list of garments) lie atop (G - a garment):
-	Let clothing atop be a list of garments;
-	Sort clothing in reverse body layer order;
-	Repeat with cloth running through clothing:
-		If body layer of cloth <= the body layer of G, Break;
-		Repeat with A running through the cover areas of G:
-			If A is listed in the concealed cover areas of cloth, decide yes;
-	Decide no;
-
-To decide which list of garments is (clothing - a list of garments) which ones lie atop (G - a garment):
-	Let clothing atop be a list of garments;
-	Sort clothing in reverse body layer order;
-	Repeat with cloth running through clothing:
-		If body layer of cloth <= the body layer of G, Break;
-		Repeat with A running through the cover areas of G:
-			If A is listed in the concealed cover areas of cloth: [Take shifted/ripped into account]
-				Add cloth to clothing atop;
-				break; [(inner): cheaper to prevent adding clothes multiple times]
-	Decide on clothing atop;
-
 To decide which list of garments is concealing vision of (G - a garment):
 	If G is not worn by someone, Decide on {};
-	Decide on the list of opaque garments worn by the holder of G which ones lie atop G;
+	Decide on the list of opaque garments worn by the holder of G which ones cover G;
 
 Section - Touching Garments
 
 [A garment can be touched if none of its cover areas are covered by something barring touch]
 To decide whether (G - a garment) can be touched:
-	If G is worn by someone and the list of barring touch garments worn by the holder of G lie atop G, Decide no;
-	Decide yes;
+	If G is worn by someone and the list of barring touch garments worn by the holder of G do not cover G, Decide yes;
+	Decide no;
 
 To decide which list of garments is preventing touching of (G - a garment):
 	If G is not worn by someone, Decide on {};
-	Decide on the list of barring touch garments worn by the holder of G which ones lie atop G;
+	Decide on the list of barring touch garments worn by the holder of G which ones cover G;
 
 Section - Wearing Garments
 
 [A garment can be taken off if none of the blocking cover areas underlies anything]
 To decide whether (G - a garment) can be worn by (P - a person):
-	If G is worn by P and the list of garments worn by P lie atop G, Decide no;
-	Decide yes;
+	If G is worn by P and the list of garments worn by P do not cover G, Decide yes;
+	Decide no;
 
 To decide which list of garments is preventing wearing of (G - a garment) by (P - a person):
 	If G is not worn by P, Decide on {};
-	Decide on the list of garments worn by P which ones lie atop G;
+	Decide on the list of garments worn by P which ones cover G;
 
 Section - Taking Off Garments
 
