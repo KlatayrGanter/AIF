@@ -309,7 +309,7 @@ Chapter 1.1.2e - Layering
 A body layer is a kind of value. The body layers are inner, skin, underwear, normalwear, overwear, outerwear.
 The specification of body layer is "Body layer is used together with the covered areas to determine which garments are compatible with one other. A person can only be wearing one garment for each layer over each cover area."
 
-A garment has a body layer. A garment is usually normalwear.
+A layering has a body layer. A garment is usually normalwear. A body part is usually skin.
 
 Chapter 1.1.2f - Understanding
 
@@ -459,10 +459,10 @@ To decide whether (included - a list of cover areas) do include (areas - a list 
 
 Chapter 1.2.2b - Layerings (body parts and Garments)
 
-To decide whether (clothing - a list of garments) do not cover (L - a layering):
+To decide whether (clothing - a list of garments) bare (L - a layering):
 	Let layer be the body layer of L;
-	if L is a garment: [ is this really necessary? ]
-		Let layer be the body layer after layer;
+	if L is a garment:
+		Let layer be the body layer before layer; [ is this really necessary? ]
 	Let areas be the cover areas of L;
 	Repeat with cloth running through the clothing:
 		If the body layer of cloth >= layer:
@@ -473,8 +473,8 @@ To decide whether (clothing - a list of garments) do not cover (L - a layering):
 
 To decide which list of garments is (clothing - a list of garments) which ones cover (L - a layering):
 	Let layer be the body layer of L;
-	if L is a garment: [ Dito? ]
-		Let layer be the body layer after layer;
+	if L is a garment:
+		Let layer be the body layer before layer; [ is this really necessary? ]
 	Let areas be the cover areas of L;
 	Let covering parts be a list of garments;
 	Repeat with cloth running through the clothing:
@@ -484,26 +484,24 @@ To decide which list of garments is (clothing - a list of garments) which ones c
 			Add cloth to covering parts;
 	Decide on covering parts;
 
-To decide whether (L - a layering) can be seen:
-	If the list of opaque garments worn by the holder of L do not cover L, decide yes;
-	Decide no;
+Definition: a layering is visible rather than invisible if the player can see it and the list of opaque garments worn by the holder of it bare it.
 
 To decide whether (G - a garment) can be seen:
-	If G is worn by someone and the list of opaque garments worn by the holder of G do not cover G, Decide yes;
+	If G is worn by someone and the list of opaque garments worn by the holder of G bare G, Decide yes;
 	Decide no;
 
 To decide which list of garments is concealing vision of (L - a layering):
 	Decide on the list of opaque garments worn by the holder of L which ones cover L;
 
 To decide whether (L - a layering) can be touched:
-	If the list of barring touch garments worn by the holder of L do not cover L, decide yes;
+	If the list of barring touch garments worn by the holder of L bare L, decide yes;
 	Decide no;
 
 To decide which list of garments is preventing touching of (L - a layering):
 	Decide on the list of barring touch garments worn by the holder of L which ones cover L;
 
 To decide whether (L - a layering) is accessible:
-	If the list of garments worn by the holder of L do not cover L, decide yes;
+	If the list of garments worn by the holder of L bare L, decide yes;
 	Decide no;
 
 To decide which list of garments is preventing access to (L - a layering):
@@ -544,8 +542,8 @@ Chapter 1.2.2d - Garments
 
 Section - Visibility of Garments
 
-[A garment can be seen if atleast one (unmodified) cover area is visible;
-a shifted/ripped garment can be seen even if the only visible cover area is visible.
+[A garment is visible if atleast one (unmodified) cover area is visible;
+a shifted/ripped garment is visible even if the only visible cover area is visible.
 An unworn garment is assumed to be visible.]
 
 [underneath, beside, atop]
@@ -558,7 +556,7 @@ Section - Touching Garments
 
 [A garment can be touched if none of its cover areas are covered by something barring touch]
 To decide whether (G - a garment) can be touched:
-	If G is worn by someone and the list of barring touch garments worn by the holder of G do not cover G, Decide yes;
+	If G is worn by someone and the list of barring touch garments worn by the holder of G bare G, Decide yes;
 	Decide no;
 
 To decide which list of garments is preventing touching of (G - a garment):
@@ -569,7 +567,7 @@ Section - Wearing Garments
 
 [A garment can be taken off if none of the blocking cover areas underlies anything]
 To decide whether (G - a garment) can be worn by (P - a person):
-	If G is worn by P and the list of garments worn by P do not cover G, Decide yes;
+	If G is worn by P and the list of garments worn by P bare G, Decide yes;
 	Decide no;
 
 To decide which list of garments is preventing wearing of (G - a garment) by (P - a person):
@@ -691,7 +689,7 @@ Chapter 1.2.3a - Concealed Possessions
 
 A rule for deciding the concealed possessions of someone:
 	If the particular possession is a garment (called G):
-		If G can be seen, no;
+		If G is visible, no;
 		Else yes;
 	Make no decision;[Defer to other rules]
 
@@ -700,7 +698,7 @@ Chapter 1.2.3b - Examining Body Parts
 The examining body parts rule is listed after the standard examining rule in the carry out examining rulebook.
 Carry out examining (this is the examining body parts rule):
 	If noun is a body part:
-		If noun can be seen:
+		If noun is visible:
 			If noun provides the property uncovered description and the uncovered description of the noun is not the default value of text:
 				Say "[uncovered description of the noun][line break]";
 				Now examine text printed is true;
@@ -3208,7 +3206,7 @@ Carry out debug examining something (this is the debug examine body parts rule):
 	If noun is a body part:
 		Now debug text printed is true;
 		Let P be the holder of the noun;
-		Say "[The noun] is a body part that can [unless noun can be seen]not [end unless]be seen, [unless noun can be touched]not [end unless]be touched and is [unless noun is accessible]not [end unless] accessible.";
+		Say "[The noun] is a body part that can [unless noun is visible]not [end unless]be seen, [unless noun can be touched]not [end unless]be touched and is [unless noun is accessible]not [end unless] accessible.";
 		Say "Cover Areas:[line break]";
 		Repeat with L running through the cover areas of the noun:
 			Say "[L]: [if L can be seen for P]visible[else]hidden[line break]";
@@ -3233,7 +3231,7 @@ Carry out debug examining something (this is the debug examine garments rule):
 	If noun is a garment:
 		Now debug text printed is true;
 		Let P be the holder of the noun;
-		Say "[The noun] is a garment that [if noun is shiftable]can be [describe shifted of shiftyness of noun][else]can't be shifted[end if], and is [if noun is rippable]rippable[else]not rippable[end if]. It is [if noun can be seen]visible[else]concealed[end if] and [if noun can be touched]touchable[else]covered[end if].";
+		Say "[The noun] is a garment that [if noun is shiftable]can be [describe shifted of shiftyness of noun][else]can't be shifted[end if], and is [if noun is rippable]rippable[else]not rippable[end if]. It is [if noun is visible]visible[else]concealed[end if] and [if noun can be touched]touchable[else]covered[end if].";
 		If noun is shiftable, say "[The noun] is [if noun is shifted]shifted, revealing[else]not shifted. Shifting it will reveal[end if] the [shift areas of noun].";
 		If noun is rippable, say "[The noun] is [if noun is ripped]ripped, revealing[else]not ripped. Ripping it will reveal[end if] the [rip areas of noun].";
 		Repeat with L running through the cover areas of the noun:
@@ -5849,8 +5847,8 @@ These phrases deals with determining which cover areas should be used for a garm
 These phrases deals with what the player can see:
 
 	whether (body part) CAN BE SEEN: Checks if a body part is visible, taking into account transparent clothing.
-	whether (cover area) CAN BE SEEN FOR (person): Checks if a cover area on a given person can be seen, taking into account transparent clothing.
-	whether (garment) CAN BE SEEN: Checks if a garment can be seen, taking into account transparent clothing. Unworn garments are considered always visible.
+	whether (cover area) CAN BE SEEN FOR (person): Checks if a cover area on a given person is visible, taking into account transparent clothing.
+	whether (garment) CAN BE SEEN: Checks if a garment is visible, taking into account transparent clothing. Unworn garments are considered always visible.
 	which (list of garments) is CONCEALING VISION OF (garment): The opaque garments that are worn over a given garment, regardless of visibility.
 	which (list of garments) is CONCEALING VISION OF (body part): The opaque garments that are worn over a given body part, regardless of visibility.
 	which (list of things) is REVEALED BY TAKING OFF (garment): The list of things that would be revealed if a garment was removed entirely.
@@ -6118,7 +6116,7 @@ The body part must also be declared to be part of the relevant persons.
 	The covered description of Kitsune's tail is "You've heard the rumours about her [short description], but you can't see it."
 	The uncovered description of Kitsune's tail is "She has a [short description], wagging playfully from side to side."
 	The short description of Kitsune's tail is "long furry tail".
-	Description notability for Kitsune's tail: If Kitsune's tail can be seen, distinct.
+	Description notability for Kitsune's tail: If Kitsune's tail is visible, distinct.
 
 The second part is adapting existing garments to take this new cover area into consideration.
 Without this modification the tail would not be covered by the dress, which might be what was wanted (if it had a tail-hole, for instance).
