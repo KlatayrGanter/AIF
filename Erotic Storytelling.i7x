@@ -630,12 +630,9 @@ To decide which list of things is revealed by taking off (G - a garment):
 	If G is not worn by someone or G is transparent, Decide on {};
 	Decide on the concealed cover areas of G exposed by G;
 
-To decide which decency is exposed by taking off (G - a garment):
+To decide which decency is (cover - a list of cover areas) flaunted by (G - a garment):
 	Let exposed be the undefined decency;
-	If G is not worn by someone or G is transparent: [It doesn't conceal anything, so nothing will be revealed]
-		Decide on exposed;
 	[Use modified cover, as the areas revealed by shifting/ripping are already revealed:]
-	Let cover be the concealed cover areas of G;
 	Repeat with A running through cover:
 		Let items be the concealed by G for A;
 		Repeat with I running through items:
@@ -643,6 +640,10 @@ To decide which decency is exposed by taking off (G - a garment):
 			If I is a body part and the base decency of I is less than exposed, now exposed is the base decency of I;
 		If items is empty and the decency of A is less than exposed, now exposed is the decency of A;
 	Decide on exposed;
+
+To decide which decency is exposed by taking off (G - a garment):
+	If G is not worn by someone or G is transparent, Decide on the undefined decency;
+	Decide on the concealed cover areas of G flaunted by G;
 
 Section - Shifting Garments
 
@@ -661,18 +662,8 @@ To decide which list of things is revealed by shifting (G - a garment):
 	Decide on the shift areas of G exposed by G;
 
 To decide which decency is exposed by shifting (G - a garment):
-	Let exposed be the undefined decency;
-	If G is not worn by someone or G is transparent: [It doesn't conceal anything, so nothing will be revealed]
-		Decide on exposed;
-	[Use the shifting revealed cover]
-	Let cover be the shift areas of G;
-	Repeat with A running through cover:
-		Let items be the concealed by G for A;
-		Repeat with I running through items:
-			If I provides the property cloth decency and the cloth decency of I is less than exposed, now exposed is the cloth decency of I;
-			If I is a body part and the base decency of I is less than exposed, now exposed is the base decency of I;
-		If items is empty and the decency of A is less than exposed, now exposed is the decency of A;
-	Decide on exposed;
+	If G is not worn by someone or G is transparent, Decide on the undefined decency;
+	Decide on the shift areas of G flaunted by G;
 
 Section - Ripping Garments
 
@@ -691,18 +682,8 @@ To decide which list of things is revealed by ripping (G - a garment):
 	Decide on the rip areas of G exposed by G;
 
 To decide which decency is exposed by ripping (G - a garment):
-	Let exposed be the undefined decency;
-	If G is not worn by someone or G is transparent: [It doesn't conceal anything, so nothing will be revealed]
-		Decide on exposed;
-	[Use the ripped cover]
-	Let cover be the rip areas of G;
-	Repeat with A running through cover:
-		Let items be the concealed by G for A;
-		Repeat with I running through items:
-			If I provides the property cloth decency and the cloth decency of I is less than exposed, now exposed is the cloth decency of I;
-			If I is a body part and the base decency of I is less than exposed, now exposed is the base decency of I;
-		If items is empty and the decency of A is less than exposed, now exposed is the decency of A;
-	Decide on exposed;
+	If G is not worn by someone or G is transparent, Decide on the undefined decency;
+	Decide on the rip areas of G flaunted by G;
 
 Chapter 1.2.2e - Definitions
 
