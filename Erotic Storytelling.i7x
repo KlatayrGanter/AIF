@@ -307,10 +307,10 @@ A garment has some text called the unworn description.
 
 Chapter 1.1.2e - Layering
 
-A clothing layer is a kind of value. The clothing layers are skinwear, underwear, normalwear, overwear, outerwear.
-The specification of clothing layer is "Clothing layer is used together with the covered areas to determine which garments are compatible with each other. A person can only be wearing one garment for each layer over each cover area."
+A body layer is a kind of value. The body layers are inner, skin, underwear, normalwear, overwear, outerwear.
+The specification of body layer is "Body layer is used together with the covered areas to determine which garments are compatible with one other. A person can only be wearing one garment for each layer over each cover area."
 
-A garment has a clothing layer. A garment is usually normalwear.
+A garment has a body layer. A garment is usually normalwear.
 
 Chapter 1.1.2f - Understanding
 
@@ -329,7 +329,7 @@ An outfit is a kind of garment.
 The specification of outfit is "An outfit is a special kind of garment, designed to be an alternative to individual garment pieces the player can interact with. It therefore cover almost all the body areas of a person, except hands and head/face."
 
 The cover areas of an outfit is usually {shoulder area, arm area, upper torso area, upper back area, lower torso area, lower back area, crotch area, thigh area, leg area, feet area}.
-The clothing layer of an outfit is usually skinwear.
+The body layer of an outfit is usually skin.
 
 Chapter 1.1.3b - Wearing Incomptibility
 
@@ -518,13 +518,13 @@ To decide which decency is exposed by (A - cover area) on (P - a person):
 [Determine what would be revealed if G was removed from a cover area]
 To decide which list of things is concealed by (G - a garment) for (A - cover area):
 	Let clothing be the list of garments worn by the holder of G;
-	Sort clothing in reverse clothing layer order;
+	Sort clothing in reverse body layer order;
 	Let revealed be a list of things;
 	repeat with cloth running through clothing:
-		If clothing layer of G is less than clothing layer of cloth:
+		If body layer of G is less than body layer of cloth:
 			If cloth is transparent or A is not listed in the concealed cover areas of cloth, Next;
 			Decide on revealed; [empty]
-		Else If clothing layer of cloth is less than clothing layer of G:
+		Else If body layer of cloth is less than body layer of G:
 			If A is listed in the concealed cover areas of cloth, Next;
 			Add cloth to revealed;
 			If cloth is opaque, Decide on revealed; [stop when opaque]
@@ -545,18 +545,18 @@ An unworn garment is assumed to be visible.]
 
 To decide whether (clothing - a list of garments) lie atop (G - a garment):
 	Let clothing atop be a list of garments;
-	Sort clothing in reverse clothing layer order;
+	Sort clothing in reverse body layer order;
 	Repeat with cloth running through clothing:
-		If clothing layer of cloth <= the clothing layer of G, Break;
+		If body layer of cloth <= the body layer of G, Break;
 		Repeat with A running through the cover areas of G:
 			If A is listed in the concealed cover areas of cloth, decide yes;
 	Decide no;
 
 To decide which list of garments is (clothing - a list of garments) which ones lie atop (G - a garment):
 	Let clothing atop be a list of garments;
-	Sort clothing in reverse clothing layer order;
+	Sort clothing in reverse body layer order;
 	Repeat with cloth running through clothing:
-		If clothing layer of cloth <= the clothing layer of G, Break;
+		If body layer of cloth <= the body layer of G, Break;
 		Repeat with A running through the cover areas of G:
 			If A is listed in the concealed cover areas of cloth: [Take shifted/ripped into account]
 				Add cloth to clothing atop;
@@ -597,18 +597,18 @@ Section - Taking Off Garments
 
 To decide whether (clothing - a list of garments) fall over (cover - a list of cover areas) for (G - a garment):
 	Let clothing atop be a list of garments;
-	Sort clothing in reverse clothing layer order;
+	Sort clothing in reverse body layer order;
 	Repeat with cloth running through clothing:
-		If the clothing layer of cloth < the clothing layer of G, Break;
+		If the body layer of cloth < the body layer of G, Break;
 		Repeat with A running through cover:
 			If A is listed in the blocked cover areas of cloth, decide yes;
 	Decide no;
 
 To decide which list of garments is (clothing - a list of garments) which ones fall over (cover - a list of cover areas) for (G - a garment):
 	Let clothing atop be a list of garments;
-	Sort clothing in reverse clothing layer order;
+	Sort clothing in reverse body layer order;
 	Repeat with cloth running through clothing:
-		If the clothing layer of cloth < the clothing layer of G, Break;
+		If the body layer of cloth < the body layer of G, Break;
 		Repeat with A running through cover:
 			If A is listed in the blocked cover areas of cloth:
 				Add cloth to clothing atop;
@@ -979,7 +979,7 @@ Check an actor dressing (this is the clothing must be available for dressing rul
 [Make sure that nothing is worn before]
 Check an actor dressing (this is the actor must be nude for dressing rule):
 	Let clothing be the list of garments worn by actor;
-	Sort clothing in reverse clothing layer order;
+	Sort clothing in reverse body layer order;
 	Repeat with cloth running through clothing:
 		If the actor is the player:
 			Say "(first taking off [the cloth])[command clarification break]" (A);
@@ -993,7 +993,7 @@ Chapter 1.3.4c - Carry Out
 
 Carry out an actor dressing (this is the default dressing rule):
 	Let clothing be the preferred clothing of actor;
-	Sort clothing in clothing layer order;
+	Sort clothing in body layer order;
 	Repeat with cloth running through clothing:
 		If the actor is the player:
 			Say "(first putting on [the cloth])[command clarification break]" (A);
@@ -1048,7 +1048,7 @@ Carry out an actor implicit stripping (this is the implicit stripping redirect r
 
 Carry out an actor stripping (this is the default stripping rule):
 	Let clothing be the list of garments worn by noun;
-	Sort clothing in reverse clothing layer order;
+	Sort clothing in reverse body layer order;
 	Let stoppage be false;
 	Repeat with garment running through clothing:
 		If the actor is the noun:
@@ -4664,7 +4664,7 @@ Section 1.7 - Version History
 2017-04-01: Beta-2 (Release 2)
 
 	* Midriff renamed to abdomen
-	* Bug fixes on mini dress and clothing layer (courtesy of allisonedwards via GitHub)
+	* Bug fixes on mini dress and body layer (courtesy of allisonedwards via GitHub)
 	* Updated documentation and examples
 
 Section 1.8 - Contact Info
@@ -4861,7 +4861,7 @@ Body parts can then be assigned to be in one or more cover areas, stored in the 
 Cover areas are defined in the Table of Coverage, which links a given area to a decency.
 
 Garments are then implemented as a type of clothing that can be worn over cover areas in layers.
-For simplicity this layering is discrete using the new kind of value clothing layer.
+For simplicity this layering is discrete using the new kind of value body layer.
 Determining the cover areas that a garment covers is slightly more complex, because the system supports garments that can be altered to be more revealing.
 Each garment has a default list of areas covered, stored in the cover areas property.
 Depending on the status of the garment, this list can be modified by either the shift areas or rip areas, and the MODIFIED COVER AREAS OF (garment) phrase selects the correct list of cover areas based on the garment's status.
@@ -5662,7 +5662,7 @@ The system is extensible, but it assumes that unaorused is the neutral setting, 
 The Discrete Arousal-based Consent and Stimulation (DACS) template makes use of several arousal properties for both persons and body parts, detailed both below and in the chapter on DACS.
 
 Clothing Layer is a simplified method of divvying up which garments can be worn over others.
-By default, the clothing layers are skinwear, underwear, normalwear, overwear and outerwear.
+By default, the body layers are inside, skin, underwear, normalwear, overwear and outerwear.
 This can be expanded upon, but the ordering of the values is important.
 
 Cover Area is a link between garments, persons and their body parts, and is used to avoid every story having a fully implemented set of body parts.
