@@ -410,7 +410,7 @@ Section - Person
 To update decency for (P - a person):
 	Now the current decency of P is undefined decency;
 	Repeat with area running through the body areas of P:
-		Let considered be the exposed by area on P;
+		Let considered be the exposure of area on P;
 		If considered is less than the current decency of P, now the current decency of P is considered;
 
 Chapter 1.2.1b - Privacy
@@ -504,7 +504,7 @@ To decide whether (A - cover area) can be seen for (P - a person):
 		If A is listed in the concealed cover areas of cloth, decide no;
 	Decide yes;
 
-To decide which decency is exposed by (A - cover area) on (P - a person):
+To decide which decency is the exposure of (A - cover area) on (P - a person):
 	Repeat with cloth running through opaque garments worn by P:
 		If A is listed in the concealed cover areas of cloth:
 			Decide on the cloth decency of cloth;
@@ -3215,7 +3215,7 @@ Carry out debug examining something (this is the debug examine people rule):
 	If noun is a person:
 		Now debug text printed is true;
 		Repeat with area running through the body areas of the noun:
-			Let considered be the exposed by area on the noun;
+			Let considered be the exposure of area on the noun;
 			Say "[Area] - [considered][line break]";
 
 Book 4.2 - Story Contents
