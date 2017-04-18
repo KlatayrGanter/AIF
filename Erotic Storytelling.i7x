@@ -452,10 +452,6 @@ To decide what list of cover areas is the blocked cover areas of (G - a garment)
 		Decide on the cover areas of G;
 	Decide on the concealed cover areas of G;
 
-[To decide which list of layerings is (T - a layering) covering (clothings - a list of garments):
-	Let X be the body layer of T;
-	Decide on filter to greater than X of clothings;]
-
 
 Chapter 1.2.2b - Layerings (body parts and Garments)
 
@@ -510,22 +506,26 @@ To decide which decency is the exposure of (A - cover area) on (P - a person):
 	Decide on the decency of A;
 
 [Determine what would be revealed if G was removed from a cover area]
-To decide which list of things is concealed by (G - a garment) for (A - cover area):
-	Let clothing be the list of garments worn by the holder of G;
-	Sort clothing in reverse body layer order;
-	Let revealed be a list of things;
-	repeat with cloth running through clothing:
-		If body layer of G is less than body layer of cloth:
-			If cloth is transparent or A is not listed in the concealed cover areas of cloth, Next;
-			Decide on revealed; [empty]
-		Else If body layer of cloth is less than body layer of G:
-			If A is listed in the concealed cover areas of cloth, Next;
-			Add cloth to revealed;
-			If cloth is opaque, Decide on revealed; [stop when opaque]
-	[could return just garments; move below to caller, just check for opaque of last revealed, to see adding body parts needed]
-	Repeat with P running through the body parts enclosed by the holder of G:
-		If A is listed in the cover areas of P,	Add P to revealed;
-	Decide on revealed;
+To decide which list of garments is the concealed by (G - a garment) for (A - cover area):
+	Let items be a list of garments;
+	Let the disclosed layer be the body layer of G;
+	Let I be 0;
+	repeat with cloth running through the list of garments worn by the holder of G:
+		let the current layer be the body layer of cloth;
+		If cloth is invisible or the current layer is the disclosed layer
+			or cloth is ripped and A is listed in the rip areas of cloth
+			or cloth is shifted and A is listed in the shift areas of cloth
+			or A is not listed in the cover areas of cloth, Next;
+		while I is not 0 and the current layer is greater than the body layer of entry I of items:
+			decrement I;
+		If the current layer is greater than the disclosed layer, break;
+		increment I;
+		if I is 1:
+			add cloth to items;
+		else:
+			now entry I of items is cloth;
+	truncate items to I entries;
+	Decide on items;
 
 Chapter 1.2.2d - Garments
 
@@ -547,7 +547,7 @@ To decide whether (clothing - a list of garments) fall over (cover - a list of c
 	Let clothing atop be a list of garments;
 	Sort clothing in reverse body layer order;
 	Repeat with cloth running through clothing:
-		If the body layer of cloth < the body layer of G, Break;
+		If G is cloth or the body layer of cloth < the body layer of G, Break;
 		Repeat with A running through cover:
 			If A is listed in the blocked cover areas of cloth, decide yes;
 	Decide no;
@@ -563,12 +563,17 @@ To decide which list of garments is (clothing - a list of garments) which ones f
 				break;
 	Decide on clothing atop;
 
-To decide which list of things is (cover - a list of cover areas) exposed by (G - a garment):
-	Let revealed be a list of things;
+To decide which list of layerings is (cover - a list of cover areas) exposed by (G - a garment):
+	Let revealed be a list of layerings;
 	[Use modified cover, as the areas revealed by shifting/ripping are already revealed:]
 	Repeat with A running through cover:
-		Repeat with I running through the concealed by G for A:
+		Let items be the concealed by G for A;
+		Repeat with I running through the items:
 			Add I to revealed, if absent;
+		Let last be the number of entries in items;
+		If last is 0 or entry last of items is invisible:
+			Repeat with P running through the body parts enclosed by the holder of G:
+				If A is listed in the cover areas of P,	Add P to revealed, if absent;
 	Decide on revealed;
 
 To decide whether (G - a garment) can be taken off:
@@ -591,7 +596,10 @@ To decide which decency is (cover - a list of cover areas) flaunted by (G - a ga
 		Let items be the concealed by G for A;
 		Repeat with I running through items:
 			If I provides the property cloth decency and the cloth decency of I is less than exposed, now exposed is the cloth decency of I;
-			If I is a body part and the base decency of I is less than exposed, now exposed is the base decency of I;
+		Let last be the number of entries in items;
+		If last is 0 or entry last of items is invisible:
+			Repeat with P running through the body parts enclosed by the holder of G:
+				If the base decency of P is less than exposed and A is listed in the cover areas of P, now exposed is the base decency of P;
 		If items is empty and the decency of A is less than exposed, now exposed is the decency of A;
 	Decide on exposed;
 
