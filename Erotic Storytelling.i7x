@@ -461,11 +461,9 @@ Chapter 1.2.2b - Layerings (body parts and Garments)
 
 To decide whether (clothing - a list of garments) bare (L - a layering):
 	Let layer be the body layer of L;
-	if L is a garment:
-		Let layer be the body layer before layer; [ is this really necessary? ]
 	Let areas be the cover areas of L;
 	Repeat with cloth running through the clothing:
-		If the body layer of cloth >= layer:
+		If the body layer of cloth > layer:
 			If cloth is ripped and rip areas of cloth do include areas, Next;
 			If cloth is shifted and shift areas of cloth do include areas, Next;
 			Decide no;
@@ -473,12 +471,10 @@ To decide whether (clothing - a list of garments) bare (L - a layering):
 
 To decide which list of garments is (clothing - a list of garments) which ones cover (L - a layering):
 	Let layer be the body layer of L;
-	if L is a garment:
-		Let layer be the body layer before layer; [ is this really necessary? ]
 	Let areas be the cover areas of L;
 	Let covering parts be a list of garments;
 	Repeat with cloth running through the clothing:
-		If the body layer of cloth >= layer:
+		If the body layer of cloth > layer:
 			If cloth is ripped and rip areas of cloth do include areas, Next;
 			If cloth is shifted and shift areas of cloth do include areas, Next;
 			Add cloth to covering parts;
@@ -538,8 +534,7 @@ An unworn garment is assumed to be visible.]
 
 [A garment can be taken off if none of the blocking cover areas underlies anything]
 To decide whether (G - a garment) can be worn by (P - a person):
-	If G is worn by P or the list of garments worn by P bare G, Decide yes;
-	Decide no;
+	Decide on whether or not G is worn by P or the list of garments worn by P bare G;
 
 To decide which list of garments is preventing wearing of (G - a garment) by (P - a person):
 	If G is not worn by P, Decide on {};
