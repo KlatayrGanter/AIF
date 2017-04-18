@@ -504,8 +504,9 @@ To decide whether (A - cover area) can be seen for (P - a person):
 
 To decide which decency is the exposure of (A - cover area) on (P - a person):
 	Repeat with cloth running through opaque garments worn by P:
-		If A is listed in the concealed cover areas of cloth:
-			Decide on the cloth decency of cloth;
+		If cloth is ripped and A is listed in the rip areas of cloth, Next;
+		If cloth is shifted and A is listed in the shift areas of cloth, Next;
+		If A is listed in the cover areas of cloth, Decide on the cloth decency of cloth;
 	Decide on the decency of A;
 
 [Determine what would be revealed if G was removed from a cover area]
