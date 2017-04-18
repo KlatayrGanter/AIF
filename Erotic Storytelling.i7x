@@ -442,6 +442,10 @@ To decide what list of cover areas is the concealed cover areas of (G - a garmen
 		Repeat with A running through shift areas of G:
 			Remove A from cover;
 	Decide on cover;
+To decide whether (given - a list of cover areas) include any of (set - a list of cover areas):
+	Repeat with X running through the given:
+		If X is not listed in the set, Decide no;
+	Decide yes;
 
 To decide what list of cover areas is the blocked cover areas of (G - a garment):
 	If G is default cover blocking:
@@ -452,10 +456,6 @@ To decide what list of cover areas is the blocked cover areas of (G - a garment)
 	Let X be the body layer of T;
 	Decide on filter to greater than X of clothings;]
 
-To decide whether (included - a list of cover areas) do include (areas - a list of cover areas):
-	Repeat with A running through the areas:
-		If A is not listed in the included, Decide no;
-	Decide yes;
 
 Chapter 1.2.2b - Layerings (body parts and Garments)
 
@@ -464,8 +464,8 @@ To decide whether (clothing - a list of garments) bare (L - a layering):
 	Let areas be the cover areas of L;
 	Repeat with cloth running through the clothing:
 		If the body layer of cloth > layer:
-			If cloth is ripped and rip areas of cloth do include areas, Next;
-			If cloth is shifted and shift areas of cloth do include areas, Next;
+			If cloth is ripped and rip areas of cloth include any of the areas, Next;
+			If cloth is shifted and shift areas of cloth include any of the areas, Next;
 			Decide no;
 	decide yes;
 
@@ -475,8 +475,8 @@ To decide which list of garments is (clothing - a list of garments) which ones c
 	Let covering parts be a list of garments;
 	Repeat with cloth running through the clothing:
 		If the body layer of cloth > layer:
-			If cloth is ripped and rip areas of cloth do include areas, Next;
-			If cloth is shifted and shift areas of cloth do include areas, Next;
+			If cloth is ripped and rip areas of cloth include any of the areas, Next;
+			If cloth is shifted and shift areas of cloth include any of the areas, Next;
 			Add cloth to covering parts;
 	Decide on covering parts;
 
