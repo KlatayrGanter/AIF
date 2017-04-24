@@ -477,8 +477,12 @@ To decide which list of garments is (clothing - a list of garments) which ones c
 			Add cloth to covering parts;
 	Decide on covering parts;
 
+[Definition: a layering is visible rather than invisible if the player can see it and the list of opaque garments worn by the holder of it bare it.]
+To decide whether (L - a layering) can be seen:
+	If the list of opaque garments worn by the holder of L do not cover L, decide yes;
+	Decide no;
+
 Definition: a layering is accessible rather than inaccessible if the list of garments worn by the holder of it bare it.
-Definition: a layering is visible rather than invisible if the player can see it and the list of opaque garments worn by the holder of it bare it.
 Definition: a layering is touchable rather than untouchable if the player can touch it and the list of barring touch garments worn by the holder of it bare it.
 
 To decide which list of garments is concealing (L - a layering):
@@ -654,7 +658,7 @@ Chapter 1.2.3a - Concealed Possessions
 
 A rule for deciding the concealed possessions of someone:
 	If the particular possession is a garment (called G):
-		If G is visible, no;
+		If G can be seen, no;
 		Else yes;
 	Make no decision;[Defer to other rules]
 
@@ -663,7 +667,7 @@ Chapter 1.2.3b - Examining Body Parts
 The examining body parts rule is listed after the standard examining rule in the carry out examining rulebook.
 Carry out examining (this is the examining body parts rule):
 	If noun is a body part:
-		If noun is visible:
+		If noun can be seen:
 			If noun provides the property uncovered description and the uncovered description of the noun is not the default value of text:
 				Say "[uncovered description of the noun][line break]";
 				Now examine text printed is true;
@@ -3171,7 +3175,7 @@ Carry out debug examining something (this is the debug examine body parts rule):
 	If noun is a body part:
 		Now debug text printed is true;
 		Let P be the holder of the noun;
-		Say "[The noun] is a body part that can [unless noun is visible]not [end unless]be seen, [unless noun is touchable]not [end unless]be touched and is [unless noun is accessible]not [end unless] accessible.";
+		Say "[The noun] is a body part that can [unless noun can be seen]not [end unless]be seen, [unless noun is touchable]not [end unless]be touched and is [unless noun is accessible]not [end unless] accessible.";
 		Say "Cover Areas:[line break]";
 		Repeat with L running through the cover areas of the noun:
 			Say "[L]: [if L can be seen for P]visible[else]hidden[line break]";
@@ -3196,7 +3200,7 @@ Carry out debug examining something (this is the debug examine garments rule):
 	If noun is a garment:
 		Now debug text printed is true;
 		Let P be the holder of the noun;
-		Say "[The noun] is a garment that [if noun is shiftable]can be [describe shifted of shiftyness of noun][else]can't be shifted[end if], and is [if noun is rippable]rippable[else]not rippable[end if]. It is [if noun is visible]visible[else]concealed[end if] and [if noun is touchable]touchable[else]covered[end if].";
+		Say "[The noun] is a garment that [if noun is shiftable]can be [describe shifted of shiftyness of noun][else]can't be shifted[end if], and is [if noun is rippable]rippable[else]not rippable[end if]. It is [if noun can be seen]visible[else]concealed[end if] and [if noun is touchable]touchable[else]covered[end if].";
 		If noun is shiftable, say "[The noun] is [if noun is shifted]shifted, revealing[else]not shifted. Shifting it will reveal[end if] the [shift areas of noun].";
 		If noun is rippable, say "[The noun] is [if noun is ripped]ripped, revealing[else]not ripped. Ripping it will reveal[end if] the [rip areas of noun].";
 		Repeat with L running through the cover areas of the noun:
@@ -5812,8 +5816,8 @@ These phrases deals with determining which cover areas should be used for a garm
 These phrases deals with what the player can see:
 
 	whether (body part) CAN BE SEEN: Checks if a body part is visible, taking into account transparent clothing.
-	whether (cover area) CAN BE SEEN FOR (person): Checks if a cover area on a given person is visible, taking into account transparent clothing.
-	whether (garment) CAN BE SEEN: Checks if a garment is visible, taking into account transparent clothing. Unworn garments are considered always visible.
+	whether (cover area) CAN BE SEEN FOR (person): Checks if a cover area on a given person can be seen, taking into account transparent clothing.
+	whether (garment) CAN BE SEEN: Checks if a garment can be seen, taking into account transparent clothing. Unworn garments are considered always visible.
 	which (list of garments) is CONCEALING VISION OF (garment): The opaque garments that are worn over a given garment, regardless of visibility.
 	which (list of garments) is CONCEALING VISION OF (body part): The opaque garments that are worn over a given body part, regardless of visibility.
 	which (list of things) is REVEALED BY TAKING OFF (garment): The list of things that would be revealed if a garment was removed entirely.
@@ -6081,7 +6085,7 @@ The body part must also be declared to be part of the relevant persons.
 	The covered description of Kitsune's tail is "You've heard the rumours about her [short description], but you can't see it."
 	The uncovered description of Kitsune's tail is "She has a [short description], wagging playfully from side to side."
 	The short description of Kitsune's tail is "long furry tail".
-	Description notability for Kitsune's tail: If Kitsune's tail is visible, distinct.
+	Description notability for Kitsune's tail: If Kitsune's tail can be seen, distinct.
 
 The second part is adapting existing garments to take this new cover area into consideration.
 Without this modification the tail would not be covered by the dress, which might be what was wanted (if it had a tail-hole, for instance).
