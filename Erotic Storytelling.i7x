@@ -496,7 +496,7 @@ To decide whether (A - cover area) can be seen for (P - a person):
 	Repeat with cloth running through opaque garments worn by P:
 		If cloth is ripped and A is listed in the rip areas of cloth, Next;
 		If cloth is shifted and A is listed in the shift areas of cloth, Next;
-		If A is listed in the cover areas of cloth,	Decide no;
+		If A is listed in the cover areas of cloth, Decide no;
 	Decide yes;
 
 To decide which decency is the exposure of (A - cover area) on (P - a person):
@@ -507,7 +507,7 @@ To decide which decency is the exposure of (A - cover area) on (P - a person):
 	Decide on the decency of A;
 
 [Determine what would be revealed if garb was removed from a cover area - returns items and removes areas when covered.]
-To decide which list of garments is the (areas disclosed - a list of cover areas) concealed by (garb - a garment):
+To decide which list of garments is (areas disclosed - a list of cover areas) concealed by (garb - a garment):
 	Let covering be a various-to-one relation of the cover areas to garments;
 	Let the disclosed layer be the body layer of the garb;
 	Repeat with cloth running through the garments worn by the holder of the garb:
@@ -520,7 +520,7 @@ To decide which list of garments is the (areas disclosed - a list of cover areas
 				Let the other cloth be the garment to which the part relates by the covering;
 				If body layer of the other cloth is greater than the current layer, next;
 			Else:
-				Remove the part from the areas disclosed;
+				Remove the part from the areas disclosed, if present;
 			Now the covering relates part to cloth;
 	Decide on the list of the garments which the covering relates to;
 
@@ -741,7 +741,7 @@ Check an actor wearing something (This is the check wearing garments rule):
 		Let areas be the cover areas of G;
 		Let matches be 0;
 		Repeat with A running through areas:
-			If A is listed in the body areas of actor, increase matches by 1;
+			If A is listed in the body areas of actor, increment matches;
 		If matches is 0:
 			If the player is the actor:
 				Say "[The noun] [can't] fit on [us]." (A);
@@ -3500,7 +3500,7 @@ Chapter 5.1.2b - Normalwear
 [Normalwear is clothing that go on the "normal" layer, above underwear but under overwear. Because pantyhose needs to go over underwear and be on the same layer as socks, socks also sort here.]
 
 Some socks is a kind of garment.
-It is usually ambiguously plural. The indefinite article is usually "some". The plural of some is pairs of socks.
+It is usually ambiguously plural. The indefinite article is usually "some". The plural of some socks is pairs of socks.
 The specification of some socks is "Socks cover the feet, and is usually formal and normalwear (in order to match stockings and pantyhose)."
 Some socks is usually normalwear.
 The cloth decency of some socks is usually formal.
