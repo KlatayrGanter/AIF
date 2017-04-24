@@ -553,18 +553,16 @@ Section - Taking Off Garments
 
 To decide whether (clothing - a list of garments) fall over (cover - a list of cover areas) for (G - a garment):
 	Let clothing atop be a list of garments;
-	Sort clothing in reverse body layer order;
 	Repeat with cloth running through clothing:
-		If G is cloth or the body layer of cloth < the body layer of G, Break;
+		If G is cloth or the body layer of cloth < the body layer of G, Next;
 		Repeat with A running through cover:
 			If A is listed in the blocked cover areas of cloth, decide yes;
 	Decide no;
 
 To decide which list of garments is (clothing - a list of garments) which ones fall over (cover - a list of cover areas) for (G - a garment):
 	Let clothing atop be a list of garments;
-	Sort clothing in reverse body layer order;
 	Repeat with cloth running through clothing:
-		If the body layer of cloth < the body layer of G, Break;
+		If G is cloth or the body layer of cloth < the body layer of G, Next;
 		Repeat with A running through cover:
 			If A is listed in the blocked cover areas of cloth:
 				Add cloth to clothing atop;
